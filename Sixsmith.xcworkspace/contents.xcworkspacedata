@@ -4,10 +4,6 @@
    <FileRef
       location = "group:SixsmithSample/SixsmithSample.xcodeproj">
    </FileRef>
-   <Group
-      location = "group:SixsmithSample"
-      name = "Frameworks">
-   </Group>
    <FileRef
       location = "group:Sixsmith/Sixsmith.xcodeproj">
    </FileRef>
