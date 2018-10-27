@@ -14,6 +14,8 @@
 		2BA4C3472182766A00947D12 /* HexEqualityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA4C3462182766A00947D12 /* HexEqualityTests.swift */; };
 		2BA4C3492182766A00947D12 /* Sixsmith.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BA4C33B2182766900947D12 /* Sixsmith.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BFF69792184E52A005DE688 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF69782184E52A005DE688 /* Orientation.swift */; };
+		2BFF697B2184E645005DE688 /* Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF697A2184E645005DE688 /* Conversion.swift */; };
+		2BFF697D2184E727005DE688 /* HexConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF697C2184E727005DE688 /* HexConversionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,8 @@
 		2BA4C3462182766A00947D12 /* HexEqualityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexEqualityTests.swift; sourceTree = "<group>"; };
 		2BA4C3482182766A00947D12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BFF69782184E52A005DE688 /* Orientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
+		2BFF697A2184E645005DE688 /* Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversion.swift; sourceTree = "<group>"; };
+		2BFF697C2184E727005DE688 /* HexConversionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexConversionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 				2BA4C33C2182766900947D12 /* Info.plist */,
 				2B502E7B21846C79003BB122 /* Hex.swift */,
 				2BFF69782184E52A005DE688 /* Orientation.swift */,
+				2BFF697A2184E645005DE688 /* Conversion.swift */,
 			);
 			path = Sixsmith;
 			sourceTree = "<group>";
@@ -93,6 +98,7 @@
 				2BA4C3462182766A00947D12 /* HexEqualityTests.swift */,
 				2B502E7D2184848B003BB122 /* HexArithmeticTests.swift */,
 				2B502E7F21848504003BB122 /* HexRelationalTests.swift */,
+				2BFF697C2184E727005DE688 /* HexConversionTests.swift */,
 				2BA4C3482182766A00947D12 /* Info.plist */,
 			);
 			path = SixsmithTests;
@@ -207,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BFF697B2184E645005DE688 /* Conversion.swift in Sources */,
 				2BFF69792184E52A005DE688 /* Orientation.swift in Sources */,
 				2B502E7C21846C79003BB122 /* Hex.swift in Sources */,
 			);
@@ -217,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B502E8021848504003BB122 /* HexRelationalTests.swift in Sources */,
+				2BFF697D2184E727005DE688 /* HexConversionTests.swift in Sources */,
 				2BA4C3472182766A00947D12 /* HexEqualityTests.swift in Sources */,
 				2B502E7E2184848B003BB122 /* HexArithmeticTests.swift in Sources */,
 			);
