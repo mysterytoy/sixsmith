@@ -36,4 +36,8 @@ extension Hex {
     public func length() -> Int {
         return (abs(q) + abs(r) + abs(s)) / 2
     }
+
+    public func distance(to other: Hex) -> Int {
+        return (self - other).length()
+    }
 }
