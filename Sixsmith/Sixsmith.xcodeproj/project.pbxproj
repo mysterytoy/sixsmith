@@ -19,6 +19,8 @@
 		2BFF697F2184E945005DE688 /* HexagonGroupDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF697E2184E945005DE688 /* HexagonGroupDataSource.swift */; };
 		2BFF69812184EAA5005DE688 /* HexagonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF69802184EAA5005DE688 /* HexagonGroup.swift */; };
 		2BFF69852184F448005DE688 /* HexagonGroupDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF69842184F448005DE688 /* HexagonGroupDelegate.swift */; };
+		2BFF69872185011F005DE688 /* PartialHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF69862185011F005DE688 /* PartialHex.swift */; };
+		2BFF69892185016D005DE688 /* PartialHexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF69882185016D005DE688 /* PartialHexTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		2BFF697E2184E945005DE688 /* HexagonGroupDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonGroupDataSource.swift; sourceTree = "<group>"; };
 		2BFF69802184EAA5005DE688 /* HexagonGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonGroup.swift; sourceTree = "<group>"; };
 		2BFF69842184F448005DE688 /* HexagonGroupDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonGroupDelegate.swift; sourceTree = "<group>"; };
+		2BFF69862185011F005DE688 /* PartialHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartialHex.swift; sourceTree = "<group>"; };
+		2BFF69882185016D005DE688 /* PartialHexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartialHexTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,7 @@
 				2BA4C33B2182766900947D12 /* Sixsmith.h */,
 				2BA4C33C2182766900947D12 /* Info.plist */,
 				2B502E7B21846C79003BB122 /* Hex.swift */,
+				2BFF69862185011F005DE688 /* PartialHex.swift */,
 				2BFF69782184E52A005DE688 /* Orientation.swift */,
 				2BFF697A2184E645005DE688 /* Conversion.swift */,
 				2BFF69802184EAA5005DE688 /* HexagonGroup.swift */,
@@ -108,6 +113,7 @@
 				2B502E7D2184848B003BB122 /* HexArithmeticTests.swift */,
 				2B502E7F21848504003BB122 /* HexRelationalTests.swift */,
 				2BFF697C2184E727005DE688 /* HexConversionTests.swift */,
+				2BFF69882185016D005DE688 /* PartialHexTests.swift */,
 				2BA4C3482182766A00947D12 /* Info.plist */,
 			);
 			path = SixsmithTests;
@@ -223,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BFF697B2184E645005DE688 /* Conversion.swift in Sources */,
+				2BFF69872185011F005DE688 /* PartialHex.swift in Sources */,
 				2BFF69852184F448005DE688 /* HexagonGroupDelegate.swift in Sources */,
 				2BFF697F2184E945005DE688 /* HexagonGroupDataSource.swift in Sources */,
 				2BFF69792184E52A005DE688 /* Orientation.swift in Sources */,
@@ -237,6 +244,7 @@
 			files = (
 				2B502E8021848504003BB122 /* HexRelationalTests.swift in Sources */,
 				2BFF697D2184E727005DE688 /* HexConversionTests.swift in Sources */,
+				2BFF69892185016D005DE688 /* PartialHexTests.swift in Sources */,
 				2BA4C3472182766A00947D12 /* HexEqualityTests.swift in Sources */,
 				2B502E7E2184848B003BB122 /* HexArithmeticTests.swift in Sources */,
 			);
