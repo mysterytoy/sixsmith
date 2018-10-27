@@ -28,4 +28,14 @@ class HexRelationalTests: XCTestCase {
 
         XCTAssertEqual(x.distance(to: y), 8)
     }
+
+    func testDirectionPositionIsSanitised() {
+        let origin = Hex(q: 1, r: 2, s: 3)
+
+        let negative = origin.direction(for: -1)
+        let large = origin.direction(for: 10)
+
+        XCTAssertEqual(negative, origin)
+        XCTAssertEqual(large, origin)
+    }
 }

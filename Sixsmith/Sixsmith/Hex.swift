@@ -3,6 +3,13 @@ public struct Hex {
     let q: Int
     let r: Int
     let s: Int
+
+    static let directions = [Hex(q: 0, r: 1, s: -1),
+                             Hex(q: -1, r: 1, s: 0),
+                             Hex(q: -1, r: 0, s: 1),
+                             Hex(q: 0, r: -1, s: 1),
+                             Hex(q: 1, r: -1, s: 0),
+                             Hex(q: 1, r: 0, s: -1)]
 }
 
 // Equality
@@ -39,5 +46,12 @@ extension Hex {
 
     public func distance(to other: Hex) -> Int {
         return (self - other).length()
+    }
+
+    public func direction(for antiClockwisePosition: Int) -> Hex {
+        if antiClockwisePosition >= 0 && antiClockwisePosition <= 5 {
+            return Hex.directions[antiClockwisePosition]
+        }
+        return self
     }
 }
