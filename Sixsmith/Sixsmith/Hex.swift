@@ -54,4 +54,8 @@ extension Hex {
         }
         return self
     }
+
+    public func neighbor(at antiClockwisePosition: Int) -> Hex {
+        return self + self.direction(for: antiClockwisePosition)
+    }
 }

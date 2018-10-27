@@ -38,4 +38,34 @@ class HexRelationalTests: XCTestCase {
         XCTAssertEqual(negative, origin)
         XCTAssertEqual(large, origin)
     }
+
+    func testNeighborPosition0() {
+        let origin = Hex(q: 1, r: -3, s: 2)
+        XCTAssertEqual(origin.neighbor(at: 0), Hex(q: 1, r: -2, s: 1))
+    }
+
+    func testNeighborPosition1() {
+        let origin = Hex(q: 1, r: -3, s: 2)
+        XCTAssertEqual(origin.neighbor(at: 1), Hex(q: 0, r: -2, s: 2))
+    }
+
+    func testNeighborPosition2() {
+        let origin = Hex(q: 1, r: -3, s: 2)
+        XCTAssertEqual(origin.neighbor(at: 2), Hex(q: 0, r: -3, s: 3))
+    }
+
+    func testNeighborPosition3() {
+        let origin = Hex(q: 1, r: -3, s: 2)
+        XCTAssertEqual(origin.neighbor(at: 3), Hex(q: 1, r: -4, s: 3))
+    }
+
+    func testNeighborPosition4() {
+        let origin = Hex(q: 1, r: -3, s: 2)
+        XCTAssertEqual(origin.neighbor(at: 4), Hex(q: 2, r: -4, s: 2))
+    }
+
+    func testNeighborPosition5() {
+        let origin = Hex(q: 1, r: -3, s: 2)
+        XCTAssertEqual(origin.neighbor(at: 5), Hex(q: 2, r: -3, s: 1))
+    }
 }
