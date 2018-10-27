@@ -30,4 +30,18 @@ class HexOperationTests: XCTestCase {
 
         XCTAssertTrue(x != y)
     }
+
+    func testPositiveHexAddition() {
+        let x = Hex(q: 5, r: 10, s: 15)
+        let y = Hex(q: 1, r: 3, s: 3)
+
+        XCTAssertEqual(x + y, Hex(q: 6, r: 13, s: 18))
+    }
+
+    func testNegativeHexAddition() {
+        let x = Hex(q: -5, r: -10, s: -15)
+        let y = Hex(q: 1, r: -3, s: 3)
+
+        XCTAssertEqual(x + y, Hex(q: -4, r: -13, s: -12))
+    }
 }

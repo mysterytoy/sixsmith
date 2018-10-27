@@ -14,3 +14,9 @@ extension Hex: Equatable {
         return !(lhs == rhs)
     }
 }
+
+extension Hex {
+    public static func +(lhs: Hex, rhs: Hex) -> Hex {
+        return Hex(q: lhs.q + rhs.q, r: lhs.r + rhs.r, s: lhs.s + rhs.s)
+    }
+}
