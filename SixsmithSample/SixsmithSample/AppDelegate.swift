@@ -1,6 +1,5 @@
 
 import UIKit
-import Sixsmith
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

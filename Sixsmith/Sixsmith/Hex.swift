@@ -12,6 +12,12 @@ public struct Hex {
                              Hex(q: 1, r: 0, s: -1)]
 }
 
+extension Hex: CustomStringConvertible {
+    public var description: String {
+        return "Hex(q:\(q), r:\(r), s:\(s))"
+    }
+}
+
 // Equality
 extension Hex: Equatable {
     public static func ==(lhs: Hex, rhs: Hex) -> Bool {
