@@ -13,6 +13,7 @@
 		2BA4C3422182766A00947D12 /* Sixsmith.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BA4C3382182766900947D12 /* Sixsmith.framework */; };
 		2BA4C3472182766A00947D12 /* HexEqualityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA4C3462182766A00947D12 /* HexEqualityTests.swift */; };
 		2BA4C3492182766A00947D12 /* Sixsmith.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BA4C33B2182766900947D12 /* Sixsmith.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2BFF69792184E52A005DE688 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF69782184E52A005DE688 /* Orientation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		2BA4C3412182766A00947D12 /* SixsmithTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SixsmithTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA4C3462182766A00947D12 /* HexEqualityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexEqualityTests.swift; sourceTree = "<group>"; };
 		2BA4C3482182766A00947D12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BFF69782184E52A005DE688 /* Orientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				2BA4C33B2182766900947D12 /* Sixsmith.h */,
 				2BA4C33C2182766900947D12 /* Info.plist */,
 				2B502E7B21846C79003BB122 /* Hex.swift */,
+				2BFF69782184E52A005DE688 /* Orientation.swift */,
 			);
 			path = Sixsmith;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BFF69792184E52A005DE688 /* Orientation.swift in Sources */,
 				2B502E7C21846C79003BB122 /* Hex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
