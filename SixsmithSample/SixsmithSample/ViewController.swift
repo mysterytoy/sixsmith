@@ -2,7 +2,7 @@
 import UIKit
 import Sixsmith
 
-class ViewController: UIViewController, HexConfig, Client {
+class ViewController: UIViewController, HexagonGroupDataSource, HexagonGroupDelegate {
 
     var hexagonView: HexagonView?
 

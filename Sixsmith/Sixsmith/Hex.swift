@@ -11,7 +11,7 @@ public struct Hex {
                              Hex(q: 1, r: -1, s: 0),
                              Hex(q: 1, r: 0, s: -1)]
 
-    func drawData(with config: HexConfig) -> [Vector2] {
+    func drawData(with config: HexagonGroupDataSource) -> [Vector2] {
         var corners: [Vector2] = Array()
         let center = Conversion.hexToPixel(self, config: config)
         (0...5).forEach { index in

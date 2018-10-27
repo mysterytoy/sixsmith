@@ -2,7 +2,7 @@
 import XCTest
 @testable import Sixsmith
 
-struct OriginConfig: HexConfig {
+struct OriginConfig: HexagonGroupDataSource {
     var orientation: Orientation
 
     var origin: Vector2 {

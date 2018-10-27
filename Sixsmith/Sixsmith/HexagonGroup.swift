@@ -1,15 +1,11 @@
 
-public protocol Client {
-    func draw(_ corners: [Vector2])
-}
-
 public class HexagonGroup {
-    let config: HexConfig
-    let client: Client
+    let config: HexagonGroupDataSource
+    let client: HexagonGroupDelegate
 
     var hexagons: [Hex] = Array()
 
-    public init(config: HexConfig, client: Client) {
+    public init(config: HexagonGroupDataSource, client: HexagonGroupDelegate) {
         self.config = config
         self.client = client
 
