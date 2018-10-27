@@ -13,6 +13,10 @@ struct OriginConfig: HexagonGroupDataSource {
         return 5
     }
 
+    var radius: Int {
+        return 1
+    }
+
     init(_ o: Orientation = Orientation.flat) {
         orientation = o
     }

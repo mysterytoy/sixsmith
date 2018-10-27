@@ -3,8 +3,11 @@ import UIKit
 import Sixsmith
 
 class ViewController: UIViewController, HexagonGroupDataSource, HexagonGroupDelegate {
-
     var hexagonView: HexagonView?
+
+    var radius: Int {
+        return 2
+    }
 
     var orientation: Orientation {
         return Orientation.flat
@@ -30,6 +33,6 @@ class ViewController: UIViewController, HexagonGroupDataSource, HexagonGroupDele
     }
 
     func draw(_ corners: [Vector2]) {
-        hexagonView?.path = corners
+        hexagonView?.paths.append(corners)
     }
 }
