@@ -7,7 +7,7 @@ struct OriginConfig: HexagonGroupDataSource {
         return Vector2(0, 0)
     }
     var groupRadius: Int {
-        return 1
+        return 15
     }
     var hexagonSize: Double {
         return 5
@@ -42,5 +42,19 @@ class HexConversionTests: XCTestCase {
                                           config: OriginConfig(Orientation.pointed))
         XCTAssertEqual(Int(pixel.x), 4)
         XCTAssertEqual(Int(pixel.y), -7)
+    }
+
+    func testOriginScreenToHexConversion() {
+        let touchPosition = Vector2(0, 0)
+        let hex = Conversion.pixelToHex(touchPosition,
+                                        config: OriginConfig(Orientation.pointed))
+        XCTAssertEqual(hex, Hex(q: 0, r: 0, s: 0))
+    }
+
+    func testRandomScreenToHexConversion() {
+        let touchPosition = Vector2(3.56, -42.081)
+        let hex = Conversion.pixelToHex(touchPosition,
+                                        config: OriginConfig(Orientation.pointed))
+        XCTAssertEqual(hex, Hex(q: 3, r: -6, s: 3))
     }
 }

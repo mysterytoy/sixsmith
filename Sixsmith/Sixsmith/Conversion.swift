@@ -29,4 +29,13 @@ struct Conversion {
         return Vector2(x + config.groupOrigin.x,
                        y + config.groupOrigin.y);
     }
+
+    static func pixelToHex(_ pixel: Vector2, config: HexagonGroupDataSource) -> Hex {
+        let point = Vector2((pixel.x - config.groupOrigin.x) / config.hexagonSize,
+                            (pixel.y - config.groupOrigin.y) / config.hexagonSize)
+        let q = config.hexagonOrientation.backward[0] * point.x + config.hexagonOrientation.backward[1] * point.y
+        let r = config.hexagonOrientation.backward[2] * point.x + config.hexagonOrientation.backward[3] * point.y
+
+        return PartialHex(q: q, r: r, s: -q - r).rounded
+    }
 }
