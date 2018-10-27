@@ -9,7 +9,7 @@ public class HexagonGroup {
         self.config = config
         self.client = client
 
-        let radius = config.radius
+        let radius = config.groupRadius
 
         (-radius...radius).forEach { i in
             let r1 = max(-radius, -i - radius)

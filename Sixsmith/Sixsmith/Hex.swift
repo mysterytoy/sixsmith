@@ -15,9 +15,9 @@ public struct Hex {
         var corners: [Vector2] = Array()
         let center = Conversion.hexToPixel(self, config: config)
         (0...5).forEach { index in
-            let angle = 2.0 * Double.pi * (config.orientation.startAngle - Double(index)) / 6.0
-            let offset =  Vector2(config.size * cos(angle),
-                                  config.size * sin(angle))
+            let angle = 2.0 * Double.pi * (config.hexagonOrientation.startAngle - Double(index)) / 6.0
+            let offset =  Vector2(config.hexagonSize * cos(angle),
+                                  config.hexagonSize * sin(angle))
 
             corners.append(Vector2(center.x + offset.x,
                                    center.y + offset.y))

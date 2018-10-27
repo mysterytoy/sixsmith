@@ -3,23 +3,23 @@ import UIKit
 import Sixsmith
 
 class ViewController: UIViewController, HexagonGroupDataSource, HexagonGroupDelegate {
-    var hexagonView: HexagonView?
-
-    var radius: Int {
-        return 2
-    }
-
-    var orientation: Orientation {
-        return Orientation.flat
-    }
-
-    var origin: Vector2 {
+    var groupOrigin: Vector2 {
         return Vector2(100, 100)
     }
 
-    var size: Double {
+    var groupRadius: Int {
+        return 2
+    }
+
+    var hexagonSize: Double {
         return 10
     }
+
+    var hexagonOrientation: Orientation {
+        return Orientation.flat
+    }
+
+    var hexagonView: HexagonView?
 
     override func viewDidLoad() {
         super.viewDidLoad()

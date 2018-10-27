@@ -3,22 +3,19 @@ import XCTest
 @testable import Sixsmith
 
 struct OriginConfig: HexagonGroupDataSource {
-    var orientation: Orientation
-
-    var origin: Vector2 {
+    var groupOrigin: Vector2 {
         return Vector2(0, 0)
     }
-
-    var size: Double {
-        return 5
-    }
-
-    var radius: Int {
+    var groupRadius: Int {
         return 1
     }
+    var hexagonSize: Double {
+        return 5
+    }
+    var hexagonOrientation: Orientation
 
-    init(_ o: Orientation = Orientation.flat) {
-        orientation = o
+    init(_ orientation: Orientation = Orientation.flat) {
+        hexagonOrientation = orientation
     }
 }
 
