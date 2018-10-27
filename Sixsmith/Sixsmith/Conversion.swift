@@ -10,10 +10,10 @@ public struct Vector2 {
 }
 
 struct Conversion {
-    static func hexToPixel(_ hex: Hex, orientation: Orientation, origin: Vector2, size: Double) -> Vector2 {
-        let x = (orientation.forward[0] * Double(hex.q) + orientation.forward[1] * Double(hex.r)) * size;
-        let y = (orientation.forward[2] * Double(hex.q) + orientation.forward[3] * Double(hex.r)) * size;
-        return Vector2(x + origin.x,
-                       y + origin.y);
+    static func hexToPixel(_ hex: Hex, config: HexConfig) -> Vector2 {
+        let x = (config.orientation.forward[0] * Double(hex.q) + config.orientation.forward[1] * Double(hex.r)) * config.size;
+        let y = (config.orientation.forward[2] * Double(hex.q) + config.orientation.forward[3] * Double(hex.r)) * config.size;
+        return Vector2(x + config.origin.x,
+                       y + config.origin.y);
     }
 }
