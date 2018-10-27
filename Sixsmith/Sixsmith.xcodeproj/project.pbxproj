@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B502E7C21846C79003BB122 /* Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B502E7B21846C79003BB122 /* Hex.swift */; };
 		2BA4C3422182766A00947D12 /* Sixsmith.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BA4C3382182766900947D12 /* Sixsmith.framework */; };
 		2BA4C3472182766A00947D12 /* SixsmithTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA4C3462182766A00947D12 /* SixsmithTests.swift */; };
 		2BA4C3492182766A00947D12 /* Sixsmith.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BA4C33B2182766900947D12 /* Sixsmith.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,6 +24,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B502E7B21846C79003BB122 /* Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hex.swift; sourceTree = "<group>"; };
 		2BA4C3382182766900947D12 /* Sixsmith.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sixsmith.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA4C33B2182766900947D12 /* Sixsmith.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sixsmith.h; sourceTree = "<group>"; };
 		2BA4C33C2182766900947D12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			children = (
 				2BA4C33B2182766900947D12 /* Sixsmith.h */,
 				2BA4C33C2182766900947D12 /* Info.plist */,
+				2B502E7B21846C79003BB122 /* Hex.swift */,
 			);
 			path = Sixsmith;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				TargetAttributes = {
 					2BA4C3372182766900947D12 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 					2BA4C3402182766A00947D12 = {
 						CreatedOnToolsVersion = 10.0;
@@ -194,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B502E7C21846C79003BB122 /* Hex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +346,7 @@
 		2BA4C34D2182766A00947D12 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -358,6 +364,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.lazyaugust.Sixsmith;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -366,6 +373,7 @@
 		2BA4C34E2182766A00947D12 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -391,6 +399,7 @@
 		2BA4C3502182766A00947D12 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WXTE2T7ZL9;
 				INFOPLIST_FILE = SixsmithTests/Info.plist;
@@ -409,6 +418,7 @@
 		2BA4C3512182766A00947D12 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WXTE2T7ZL9;
 				INFOPLIST_FILE = SixsmithTests/Info.plist;
