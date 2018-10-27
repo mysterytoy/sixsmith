@@ -4,6 +4,8 @@ import Sixsmith
 
 class ViewController: UIViewController, HexConfig, Client {
 
+
+
     var orientation: Orientation {
         return Orientation.flat
     }
@@ -23,7 +25,9 @@ class ViewController: UIViewController, HexConfig, Client {
         group.present()
     }
 
-    func draw(_ hex: Hex) {
-        print(hex)
+    func draw(_ corners: [Vector2]) {
+        corners.forEach { corner in
+            print(corner)
+        }
     }
 }

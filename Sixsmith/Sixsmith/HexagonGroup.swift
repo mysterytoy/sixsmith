@@ -1,6 +1,6 @@
 
 public protocol Client {
-    func draw(_ hex: Hex)
+    func draw(_ corners: [Vector2])
 }
 
 public class HexagonGroup {
@@ -19,7 +19,7 @@ public class HexagonGroup {
 
     public func present() {
         hexagons.forEach { hexagon in
-            client.draw(hexagon)
+            client.draw(hexagon.drawData(with: config))
         }
     }
 }
