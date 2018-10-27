@@ -69,22 +69,22 @@ extension Hex {
 
 // Relational
 extension Hex {
-    public func length() -> Int {
+    func length() -> Int {
         return (abs(q) + abs(r) + abs(s)) / 2
     }
 
-    public func distance(to other: Hex) -> Int {
+    func distance(to other: Hex) -> Int {
         return (self - other).length()
     }
 
-    public func direction(for antiClockwisePosition: Int) -> Hex {
+    func direction(for antiClockwisePosition: Int) -> Hex {
         if antiClockwisePosition >= 0 && antiClockwisePosition <= 5 {
             return Hex.directions[antiClockwisePosition]
         }
         return self
     }
 
-    public func neighbor(at antiClockwisePosition: Int) -> Hex {
+    func neighbor(at antiClockwisePosition: Int) -> Hex {
         return self + self.direction(for: antiClockwisePosition)
     }
 }
