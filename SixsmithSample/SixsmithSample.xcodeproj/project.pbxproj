@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		2BA4C35F218276C200947D12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA4C35E218276C200947D12 /* AppDelegate.swift */; };
-		2BA4C361218276C200947D12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA4C360218276C200947D12 /* ViewController.swift */; };
+		2BA4C361218276C200947D12 /* UIHexagonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA4C360218276C200947D12 /* UIHexagonViewController.swift */; };
 		2BA4C366218276C300947D12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA4C365218276C300947D12 /* Assets.xcassets */; };
 		2BA4C371218278A000947D12 /* Sixsmith.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BA4C370218278A000947D12 /* Sixsmith.framework */; };
 		2BA4C372218278A000947D12 /* Sixsmith.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2BA4C370218278A000947D12 /* Sixsmith.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2BFF69832184F1B5005DE688 /* HexagonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF69822184F1B5005DE688 /* HexagonView.swift */; };
+		2BFF698B2185056F005DE688 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF698A2185056F005DE688 /* AppCoordinator.swift */; };
+		2BFF698D2185061D005DE688 /* SKHexagonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF698C2185061D005DE688 /* SKHexagonViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,11 +34,13 @@
 /* Begin PBXFileReference section */
 		2BA4C35B218276C200947D12 /* SixsmithSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SixsmithSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA4C35E218276C200947D12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2BA4C360218276C200947D12 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2BA4C360218276C200947D12 /* UIHexagonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHexagonViewController.swift; sourceTree = "<group>"; };
 		2BA4C365218276C300947D12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BA4C36A218276C300947D12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BA4C370218278A000947D12 /* Sixsmith.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Sixsmith.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BFF69822184F1B5005DE688 /* HexagonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonView.swift; sourceTree = "<group>"; };
+		2BFF698A2185056F005DE688 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		2BFF698C2185061D005DE688 /* SKHexagonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKHexagonViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +76,9 @@
 			isa = PBXGroup;
 			children = (
 				2BA4C35E218276C200947D12 /* AppDelegate.swift */,
-				2BA4C360218276C200947D12 /* ViewController.swift */,
+				2BFF698A2185056F005DE688 /* AppCoordinator.swift */,
+				2BA4C360218276C200947D12 /* UIHexagonViewController.swift */,
+				2BFF698C2185061D005DE688 /* SKHexagonViewController.swift */,
 				2BFF69822184F1B5005DE688 /* HexagonView.swift */,
 				2BA4C365218276C300947D12 /* Assets.xcassets */,
 				2BA4C36A218276C300947D12 /* Info.plist */,
@@ -158,7 +164,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BA4C361218276C200947D12 /* ViewController.swift in Sources */,
+				2BFF698B2185056F005DE688 /* AppCoordinator.swift in Sources */,
+				2BA4C361218276C200947D12 /* UIHexagonViewController.swift in Sources */,
+				2BFF698D2185061D005DE688 /* SKHexagonViewController.swift in Sources */,
 				2BA4C35F218276C200947D12 /* AppDelegate.swift in Sources */,
 				2BFF69832184F1B5005DE688 /* HexagonView.swift in Sources */,
 			);

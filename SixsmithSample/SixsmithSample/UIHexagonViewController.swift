@@ -2,7 +2,7 @@
 import UIKit
 import Sixsmith
 
-class ViewController: UIViewController, HexagonGroupDataSource, HexagonGroupDelegate {
+class UIHexagonViewController: UIViewController, HexagonGroupDataSource, HexagonGroupDelegate {
     var groupOrigin: Vector2 {
         return Vector2(100, 100)
     }
