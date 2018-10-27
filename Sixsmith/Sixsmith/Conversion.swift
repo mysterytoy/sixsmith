@@ -15,6 +15,13 @@ extension Vector2: CustomStringConvertible {
     }
 }
 
+extension Vector2 {
+    public var point: CGPoint {
+        return CGPoint(x: x,
+                       y: y)
+    }
+}
+
 struct Conversion {
     static func hexToPixel(_ hex: Hex, config: HexConfig) -> Vector2 {
         let x = (config.orientation.forward[0] * Double(hex.q) + config.orientation.forward[1] * Double(hex.r)) * config.size;

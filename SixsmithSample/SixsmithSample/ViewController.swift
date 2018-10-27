@@ -4,7 +4,7 @@ import Sixsmith
 
 class ViewController: UIViewController, HexConfig, Client {
 
-
+    var hexagonView: HexagonView?
 
     var orientation: Orientation {
         return Orientation.flat
@@ -21,13 +21,15 @@ class ViewController: UIViewController, HexConfig, Client {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        hexagonView = HexagonView(frame: view.frame)
+
         let group = HexagonGroup(config: self, client: self)
         group.present()
+
+        view.addSubview(hexagonView!)
     }
 
     func draw(_ corners: [Vector2]) {
-        corners.forEach { corner in
-            print(corner)
-        }
+        hexagonView?.path = corners
     }
 }
