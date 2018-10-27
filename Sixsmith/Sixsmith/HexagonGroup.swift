@@ -24,7 +24,7 @@ public class HexagonGroup {
 
     public func present() {
         hexagons.forEach { hexagon in
-            client.draw(hexagon.drawData(with: config))
+            client.dataForHexagon(hexagon.drawData(with: config))
         }
     }
 }

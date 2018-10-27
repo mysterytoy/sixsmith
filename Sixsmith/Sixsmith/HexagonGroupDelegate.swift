@@ -1,4 +1,4 @@
 
 public protocol HexagonGroupDelegate {
-    func draw(_ corners: [Vector2])
+    func dataForHexagon(_ drawData: DrawData)
 }

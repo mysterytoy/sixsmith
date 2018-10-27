@@ -32,7 +32,7 @@ class ViewController: UIViewController, HexagonGroupDataSource, HexagonGroupDele
         view.addSubview(hexagonView!)
     }
 
-    func draw(_ corners: [Vector2]) {
-        hexagonView?.paths.append(corners)
+    func dataForHexagon(_ drawData: DrawData) {
+        hexagonView?.paths.append(drawData.vertices)
     }
 }

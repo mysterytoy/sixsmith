@@ -1,4 +1,12 @@
 
+public struct DrawData {
+    public let vertices: [Vector2]
+
+    init(_ vertices: [Vector2]) {
+        self.vertices = vertices
+    }
+}
+
 public struct Hex {
     let q: Int
     let r: Int
@@ -11,7 +19,7 @@ public struct Hex {
                              Hex(q: 1, r: -1, s: 0),
                              Hex(q: 1, r: 0, s: -1)]
 
-    func drawData(with config: HexagonGroupDataSource) -> [Vector2] {
+    func drawData(with config: HexagonGroupDataSource) -> DrawData {
         var corners: [Vector2] = Array()
         let center = Conversion.hexToPixel(self, config: config)
         (0...5).forEach { index in
@@ -23,7 +31,7 @@ public struct Hex {
                                    center.y + offset.y))
         }
 
-        return corners
+        return DrawData(corners)
     }
 }
 
