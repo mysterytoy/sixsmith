@@ -2,21 +2,7 @@
 import XCTest
 @testable import Sixsmith
 
-class HexOperationTests: XCTestCase {
-    func testHexEquality() {
-        let x = Hex(q: -1, r: 0, s: 1)
-        let y = Hex(q: -1, r: 0, s: 1)
-
-        XCTAssertTrue(x == y)
-    }
-
-    func testHexInequality() {
-        let x = Hex(q: 1, r: 2, s: 3)
-        let y = Hex(q: 3, r: 2, s: 1)
-
-        XCTAssertTrue(x != y)
-    }
-
+class HexArithmeticTests: XCTestCase {
     func testPositiveHexAddition() {
         let x = Hex(q: 5, r: 10, s: 15)
         let y = Hex(q: 1, r: 3, s: 3)
@@ -57,17 +43,5 @@ class HexOperationTests: XCTestCase {
         let y = Hex(q: -2, r: 4, s: -10)
 
         XCTAssertEqual(x * y, Hex(q: 8, r: -100, s: -1000))
-    }
-
-    func testPositiveHexComponentLength() {
-        let x = Hex(q: 2, r: 4, s: 6)
-
-        XCTAssertEqual(x.length(), 6)
-    }
-
-    func testNegativeHexComponentLength() {
-        let x = Hex(q: -2, r: 4, s: -6)
-
-        XCTAssertEqual(x.length(), 6)
     }
 }
