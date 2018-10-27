@@ -24,7 +24,12 @@ public class HexagonGroup {
 
     public func present() {
         hexagons.forEach { hexagon in
-            client.dataForHexagon(hexagon.drawData(with: config))
+            client.dataForHexagon(hexagon, drawData: hexagon.drawData(with: config))
         }
+    }
+
+    public func touch(at position: Vector2) {
+        let hexagon = Conversion.pixelToHex(position, config: config)
+        client.touchAtHexagon(hexagon)
     }
 }

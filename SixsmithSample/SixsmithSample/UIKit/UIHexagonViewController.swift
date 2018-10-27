@@ -32,7 +32,11 @@ class UIHexagonViewController: UIViewController, HexagonGroupDataSource, Hexagon
         view.addSubview(hexagonView!)
     }
 
-    func dataForHexagon(_ drawData: DrawData) {
+    func dataForHexagon(_ hex: Hex, drawData: DrawData) {
         hexagonView?.paths.append(drawData.vertices)
+    }
+
+    func touchAtHexagon(_ hex: Hex) {
+        
     }
 }

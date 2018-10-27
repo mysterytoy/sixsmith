@@ -5,6 +5,8 @@ import Sixsmith
 
 class SKHexagonViewController: UIViewController, HexagonGroupDataSource, HexagonGroupDelegate, TouchDelegate {
     var scene: HexagonScene!
+    var group: HexagonGroup?
+    var storage: [Hex : SKShapeNode] = Dictionary()
 
     var groupOrigin: Vector2 {
         return Vector2(0, 0)
@@ -22,7 +24,29 @@ class SKHexagonViewController: UIViewController, HexagonGroupDataSource, Hexagon
         return Orientation.pointed
     }
 
-    func dataForHexagon(_ drawData: DrawData) {
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        if let view = self.view as! SKView? {
+            scene = HexagonScene(fileNamed: "HexagonScene")
+            scene.scaleMode = .aspectFill
+            scene.touchDelegate = self
+
+            view.presentScene(scene)
+            view.ignoresSiblingOrder = true
+            view.showsFPS = true
+            view.showsNodeCount = true
+        }
+
+        group = HexagonGroup(config: self, client: self)
+        group?.present()
+    }
+
+    func touch(x: Double, y: Double) {
+        group?.touch(at: Vector2(x, y))
+    }
+
+    func dataForHexagon(_ hex: Hex, drawData: DrawData) {
         let vertices = drawData.vertices
         var points = vertices.map { vertex -> CGPoint in
             return vertex.point
@@ -38,28 +62,17 @@ class SKHexagonViewController: UIViewController, HexagonGroupDataSource, Hexagon
         shape.strokeColor = .white
         shape.lineWidth = 2
 
+        storage[hex] = shape
+
         scene.addChild(shape)
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-
-        if let view = self.view as! SKView? {
-            scene = HexagonScene(fileNamed: "HexagonScene")
-            scene.scaleMode = .aspectFill
-            scene.touchDelegate = self
-
-            view.presentScene(scene)
-            view.ignoresSiblingOrder = true
-            view.showsFPS = true
-            view.showsNodeCount = true
+    func touchAtHexagon(_ hex: Hex) {
+        let shape = storage[hex]
+        shape?.fillColor = .cyan
+        hex.neighbors.forEach { neighbor in
+            let shape = storage[neighbor]
+            shape?.fillColor = .yellow
         }
-
-        let group = HexagonGroup(config: self, client: self)
-        group.present()
-    }
-
-    func touch(x: Double, y: Double) {
-        
     }
 }

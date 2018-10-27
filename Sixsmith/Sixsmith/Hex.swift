@@ -35,6 +35,13 @@ public struct Hex {
     }
 }
 
+extension Hex: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(q)
+        hasher.combine(r)
+    }
+}
+
 extension Hex: CustomStringConvertible {
     public var description: String {
         return "Hex(q:\(q), r:\(r), s:\(s))"
@@ -86,5 +93,14 @@ extension Hex {
 
     func neighbor(at antiClockwisePosition: Int) -> Hex {
         return self + self.direction(for: antiClockwisePosition)
+    }
+    
+    public var neighbors: [Hex] {
+        return [neighbor(at: 0),
+                neighbor(at: 1),
+                neighbor(at: 2),
+                neighbor(at: 3),
+                neighbor(at: 4),
+                neighbor(at: 5)]
     }
 }
