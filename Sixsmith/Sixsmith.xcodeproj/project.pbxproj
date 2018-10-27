@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2B502E7C21846C79003BB122 /* Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B502E7B21846C79003BB122 /* Hex.swift */; };
 		2BA4C3422182766A00947D12 /* Sixsmith.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BA4C3382182766900947D12 /* Sixsmith.framework */; };
-		2BA4C3472182766A00947D12 /* SixsmithTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA4C3462182766A00947D12 /* SixsmithTests.swift */; };
+		2BA4C3472182766A00947D12 /* HexOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA4C3462182766A00947D12 /* HexOperationTests.swift */; };
 		2BA4C3492182766A00947D12 /* Sixsmith.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BA4C33B2182766900947D12 /* Sixsmith.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -29,7 +29,7 @@
 		2BA4C33B2182766900947D12 /* Sixsmith.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sixsmith.h; sourceTree = "<group>"; };
 		2BA4C33C2182766900947D12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BA4C3412182766A00947D12 /* SixsmithTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SixsmithTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2BA4C3462182766A00947D12 /* SixsmithTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixsmithTests.swift; sourceTree = "<group>"; };
+		2BA4C3462182766A00947D12 /* HexOperationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexOperationTests.swift; sourceTree = "<group>"; };
 		2BA4C3482182766A00947D12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,7 +83,7 @@
 		2BA4C3452182766A00947D12 /* SixsmithTests */ = {
 			isa = PBXGroup;
 			children = (
-				2BA4C3462182766A00947D12 /* SixsmithTests.swift */,
+				2BA4C3462182766A00947D12 /* HexOperationTests.swift */,
 				2BA4C3482182766A00947D12 /* Info.plist */,
 			);
 			path = SixsmithTests;
@@ -206,7 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BA4C3472182766A00947D12 /* SixsmithTests.swift in Sources */,
+				2BA4C3472182766A00947D12 /* HexOperationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
