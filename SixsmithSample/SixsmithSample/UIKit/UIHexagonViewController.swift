@@ -2,22 +2,7 @@
 import UIKit
 import Sixsmith
 
-class UIHexagonViewController: UIViewController, HexagonGroupDataSource, HexagonGroupDelegate {
-    var groupOrigin: Vector2 {
-        return Vector2(100, 100)
-    }
-
-    var groupRadius: Int {
-        return 2
-    }
-
-    var hexagonSize: Double {
-        return 10
-    }
-
-    var hexagonOrientation: Orientation {
-        return Orientation.flat
-    }
+class UIHexagonViewController: UIViewController, HexagonGroupDelegate {
 
     var hexagonView: HexagonView?
 
@@ -26,7 +11,10 @@ class UIHexagonViewController: UIViewController, HexagonGroupDataSource, Hexagon
 
         hexagonView = HexagonView(frame: view.frame)
 
-        let group = HexagonGroup(dataSource: self,
+        let center = CGPoint(x: view.frame.size.width / 2,
+                             y: view.frame.size.height / 2)
+
+        let group = HexagonGroup(dataSource: DataSource(origin: center),
                                  delegate: self)
         group.present()
 

@@ -27,7 +27,7 @@ class HexagonView: UIView {
 extension UIBezierPath {
     public convenience init(points: [Vector2], shouldBeClosed: Bool = true) {
         self.init()
-        self.lineWidth = 1
+        self.lineWidth = 2
 
         if let first = points.first {
             move(to: first.point)

@@ -3,26 +3,10 @@ import UIKit
 import SpriteKit
 import Sixsmith
 
-class SKHexagonViewController: UIViewController, HexagonGroupDataSource, HexagonGroupDelegate, TouchDelegate {
+class SKHexagonViewController: UIViewController, HexagonGroupDelegate, TouchDelegate {
     var scene: HexagonScene!
     var group: HexagonGroup?
     var storage: [Hex : SKShapeNode] = Dictionary()
-
-    var groupOrigin: Vector2 {
-        return Vector2(0, 0)
-    }
-
-    var groupRadius: Int {
-        return 3
-    }
-
-    var hexagonSize: Double {
-        return 25
-    }
-
-    var hexagonOrientation: Orientation {
-        return Orientation.pointed
-    }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -37,8 +21,8 @@ class SKHexagonViewController: UIViewController, HexagonGroupDataSource, Hexagon
             view.showsFPS = true
             view.showsNodeCount = true
         }
-
-        group = HexagonGroup(dataSource: self,
+        let center = CGPoint(x: 0, y: 0)
+        group = HexagonGroup(dataSource: DataSource(origin: center),
                              delegate: self)
         group?.present()
     }
