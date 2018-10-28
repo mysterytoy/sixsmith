@@ -10,7 +10,8 @@ class SKHexagonViewController: UIViewController, HexagonGroupDelegate, TouchDele
 
     override func viewDidLoad() {
         let center = CGPoint(x: 0, y: 0)
-        group = HexagonGroup(dataSource: DataSource(origin: center),
+        group = HexagonGroup(dataSource: DataSource(origin: center,
+                                                    system: .increaseTowardTopRight),
                              delegate: self)
 
         if let view = self.view as! SKView? {

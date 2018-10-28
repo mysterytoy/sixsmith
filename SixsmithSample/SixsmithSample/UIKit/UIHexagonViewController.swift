@@ -14,7 +14,8 @@ class UIHexagonViewController: UIViewController, HexagonGroupDelegate {
         let center = CGPoint(x: view.frame.size.width / 2,
                              y: view.frame.size.height / 2)
 
-        let group = HexagonGroup(dataSource: DataSource(origin: center),
+        let group = HexagonGroup(dataSource: DataSource(origin: center,
+                                                        system: .increaseTowardBottomRight),
                                  delegate: self)
         group.present()
 

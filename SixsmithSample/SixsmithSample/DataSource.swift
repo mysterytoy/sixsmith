@@ -2,6 +2,7 @@
 import Sixsmith
 
 struct DataSource: HexagonGroupDataSource {
+    var coordinateSystem: CoordinateSystem
     var groupOrigin: Vector2
 
     var groupShape: GroupShape {
@@ -20,8 +21,9 @@ struct DataSource: HexagonGroupDataSource {
         return Orientation.flat
     }
 
-    init(origin: CGPoint) {
+    init(origin: CGPoint, system: CoordinateSystem) {
         groupOrigin = Vector2(Double(origin.x),
                               Double(origin.y))
+        coordinateSystem = system
     }
 }

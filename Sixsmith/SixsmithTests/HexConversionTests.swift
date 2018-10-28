@@ -3,6 +3,9 @@ import XCTest
 @testable import Sixsmith
 
 struct DataSource: HexagonGroupDataSource {
+    var coordinateSystem: CoordinateSystem {
+        return .increaseTowardBottomRight
+    }
     var groupOrigin: Vector2 {
         return Vector2(0, 0)
     }
