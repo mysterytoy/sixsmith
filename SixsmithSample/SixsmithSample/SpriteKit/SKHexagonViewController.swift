@@ -38,7 +38,8 @@ class SKHexagonViewController: UIViewController, HexagonGroupDataSource, Hexagon
             view.showsNodeCount = true
         }
 
-        group = HexagonGroup(config: self, client: self)
+        group = HexagonGroup(dataSource: self,
+                             delegate: self)
         group?.present()
     }
 

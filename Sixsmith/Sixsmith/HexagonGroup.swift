@@ -1,15 +1,15 @@
 
 public class HexagonGroup {
-    let config: HexagonGroupDataSource
-    let client: HexagonGroupDelegate
+    let dataSource: HexagonGroupDataSource
+    let delegate: HexagonGroupDelegate
 
     var hexagons: [Hex] = Array()
 
-    public init(config: HexagonGroupDataSource, client: HexagonGroupDelegate) {
-        self.config = config
-        self.client = client
+    public init(dataSource: HexagonGroupDataSource, delegate: HexagonGroupDelegate) {
+        self.dataSource = dataSource
+        self.delegate = delegate
 
-        let radius = config.groupRadius
+        let radius = dataSource.groupRadius
 
         (-radius...radius).forEach { i in
             let r1 = max(-radius, -i - radius)
@@ -24,12 +24,12 @@ public class HexagonGroup {
 
     public func present() {
         hexagons.forEach { hexagon in
-            client.dataForHexagon(hexagon, drawData: hexagon.drawData(with: config))
+            delegate.dataForHexagon(hexagon, drawData: hexagon.drawData(with: dataSource))
         }
     }
 
     public func touch(at position: Vector2) {
-        let hexagon = Conversion.pixelToHex(position, config: config)
-        client.touchAtHexagon(hexagon)
+        let hexagon = Conversion.pixelToHex(position, dataSource: dataSource)
+        delegate.touchAtHexagon(hexagon)
     }
 }

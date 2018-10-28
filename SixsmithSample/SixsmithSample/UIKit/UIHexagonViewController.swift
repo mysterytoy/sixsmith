@@ -26,7 +26,8 @@ class UIHexagonViewController: UIViewController, HexagonGroupDataSource, Hexagon
 
         hexagonView = HexagonView(frame: view.frame)
 
-        let group = HexagonGroup(config: self, client: self)
+        let group = HexagonGroup(dataSource: self,
+                                 delegate: self)
         group.present()
 
         view.addSubview(hexagonView!)
