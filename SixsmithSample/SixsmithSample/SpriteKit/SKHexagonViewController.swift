@@ -8,8 +8,10 @@ class SKHexagonViewController: UIViewController, HexagonGroupDelegate, TouchDele
     var group: HexagonGroup?
     var storage: [Hex : SKShapeNode] = Dictionary()
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    override func viewDidLoad() {
+        let center = CGPoint(x: 0, y: 0)
+        group = HexagonGroup(dataSource: DataSource(origin: center),
+                             delegate: self)
 
         if let view = self.view as! SKView? {
             scene = HexagonScene(fileNamed: "HexagonScene")
@@ -20,11 +22,9 @@ class SKHexagonViewController: UIViewController, HexagonGroupDelegate, TouchDele
             view.ignoresSiblingOrder = true
             view.showsFPS = true
             view.showsNodeCount = true
+
+            group?.present()
         }
-        let center = CGPoint(x: 0, y: 0)
-        group = HexagonGroup(dataSource: DataSource(origin: center),
-                             delegate: self)
-        group?.present()
     }
 
     func touch(x: Double, y: Double) {
