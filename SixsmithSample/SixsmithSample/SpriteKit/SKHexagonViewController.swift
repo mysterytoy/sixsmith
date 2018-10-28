@@ -55,6 +55,10 @@ class SKHexagonViewController: UIViewController, HexagonGroupDelegate, TouchDele
     }
 
     func touchAtHexagon(_ hex: Hex) {
+        if !storage.keys.contains(hex) {
+            return
+        }
+
         let shape = storage[hex]
         shape?.fillColor = SKColor(red: 0.42, green: 0.61, blue: 0.35, alpha: 1)
         hex.neighbors.forEach { neighbor in
