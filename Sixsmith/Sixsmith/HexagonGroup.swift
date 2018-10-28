@@ -9,16 +9,9 @@ public class HexagonGroup {
         self.dataSource = dataSource
         self.delegate = delegate
 
-        let radius = dataSource.groupRadius
-
-        (-radius...radius).forEach { i in
-            let r1 = max(-radius, -i - radius)
-            let r2 = min(radius, -i + radius)
-
-            (r1...r2).forEach { u in
-                let hex = Hex(q: i, r: u, s: -i-u)
-                hexagons.append(hex)
-            }
+        switch(dataSource.groupShape) {
+        case .hexagon(let radius):
+            hexagons = Generator.hexagonGroup(with: radius)
         }
     }
 

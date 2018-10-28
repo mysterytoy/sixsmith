@@ -4,8 +4,8 @@ import Sixsmith
 struct DataSource: HexagonGroupDataSource {
     var groupOrigin: Vector2
 
-    var groupRadius: Int {
-        return 3
+    var groupShape: GroupShape {
+        return .hexagon(radius: 3)
     }
 
     var hexagonSize: Double {
