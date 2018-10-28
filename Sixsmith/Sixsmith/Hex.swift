@@ -24,8 +24,9 @@ public struct Hex {
         let center = Conversion.hexToPixel(self, dataSource: dataSource)
         (0...5).forEach { index in
             let angle = 2.0 * Double.pi * (dataSource.hexagonOrientation.startAngle - Double(index)) / 6.0
-            let offset =  Vector2(dataSource.hexagonSize * cos(angle),
-                                  dataSource.hexagonSize * sin(angle))
+            let drawSize = dataSource.hexagonSize * dataSource.hexagonScaleFactor
+            let offset =  Vector2(drawSize * cos(angle),
+                                  drawSize * sin(angle))
 
             corners.append(Vector2(center.x + offset.x,
                                    center.y + offset.y))

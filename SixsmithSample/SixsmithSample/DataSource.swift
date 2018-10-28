@@ -12,8 +12,12 @@ struct DataSource: HexagonGroupDataSource {
         return 25
     }
 
+    var hexagonScaleFactor: Double {
+        return 0.95
+    }
+
     var hexagonOrientation: Orientation {
-        return Orientation.pointed
+        return Orientation.flat
     }
 
     init(origin: CGPoint) {

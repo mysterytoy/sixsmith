@@ -16,6 +16,7 @@ class SKHexagonViewController: UIViewController, HexagonGroupDelegate, TouchDele
         if let view = self.view as! SKView? {
             scene = HexagonScene(fileNamed: "HexagonScene")
             scene.scaleMode = .aspectFill
+            scene.backgroundColor = .white
             scene.touchDelegate = self
 
             view.presentScene(scene)
@@ -43,8 +44,8 @@ class SKHexagonViewController: UIViewController, HexagonGroupDelegate, TouchDele
 
         let shape = SKShapeNode(points: &points,
                                 count: points.count)
-        shape.fillColor = .red
-        shape.strokeColor = .white
+        shape.fillColor = SKColor(red: 0.28, green: 0.66, blue: 1, alpha: 1)
+        shape.strokeColor = .clear
         shape.lineWidth = 2
 
         storage[hex] = shape
@@ -54,16 +55,16 @@ class SKHexagonViewController: UIViewController, HexagonGroupDelegate, TouchDele
 
     func touchAtHexagon(_ hex: Hex) {
         let shape = storage[hex]
-        shape?.fillColor = .yellow
+        shape?.fillColor = SKColor(red: 0.42, green: 0.61, blue: 0.35, alpha: 1)
         hex.neighbors.forEach { neighbor in
             let shape = storage[neighbor]
-            shape?.fillColor = .orange
+            shape?.fillColor = SKColor(red: 0.89, green: 0.84, blue: 0.77, alpha: 1)
         }
     }
 
     @IBAction func reset() {
         storage.forEach { hex, node in
-            node.fillColor = .red
+            node.fillColor = SKColor(red: 0.28, green: 0.66, blue: 1, alpha: 1)
         }
     }
 }
