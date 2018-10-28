@@ -18,7 +18,20 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="SKView">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPs-Xv-PtQ">
+                    <rect key="frame" x="168" y="617" width="39" height="30"/>
+                    <state key="normal" title="Reset"/>
+                    <connections>
+                        <action selector="reset" destination="-1" eventType="touchUpInside" id="Aho-p0-LKH"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="JPs-Xv-PtQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="X3W-nX-g2s"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="JPs-Xv-PtQ" secondAttribute="bottom" constant="20" id="ptq-wM-AqD"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>
     </objects>
