@@ -10,6 +10,8 @@ public class HexagonGroup {
         self.delegate = delegate
 
         switch(dataSource.groupShape) {
+        case .single:
+            hexagons = Generator.single()
         case .hexagon(let radius):
             hexagons = Generator.hexagonGroup(with: radius)
         }

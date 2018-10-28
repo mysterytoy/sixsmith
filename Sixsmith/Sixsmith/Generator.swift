@@ -1,5 +1,9 @@
 
 struct Generator {
+    static func single() -> [Hex] {
+        return [Hex(q: 0, r: 0, s: 0)]
+    }
+
     static func hexagonGroup(with radius: Int) -> [Hex] {
         var hexagons: [Hex] = Array()
         (-radius...radius).forEach { i in
