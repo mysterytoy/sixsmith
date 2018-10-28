@@ -11,7 +11,7 @@ public struct Vector2 {
 
 extension Vector2: CustomStringConvertible {
     public var description: String {
-        return "Vector2(\(x), \(y)"
+        return "Vector2(\(x), \(y))"
     }
 }
 
