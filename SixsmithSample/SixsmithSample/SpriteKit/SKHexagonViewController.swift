@@ -35,12 +35,11 @@ class SKHexagonViewController: UIViewController, HexagonGroupDelegate, TouchDele
 
     func dataForHexagon(_ hex: Hex, drawData: DrawData) {
         let vertices = drawData.vertices
+        
         var points = vertices.map { vertex -> CGPoint in
             return vertex.point
         }
-
         guard let first = points.first else { fatalError() }
-
         points.append(first)
 
         let shape = SKShapeNode(points: &points,
@@ -48,7 +47,7 @@ class SKHexagonViewController: UIViewController, HexagonGroupDelegate, TouchDele
         shape.fillColor = SKColor(red: 0.28, green: 0.66, blue: 1, alpha: 1)
         shape.strokeColor = .clear
         shape.lineWidth = 2
-
+     
         storage[hex] = shape
 
         scene.addChild(shape)
@@ -58,13 +57,25 @@ class SKHexagonViewController: UIViewController, HexagonGroupDelegate, TouchDele
         if !storage.keys.contains(hex) {
             return
         }
-
+        
         let shape = storage[hex]
         shape?.fillColor = SKColor(red: 0.42, green: 0.61, blue: 0.35, alpha: 1)
-        hex.neighbors.forEach { neighbor in
+        group?.neighbors(for: hex).forEach { neighbor in
             let shape = storage[neighbor]
             shape?.fillColor = SKColor(red: 0.89, green: 0.84, blue: 0.77, alpha: 1)
         }
+        
+        let north = group?.neighborInDirection(FlatDirections.north.direction, for: hex)
+        storage[north!]?.fillColor = .white
+        
+        let northEast = group?.neighborInDirection(FlatDirections.northEast.direction, for: hex)
+        storage[northEast!]?.fillColor = .red
+        
+        let south = group?.neighborInDirection(FlatDirections.south.direction, for: hex)
+        storage[south!]?.fillColor = .white
+        
+        let southWest = group?.neighborInDirection(FlatDirections.southWest.direction, for: hex)
+        storage[southWest!]?.fillColor = .red
     }
 
     @IBAction func reset() {

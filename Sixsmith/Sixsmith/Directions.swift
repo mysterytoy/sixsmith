@@ -1,7 +1,6 @@
 
 public struct Direction {
-    
-    let value: UInt8
+    let value: Int
     
     static let zero = Direction(value: 0)
     static let one = Direction(value:1)

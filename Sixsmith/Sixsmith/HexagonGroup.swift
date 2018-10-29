@@ -16,7 +16,15 @@ public class HexagonGroup {
             hexagons = Generator.hexagonGroup(with: radius)
         }
     }
-
+    
+    public func neighborInDirection(_ direction: Direction, for hex: Hex) -> Hex {
+        return hex.neighbor(at: direction.value, with: dataSource)
+    }
+    
+    public func neighbors(for hex: Hex) -> [Hex] {
+        return hex.neighbors(with: dataSource)
+    }
+    
     public func present() {
         hexagons.forEach { hexagon in
             delegate.dataForHexagon(hexagon, drawData: hexagon.drawData(with: dataSource))

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2702B1D72187615300C95FA5 /* StubDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2702B1D62187615300C95FA5 /* StubDataSource.swift */; };
 		278D302A21872FE50083CE70 /* Directions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D302921872FE50083CE70 /* Directions.swift */; };
 		2B502E7C21846C79003BB122 /* Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B502E7B21846C79003BB122 /* Hex.swift */; };
 		2B502E7E2184848B003BB122 /* HexArithmeticTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B502E7D2184848B003BB122 /* HexArithmeticTests.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2702B1D62187615300C95FA5 /* StubDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubDataSource.swift; sourceTree = "<group>"; };
 		278D302921872FE50083CE70 /* Directions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Directions.swift; sourceTree = "<group>"; };
 		2B502E7B21846C79003BB122 /* Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hex.swift; sourceTree = "<group>"; };
 		2B502E7D2184848B003BB122 /* HexArithmeticTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexArithmeticTests.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				2BFF697C2184E727005DE688 /* HexConversionTests.swift */,
 				2BFF69882185016D005DE688 /* PartialHexTests.swift */,
 				2BA4C3482182766A00947D12 /* Info.plist */,
+				2702B1D62187615300C95FA5 /* StubDataSource.swift */,
 			);
 			path = SixsmithTests;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			files = (
 				2B502E8021848504003BB122 /* HexRelationalTests.swift in Sources */,
 				2BFF697D2184E727005DE688 /* HexConversionTests.swift in Sources */,
+				2702B1D72187615300C95FA5 /* StubDataSource.swift in Sources */,
 				2BFF69892185016D005DE688 /* PartialHexTests.swift in Sources */,
 				2BA4C3472182766A00947D12 /* HexEqualityTests.swift in Sources */,
 				2B502E7E2184848B003BB122 /* HexArithmeticTests.swift in Sources */,

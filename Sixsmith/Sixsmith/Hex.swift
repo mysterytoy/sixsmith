@@ -1,8 +1,10 @@
 
 public struct DrawData {
+    public let center: Vector2
     public let vertices: [Vector2]
 
-    init(_ vertices: [Vector2]) {
+    init(_ center: Vector2, _ vertices: [Vector2]) {
+        self.center = center
         self.vertices = vertices
     }
 }
@@ -12,12 +14,19 @@ public struct Hex {
     let r: Int
     let s: Int
 
-    static let directions = [Hex(q: 0, r: 1, s: -1),
-                             Hex(q: -1, r: 1, s: 0),
-                             Hex(q: -1, r: 0, s: 1),
-                             Hex(q: 0, r: -1, s: 1),
-                             Hex(q: 1, r: -1, s: 0),
-                             Hex(q: 1, r: 0, s: -1)]
+    static let bottomCoordinateDirections = [Hex(q: 0, r: 1, s: -1),
+                                             Hex(q: -1, r: 1, s: 0),
+                                             Hex(q: -1, r: 0, s: 1),
+                                             Hex(q: 0, r: -1, s: 1),
+                                             Hex(q: 1, r: -1, s: 0),
+                                             Hex(q: 1, r: 0, s: -1)]
+    
+    static let topCoordinateDirections = [Hex(q: 0, r: -1, s: 1),
+                                          Hex(q: -1, r: 0, s: 1),
+                                          Hex(q: -1, r: 1, s: 0),
+                                          Hex(q: 0, r: 1, s: -1),
+                                          Hex(q: 1, r: 0, s: -1),
+                                          Hex(q: 1, r: -1, s: 0)]
 
     func drawData(with dataSource: HexagonGroupDataSource) -> DrawData {
         var corners: [Vector2] = Array()
@@ -32,7 +41,7 @@ public struct Hex {
                                    center.y + offset.y))
         }
 
-        return DrawData(corners)
+        return DrawData(center, corners)
     }
 }
 
@@ -85,23 +94,26 @@ extension Hex {
         return (self - other).length()
     }
 
-    func direction(for antiClockwisePosition: Int) -> Hex {
+    func direction(for antiClockwisePosition: Int, with dataSource: HexagonGroupDataSource) -> Hex {
         if antiClockwisePosition >= 0 && antiClockwisePosition <= 5 {
-            return Hex.directions[antiClockwisePosition]
+            if dataSource.coordinateSystem == .increaseTowardBottomRight {
+                return Hex.bottomCoordinateDirections[antiClockwisePosition]
+            }
+            return Hex.topCoordinateDirections[antiClockwisePosition]
         }
         return self
     }
 
-    func neighbor(at antiClockwisePosition: Int) -> Hex {
-        return self + self.direction(for: antiClockwisePosition)
+    func neighbor(at antiClockwisePosition: Int, with dataSource: HexagonGroupDataSource) -> Hex {
+        return self + self.direction(for: antiClockwisePosition, with: dataSource)
     }
     
-    public var neighbors: [Hex] {
-        return [neighbor(at: 0),
-                neighbor(at: 1),
-                neighbor(at: 2),
-                neighbor(at: 3),
-                neighbor(at: 4),
-                neighbor(at: 5)]
+    func neighbors(with dataSource: HexagonGroupDataSource) -> [Hex] {
+        return [neighbor(at: 0, with: dataSource),
+                neighbor(at: 1, with: dataSource),
+                neighbor(at: 2, with: dataSource),
+                neighbor(at: 3, with: dataSource),
+                neighbor(at: 4, with: dataSource),
+                neighbor(at: 5, with: dataSource)]
     }
 }
