@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		278D302A21872FE50083CE70 /* Directions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D302921872FE50083CE70 /* Directions.swift */; };
 		2B502E7C21846C79003BB122 /* Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B502E7B21846C79003BB122 /* Hex.swift */; };
 		2B502E7E2184848B003BB122 /* HexArithmeticTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B502E7D2184848B003BB122 /* HexArithmeticTests.swift */; };
 		2B502E8021848504003BB122 /* HexRelationalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B502E7F21848504003BB122 /* HexRelationalTests.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		278D302921872FE50083CE70 /* Directions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Directions.swift; sourceTree = "<group>"; };
 		2B502E7B21846C79003BB122 /* Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hex.swift; sourceTree = "<group>"; };
 		2B502E7D2184848B003BB122 /* HexArithmeticTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexArithmeticTests.swift; sourceTree = "<group>"; };
 		2B502E7F21848504003BB122 /* HexRelationalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexRelationalTests.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				2BFF69802184EAA5005DE688 /* HexagonGroup.swift */,
 				2BFF69842184F448005DE688 /* HexagonGroupDelegate.swift */,
 				2BFF697E2184E945005DE688 /* HexagonGroupDataSource.swift */,
+				278D302921872FE50083CE70 /* Directions.swift */,
 			);
 			path = Sixsmith;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				2BA6BDEE2185985A005368EC /* GroupShape.swift in Sources */,
 				2BFF69792184E52A005DE688 /* Orientation.swift in Sources */,
 				2BA6BDEA21857B02005368EC /* Vector2.swift in Sources */,
+				278D302A21872FE50083CE70 /* Directions.swift in Sources */,
 				2BA6BDF22185E269005368EC /* CoordinateSystem.swift in Sources */,
 				2BFF69812184EAA5005DE688 /* HexagonGroup.swift in Sources */,
 				2B502E7C21846C79003BB122 /* Hex.swift in Sources */,
