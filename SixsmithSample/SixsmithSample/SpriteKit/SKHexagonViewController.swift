@@ -6,6 +6,7 @@ import Sixsmith
 class SKHexagonViewController: UIViewController, HexagonGroupDelegate, TouchDelegate {
     var scene: HexagonScene!
     var group: HexagonGroup?
+
     var storage: [Hex : SKShapeNode] = Dictionary()
 
     override func viewDidLoad() {
@@ -29,13 +30,13 @@ class SKHexagonViewController: UIViewController, HexagonGroupDelegate, TouchDele
         }
     }
 
-    func touch(x: Double, y: Double) {
-        group?.touch(at: Vector2(x, y))
+    func dataForHexagon(_ hex: Hex, drawData: DrawData) {
+        let shape = createShapeNode(with: drawData.vertices)
+        storage[hex] = shape
+        scene.addChild(shape)
     }
 
-    func dataForHexagon(_ hex: Hex, drawData: DrawData) {
-        let vertices = drawData.vertices
-        
+    private func createShapeNode(with vertices: [Vector2]) -> SKShapeNode {
         var points = vertices.map { vertex -> CGPoint in
             return vertex.point
         }
@@ -47,35 +48,20 @@ class SKHexagonViewController: UIViewController, HexagonGroupDelegate, TouchDele
         shape.fillColor = SKColor(red: 0.28, green: 0.66, blue: 1, alpha: 1)
         shape.strokeColor = .clear
         shape.lineWidth = 2
-     
-        storage[hex] = shape
 
-        scene.addChild(shape)
+        return shape
+    }
+
+    func touch(x: Double, y: Double) {
+        group?.touchEvent(at: Vector2(x, y))
     }
 
     func touchAtHexagon(_ hex: Hex) {
         if !storage.keys.contains(hex) {
             return
         }
-        
         let shape = storage[hex]
         shape?.fillColor = SKColor(red: 0.42, green: 0.61, blue: 0.35, alpha: 1)
-        group?.neighbors(for: hex).forEach { neighbor in
-            let shape = storage[neighbor]
-            shape?.fillColor = SKColor(red: 0.89, green: 0.84, blue: 0.77, alpha: 1)
-        }
-        
-        let north = group?.neighborInDirection(FlatDirections.north.direction, for: hex)
-        storage[north!]?.fillColor = .white
-        
-        let northEast = group?.neighborInDirection(FlatDirections.northEast.direction, for: hex)
-        storage[northEast!]?.fillColor = .red
-        
-        let south = group?.neighborInDirection(FlatDirections.south.direction, for: hex)
-        storage[south!]?.fillColor = .white
-        
-        let southWest = group?.neighborInDirection(FlatDirections.southWest.direction, for: hex)
-        storage[southWest!]?.fillColor = .red
     }
 
     @IBAction func reset() {

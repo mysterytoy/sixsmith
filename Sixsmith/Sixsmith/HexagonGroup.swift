@@ -31,7 +31,7 @@ public class HexagonGroup {
         }
     }
 
-    public func touch(at position: Vector2) {
+    public func touchEvent(at position: Vector2) {
         let hexagon = Conversion.pixelToHex(position, dataSource: dataSource)
         delegate.touchAtHexagon(hexagon)
     }
