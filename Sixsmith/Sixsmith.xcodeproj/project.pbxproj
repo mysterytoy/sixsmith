@@ -126,13 +126,13 @@
 		2BA4C3452182766A00947D12 /* SixsmithTests */ = {
 			isa = PBXGroup;
 			children = (
+				2702B1D62187615300C95FA5 /* StubDataSource.swift */,
 				2BA4C3462182766A00947D12 /* HexEqualityTests.swift */,
 				2B502E7D2184848B003BB122 /* HexArithmeticTests.swift */,
 				2B502E7F21848504003BB122 /* HexRelationalTests.swift */,
 				2BFF697C2184E727005DE688 /* HexConversionTests.swift */,
 				2BFF69882185016D005DE688 /* PartialHexTests.swift */,
 				2BA4C3482182766A00947D12 /* Info.plist */,
-				2702B1D62187615300C95FA5 /* StubDataSource.swift */,
 			);
 			path = SixsmithTests;
 			sourceTree = "<group>";
