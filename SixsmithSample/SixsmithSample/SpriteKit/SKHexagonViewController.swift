@@ -7,8 +7,10 @@ class SKHexagonViewController: UIViewController, HexagonGroupDelegate, TouchDele
     var scene: HexagonScene!
     var group: HexagonGroup?
 
+    var data: [Hex : DrawData] = Dictionary()
     var shapes: [Hex : SKShapeNode] = Dictionary()
     var cells: [Hex : HexagonViewModel] = Dictionary()
+    var edges: [SKShapeNode] = Array()
     
     var land: [Hex : HexagonViewModel] {
         return cells.filter { key, value -> Bool in
@@ -44,6 +46,7 @@ class SKHexagonViewController: UIViewController, HexagonGroupDelegate, TouchDele
     }
 
     func dataForHexagon(_ hex: Hex, drawData: DrawData) {
+        data[hex] = drawData
         let shape = createShapeNode(with: drawData.vertices)
         shapes[hex] = shape
         cells[hex] = HexagonViewModel(type: .sea)
@@ -81,7 +84,9 @@ class SKHexagonViewController: UIViewController, HexagonGroupDelegate, TouchDele
     }
 
     @IBAction func borders() {
-        print(land)
+        edges.forEach { shape in
+            shape.removeFromParent()
+        }
         
         let landCells = land
         let seaCells = sea
@@ -95,10 +100,20 @@ class SKHexagonViewController: UIViewController, HexagonGroupDelegate, TouchDele
                 })
             }
             
-            seaNeighborKeys?.forEach { seaNeighborKey in
-                let shape = shapes[seaNeighborKey]
-                shape?.fillColor = .cyan
-            }
+            drawBordersForHex(landHex, neighbors: seaNeighborKeys!)
+        }
+    }
+    
+    func drawBordersForHex(_ origin: Hex, neighbors: [Hex]) {
+        neighbors.forEach { neighbor in
+            let result = group?.sharedEdgeBetween(origin, and: neighbor)
+            var points = [result!.first.point, result!.second.point]
+            let shape = SKShapeNode(points: &points, count: points.count)
+            shape.lineWidth = 2.0
+            shape.strokeColor = .red
+            shape.fillColor = .red
+            scene.addChild(shape)
+            edges.append(shape)
         }
     }
     
@@ -113,9 +128,11 @@ class SKHexagonViewController: UIViewController, HexagonGroupDelegate, TouchDele
         cells.merge(seaCells) { (origin, new) -> HexagonViewModel in
             return new
         }
-        
         shapes.forEach { hex, node in
             node.fillColor = SKColor(red: 0.28, green: 0.66, blue: 1, alpha: 1)
+        }
+        edges.forEach { shape in
+            shape.removeFromParent()
         }
     }
 }
