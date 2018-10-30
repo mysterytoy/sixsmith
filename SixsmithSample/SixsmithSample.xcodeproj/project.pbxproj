@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27EF4AA821884C99001A732F /* HexagonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF4AA721884C99001A732F /* HexagonViewModel.swift */; };
 		2BA4C35F218276C200947D12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA4C35E218276C200947D12 /* AppDelegate.swift */; };
 		2BA4C361218276C200947D12 /* UIHexagonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA4C360218276C200947D12 /* UIHexagonViewController.swift */; };
 		2BA4C366218276C300947D12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA4C365218276C300947D12 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		27EF4AA721884C99001A732F /* HexagonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonViewModel.swift; sourceTree = "<group>"; };
 		2BA4C35B218276C200947D12 /* SixsmithSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SixsmithSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA4C35E218276C200947D12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BA4C360218276C200947D12 /* UIHexagonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHexagonViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				2BFF699221850DA2005DE688 /* HexagonScene.swift */,
 				2BFF699021850D65005DE688 /* HexagonScene.sks */,
 				2BFF699421850EB2005DE688 /* TouchDelegate.swift */,
+				27EF4AA721884C99001A732F /* HexagonViewModel.swift */,
 			);
 			path = SpriteKit;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				2BFF69832184F1B5005DE688 /* HexagonView.swift in Sources */,
 				2BA6BDEC21858008005368EC /* DataSource.swift in Sources */,
 				2BFF699521850EB2005DE688 /* TouchDelegate.swift in Sources */,
+				27EF4AA821884C99001A732F /* HexagonViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

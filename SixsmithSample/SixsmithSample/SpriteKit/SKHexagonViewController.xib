@@ -26,10 +26,19 @@
                         <action selector="reset" destination="-1" eventType="touchUpInside" id="Aho-p0-LKH"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hde-Wn-Gb4">
+                    <rect key="frame" x="160.5" y="40" width="54" height="30"/>
+                    <state key="normal" title="Borders"/>
+                    <connections>
+                        <action selector="borders" destination="-1" eventType="touchUpInside" id="72i-Wf-TUG"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="JPs-Xv-PtQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="X3W-nX-g2s"/>
+                <constraint firstItem="Hde-Wn-Gb4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="hlk-5p-kPQ"/>
+                <constraint firstItem="Hde-Wn-Gb4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jqS-7C-sCU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="JPs-Xv-PtQ" secondAttribute="bottom" constant="20" id="ptq-wM-AqD"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
