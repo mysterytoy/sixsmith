@@ -9,6 +9,18 @@ class SKHexagonViewController: UIViewController, HexagonGroupDelegate, TouchDele
 
     var shapes: [Hex : SKShapeNode] = Dictionary()
     var cells: [Hex : HexagonViewModel] = Dictionary()
+    
+    var land: [Hex : HexagonViewModel] {
+        return cells.filter { key, value -> Bool in
+            value.type == .land
+        }
+    }
+    
+    var sea: [Hex : HexagonViewModel] {
+        return cells.filter { key, value -> Bool in
+            value.type == .sea
+        }
+    }
 
     override func viewDidLoad() {
         let center = CGPoint(x: 0, y: 0)
@@ -69,21 +81,34 @@ class SKHexagonViewController: UIViewController, HexagonGroupDelegate, TouchDele
     }
 
     @IBAction func borders() {
-        cells.forEach { hex, viewModel in
-            print("\(hex) -> \(viewModel.type)")
+        print(land)
+        
+        let landCells = land
+        let seaCells = sea
+        
+        landCells.forEach { landHex, landModel in
+            let neighborKeys = group?.neighbors(for: landHex)
+            
+            let seaNeighborKeys = neighborKeys?.filter { neighborHex -> Bool in
+                return seaCells.contains(where: { seaHex, seaModel -> Bool in
+                    neighborHex == seaHex
+                })
+            }
+            
+            seaNeighborKeys?.forEach { seaNeighborKey in
+                let shape = shapes[seaNeighborKey]
+                shape?.fillColor = .cyan
+            }
         }
     }
     
     @IBAction func reset() {
-        let landCells = cells.filter { key, value -> Bool in
-            value.type == .land
-        }
-        let seaCells = cells.filter { key, value -> Bool in
-            value.type == .sea
-        }
+        let landCells = land
+        let seaCells = sea
+
         cells.removeAll()
-        cells.merge(landCells) { (origin, new) -> HexagonViewModel in
-            return new
+        landCells.keys.forEach { hex in
+            cells[hex] = HexagonViewModel(type: .sea)
         }
         cells.merge(seaCells) { (origin, new) -> HexagonViewModel in
             return new
