@@ -14,7 +14,7 @@ struct DataSource: HexagonGroupDataSource {
     }
 
     var hexagonScaleFactor: Double {
-        return 0.8
+        return 0.9
     }
 
     var hexagonOrientation: Orientation {

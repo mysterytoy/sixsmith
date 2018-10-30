@@ -63,8 +63,8 @@ class SKHexagonViewController: UIViewController, HexagonGroupDelegate, TouchDele
         let shape = SKShapeNode(points: &points,
                                 count: points.count)
         shape.fillColor = SKColor(red: 0.28, green: 0.66, blue: 1, alpha: 1)
-        shape.strokeColor = .clear
-        shape.lineWidth = 2
+        shape.strokeColor = .black
+        shape.lineWidth = 1
 
         return shape
     }
@@ -106,17 +106,22 @@ class SKHexagonViewController: UIViewController, HexagonGroupDelegate, TouchDele
     
     func drawBordersForHex(_ origin: Hex, neighbors: [Hex]) {
         neighbors.forEach { neighbor in
-            let result = group?.sharedEdgeBetween(origin, and: neighbor)
-            var points = [result!.first.point, result!.second.point]
+            guard let result = group?.sharedEdgeBetween(origin, and: neighbor) else { return }
+            guard let center = data[origin]?.center else { return }
+
+            let newFirst = Vector2.lerp(center, result.first, coefficient: 0.925)
+            let newSecond = Vector2.lerp(center, result.second, coefficient: 0.925)
+
+            var points = [newFirst.point, newSecond.point]
+
             let shape = SKShapeNode(points: &points, count: points.count)
-            shape.lineWidth = 2.0
+            shape.lineWidth = 2.5
             shape.strokeColor = .red
-            shape.fillColor = .red
             scene.addChild(shape)
             edges.append(shape)
         }
     }
-    
+
     @IBAction func reset() {
         let landCells = land
         let seaCells = sea
