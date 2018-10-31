@@ -63,7 +63,7 @@ class SKHexagonViewController: UIViewController, HexagonGroupDelegate, TouchDele
         let shape = SKShapeNode(points: &points,
                                 count: points.count)
         shape.fillColor = SKColor(red: 0.28, green: 0.66, blue: 1, alpha: 1)
-        shape.strokeColor = .black
+        shape.strokeColor = SKColor(white: 1, alpha: 0.5)
         shape.lineWidth = 1
 
         return shape
@@ -107,10 +107,14 @@ class SKHexagonViewController: UIViewController, HexagonGroupDelegate, TouchDele
     func drawBordersForHex(_ origin: Hex, neighbors: [Hex]) {
         neighbors.forEach { neighbor in
             guard let result = group?.sharedEdgeBetween(origin, and: neighbor) else { return }
-            guard let center = data[origin]?.center else { return }
+            guard let rawCenter = data[origin]?.center else { return }
 
-            let newFirst = Vector2.lerp(center, result.first, coefficient: 0.925)
-            let newSecond = Vector2.lerp(center, result.second, coefficient: 0.925)
+            let center = Vec2(rawCenter)
+            let first = Vec2(result.first)
+            let second = Vec2(result.second)
+
+            let newFirst = Vec2.lerp(center, first, coefficient: 0.925)
+            let newSecond = Vec2.lerp(center, second, coefficient: 0.925)
 
             var points = [newFirst.point, newSecond.point]
 
