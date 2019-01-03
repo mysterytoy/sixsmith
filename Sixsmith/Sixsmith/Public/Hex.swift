@@ -84,9 +84,9 @@ extension Hex {
         return (self - other).length()
     }
 
-    func direction(for antiClockwisePosition: Int, with dataSource: HexagonGroupDataSource) -> Hex {
+    func direction(for antiClockwisePosition: Int, in coordinateSystem: CoordinateSystem) -> Hex {
         if antiClockwisePosition >= 0 && antiClockwisePosition <= 5 {
-            if dataSource.coordinateSystem == .increaseTowardBottomRight {
+            if coordinateSystem == .increaseTowardBottomRight {
                 return Hex.bottomCoordinateDirections[antiClockwisePosition]
             }
             return Hex.topCoordinateDirections[antiClockwisePosition]
@@ -94,16 +94,16 @@ extension Hex {
         return self
     }
 
-    func neighbor(at antiClockwisePosition: Int, with dataSource: HexagonGroupDataSource) -> Hex {
-        return self + self.direction(for: antiClockwisePosition, with: dataSource)
+    func neighbor(at antiClockwisePosition: Int, in coordinateSystem: CoordinateSystem) -> Hex {
+        return self + self.direction(for: antiClockwisePosition, in: coordinateSystem)
     }
     
-    func neighbors(with dataSource: HexagonGroupDataSource) -> [Hex] {
-        return [neighbor(at: 0, with: dataSource),
-                neighbor(at: 1, with: dataSource),
-                neighbor(at: 2, with: dataSource),
-                neighbor(at: 3, with: dataSource),
-                neighbor(at: 4, with: dataSource),
-                neighbor(at: 5, with: dataSource)]
+    func neighbors(in coordinateSystem: CoordinateSystem) -> [Hex] {
+        return [neighbor(at: 0, in: coordinateSystem),
+                neighbor(at: 1, in: coordinateSystem),
+                neighbor(at: 2, in: coordinateSystem),
+                neighbor(at: 3, in: coordinateSystem),
+                neighbor(at: 4, in: coordinateSystem),
+                neighbor(at: 5, in: coordinateSystem)]
     }
 }

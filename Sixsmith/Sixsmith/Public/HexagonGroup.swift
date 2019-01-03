@@ -18,7 +18,7 @@ public class HexagonGroup {
     }
     
     public func neighborInDirection(_ direction: Direction, for hex: Hex) -> Hex {
-        return hex.neighbor(at: direction.value, with: dataSource)
+        return hex.neighbor(at: direction.value, in: dataSource.coordinateSystem)
     }
     
     public func sharedEdgeBetween(_ first: Hex, and second: Hex) -> (first: Vector2, second: Vector2) {
@@ -34,7 +34,7 @@ public class HexagonGroup {
     }
     
     public func neighbors(for hex: Hex) -> [Hex] {
-        return hex.neighbors(with: dataSource)
+        return hex.neighbors(in: dataSource.coordinateSystem)
     }
     
     public func present() {
