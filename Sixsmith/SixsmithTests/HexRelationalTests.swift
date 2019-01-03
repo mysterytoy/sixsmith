@@ -3,6 +3,9 @@ import XCTest
 @testable import Sixsmith
 
 class HexRelationalTests: XCTestCase {
+
+    let dataSource = StubDataSource()
+
     func testPositiveHexComponentLength() {
         let x = Hex(q: 2, r: 4, s: 6)
 
@@ -32,8 +35,8 @@ class HexRelationalTests: XCTestCase {
     func testDirectionPositionIsSanitised() {
         let origin = Hex(q: 1, r: 2, s: 3)
 
-        let negative = origin.direction(for: -1, with: StubDataSource())
-        let large = origin.direction(for: 10, with: StubDataSource())
+        let negative = origin.direction(for: -1, in: dataSource.coordinateSystem)
+        let large = origin.direction(for: 10, in: dataSource.coordinateSystem)
 
         XCTAssertEqual(negative, origin)
         XCTAssertEqual(large, origin)
@@ -41,31 +44,31 @@ class HexRelationalTests: XCTestCase {
 
     func testNeighborPosition0() {
         let origin = Hex(q: 1, r: -3, s: 2)
-        XCTAssertEqual(origin.neighbor(at: 0, with: StubDataSource()), Hex(q: 1, r: -2, s: 1))
+        XCTAssertEqual(origin.neighbor(at: 0, in: dataSource.coordinateSystem), Hex(q: 1, r: -2, s: 1))
     }
 
     func testNeighborPosition1() {
         let origin = Hex(q: 1, r: -3, s: 2)
-        XCTAssertEqual(origin.neighbor(at: 1, with: StubDataSource()), Hex(q: 0, r: -2, s: 2))
+        XCTAssertEqual(origin.neighbor(at: 1, in: dataSource.coordinateSystem), Hex(q: 0, r: -2, s: 2))
     }
 
     func testNeighborPosition2() {
         let origin = Hex(q: 1, r: -3, s: 2)
-        XCTAssertEqual(origin.neighbor(at: 2, with: StubDataSource()), Hex(q: 0, r: -3, s: 3))
+        XCTAssertEqual(origin.neighbor(at: 2, in: dataSource.coordinateSystem), Hex(q: 0, r: -3, s: 3))
     }
 
     func testNeighborPosition3() {
         let origin = Hex(q: 1, r: -3, s: 2)
-        XCTAssertEqual(origin.neighbor(at: 3, with: StubDataSource()), Hex(q: 1, r: -4, s: 3))
+        XCTAssertEqual(origin.neighbor(at: 3, in: dataSource.coordinateSystem), Hex(q: 1, r: -4, s: 3))
     }
 
     func testNeighborPosition4() {
         let origin = Hex(q: 1, r: -3, s: 2)
-        XCTAssertEqual(origin.neighbor(at: 4, with: StubDataSource()), Hex(q: 2, r: -4, s: 2))
+        XCTAssertEqual(origin.neighbor(at: 4, in: dataSource.coordinateSystem), Hex(q: 2, r: -4, s: 2))
     }
 
     func testNeighborPosition5() {
         let origin = Hex(q: 1, r: -3, s: 2)
-        XCTAssertEqual(origin.neighbor(at: 5, with: StubDataSource()), Hex(q: 2, r: -3, s: 1))
+        XCTAssertEqual(origin.neighbor(at: 5, in: dataSource.coordinateSystem), Hex(q: 2, r: -3, s: 1))
     }
 }
