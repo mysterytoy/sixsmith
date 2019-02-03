@@ -121,6 +121,7 @@ class SKHexagonViewController: UIViewController, HexagonGroupDelegate, TouchDele
             let shape = SKShapeNode(points: &points, count: points.count)
             shape.lineWidth = 2.5
             shape.strokeColor = .red
+            shape.lineCap = .round
             scene.addChild(shape)
             edges.append(shape)
         }
