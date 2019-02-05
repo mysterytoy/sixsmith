@@ -25,24 +25,24 @@ class SKHexagonViewController: UIViewController, HexagonGroupDelegate, TouchDele
     }
 
     override func viewDidLoad() {
+        guard let view = self.view as? SKView else { return }
+
         let center = CGPoint(x: 0, y: 0)
         group = HexagonGroup(dataSource: DataSource(origin: center,
                                                     system: .increaseTowardTopRight),
                              delegate: self)
 
-        if let view = self.view as! SKView? {
-            scene = HexagonScene(fileNamed: "HexagonScene")
-            scene.scaleMode = .aspectFill
-            scene.backgroundColor = .white
-            scene.touchDelegate = self
+        scene = HexagonScene(fileNamed: "HexagonScene")
+        scene.scaleMode = .aspectFill
+        scene.backgroundColor = .white
+        scene.touchDelegate = self
 
-            view.presentScene(scene)
-            view.ignoresSiblingOrder = true
-            view.showsFPS = true
-            view.showsNodeCount = true
+        view.presentScene(scene)
+        view.ignoresSiblingOrder = true
+        view.showsFPS = true
+        view.showsNodeCount = true
 
-            group?.present()
-        }
+        group?.present()
     }
 
     func dataForHexagon(_ hex: Hex, drawData: DrawData) {
