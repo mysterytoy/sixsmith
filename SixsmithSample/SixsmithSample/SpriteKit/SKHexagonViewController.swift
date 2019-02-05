@@ -25,6 +25,8 @@ class SKHexagonViewController: UIViewController, HexagonGroupDelegate, TouchDele
     }
 
     override func viewDidLoad() {
+        tabBarItem = UITabBarItem(title: "SpriteKit", image: UIImage(named: "SpriteKitImage"), selectedImage: nil)
+
         guard let view = self.view as? SKView else { return }
 
         let center = CGPoint(x: 0, y: 0)

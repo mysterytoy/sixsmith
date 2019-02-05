@@ -3,8 +3,8 @@ import UIKit
 
 class AppCoordinator: NSObject, UITabBarControllerDelegate {
 
-    let uiViewController = UIHexagonViewController()
-    let skViewController = SKHexagonViewController()
+    let uiViewController: UIHexagonViewController
+    let spriteKitCoordinator: SpriteKitCoordinator
 
     var rootViewController: UIViewController {
         return tabBarController
@@ -13,15 +13,16 @@ class AppCoordinator: NSObject, UITabBarControllerDelegate {
     let tabBarController: UITabBarController
 
     override init() {
-        self.tabBarController = UITabBarController()
+        tabBarController = UITabBarController()
+
+        uiViewController = UIHexagonViewController()
+        spriteKitCoordinator = SpriteKitCoordinator()
     }
 
     func start() {
         uiViewController.tabBarItem = UITabBarItem(title: "UIKit", image: UIImage(named: "UIKitImage"), selectedImage: nil)
-        skViewController.tabBarItem = UITabBarItem(title: "SpriteKit", image: UIImage(named: "SpriteKitImage"), selectedImage: nil)
 
-        tabBarController.addChild(uiViewController)
-        tabBarController.addChild(skViewController)
+        tabBarController.viewControllers = [uiViewController, spriteKitCoordinator.rootViewControlle]
 
         tabBarController.delegate = self
     }
