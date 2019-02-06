@@ -11,28 +11,17 @@ class SpriteKitCoordinator {
     var group: HexagonGroup?
 
     var data: [Hex : DrawData] = Dictionary()
-    var shapes: [Hex : SKShapeNode] = Dictionary()
+
     var edges: [SKShapeNode] = Array()
 
     let gridCellManager: GridCellManager
-
-//    var cells: [Hex : GridCell] = Dictionary()
-//
-//    var land: [Hex : GridCell] {
-//        return cells.filter { key, value -> Bool in
-//            value.type == .land
-//        }
-//    }
-//
-//    var sea: [Hex : GridCell] {
-//        return cells.filter { key, value -> Bool in
-//            value.type == .sea
-//        }
-//    }
-
+    let sceneManager: SceneManager
     let hexagonViewController: SKHexagonViewController
 
     init() {
+        guard let scene = HexagonScene(fileNamed: "HexagonScene") else { fatalError() }
+        sceneManager = SceneManager(scene)
+
         gridCellManager = GridCellManager()
 
         let storyboard = UIStoryboard(name: "SKHexagon", bundle: nil)
@@ -40,13 +29,12 @@ class SpriteKitCoordinator {
         hexagonViewController.tabBarItem = UITabBarItem(title: "SpriteKit", image: UIImage(named: "SpriteKitImage"), selectedImage: nil)
         hexagonViewController.delegate = self
 
-        if let scene = HexagonScene(fileNamed: "HexagonScene") {
-            scene.scaleMode = .aspectFill
-            scene.backgroundColor = .white
-            scene.touchDelegate = self
 
-            hexagonViewController.scene = scene
-        }
+        scene.scaleMode = .aspectFill
+        scene.backgroundColor = .white
+        scene.touchDelegate = self
+
+        hexagonViewController.scene = scene
 
         let center = CGPoint(x: 0, y: 0)
         group = HexagonGroup(dataSource: DataSource(origin: center,
@@ -62,37 +50,13 @@ class SpriteKitCoordinator {
 extension SpriteKitCoordinator: HexagonGroupDelegate {
     func dataForHexagon(_ hex: Hex, drawData: DrawData) {
         data[hex] = drawData
-        let shape = createShapeNode(with: drawData.vertices)
-        shapes[hex] = shape
+        sceneManager.createNewNode(for: hex, with: drawData)
         gridCellManager.createNewCell(for: hex)
-        hexagonViewController.scene?.addChild(shape)
-    }
-
-    private func createShapeNode(with vertices: [Vector2]) -> SKShapeNode {
-        var points = vertices.map { vertex -> CGPoint in
-            return vertex.point
-        }
-        guard let first = points.first else { fatalError() }
-        points.append(first)
-
-        let shape = SKShapeNode(points: &points,
-                                count: points.count)
-        shape.fillColor = SKColor(red: 0.28, green: 0.66, blue: 1, alpha: 1)
-        shape.strokeColor = SKColor(white: 1, alpha: 0.5)
-        shape.lineWidth = 1
-
-        return shape
     }
 
     func touchAtHexagon(_ hex: Hex) {
-        if !shapes.keys.contains(hex) {
-            return
-        }
-        let shape = shapes[hex]
-
+        sceneManager.touchNode(at: hex)
         gridCellManager.createLand(at: hex)
-
-        shape?.fillColor = SKColor(red: 0.42, green: 0.61, blue: 0.35, alpha: 1)
     }
 }
 
@@ -143,11 +107,9 @@ extension SpriteKitCoordinator: HexagonInteractionDelegate {
 
     func resetGrid() {
 
+        sceneManager.reset()
         gridCellManager.reset()
 
-        shapes.forEach { hex, node in
-            node.fillColor = SKColor(red: 0.28, green: 0.66, blue: 1, alpha: 1)
-        }
         edges.forEach { shape in
             shape.removeFromParent()
         }

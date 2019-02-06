@@ -4,8 +4,8 @@ import SpriteKit
 import Sixsmith
 
 class SKHexagonViewController: UIViewController {
-    var scene: HexagonScene?
-    var delegate: HexagonInteractionDelegate?
+    weak var scene: HexagonScene?
+    weak var delegate: HexagonInteractionDelegate?
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
