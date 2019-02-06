@@ -80,18 +80,17 @@ extension SpriteKitCoordinator: HexagonInteractionDelegate {
 
     func drawBordersForHex(_ origin: Hex, neighbors: [Hex]) {
         neighbors.forEach { neighbor in
-            guard let result = group?.sharedEdgeBetween(origin, and: neighbor) else { return }
-            guard let rawCenter = data[origin]?.center else { return }
+            guard let sharedVertices = group?.sharedEdgeBetween(origin, and: neighbor) else { return }
+            guard let origin = data[origin]?.center else { return }
 
-            let center = Vec2(rawCenter)
-            let first = Vec2(result.first)
-            let second = Vec2(result.second)
+            let originCenter = Vec2(origin)
+            let firstSharedVertex = Vec2(sharedVertices.first)
+            let secondSharedVertex = Vec2(sharedVertices.second)
 
-            let newFirst = Vec2.lerp(center, first, coefficient: 0.925)
-            let newSecond = Vec2.lerp(center, second, coefficient: 0.925)
+            let firstVertexLerpedTowardCenter = Vec2.lerp(originCenter, firstSharedVertex, coefficient: 0.92)
+            let secondVertexLerpedTowardCenter = Vec2.lerp(originCenter, secondSharedVertex, coefficient: 0.92)
 
-            var points = [newFirst.point, newSecond.point]
-
+            var points = [firstVertexLerpedTowardCenter.point, secondVertexLerpedTowardCenter.point]
             sceneManager.createNewEdge(with: &points)
         }
     }
