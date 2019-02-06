@@ -12,24 +12,29 @@ class SpriteKitCoordinator {
 
     var data: [Hex : DrawData] = Dictionary()
     var shapes: [Hex : SKShapeNode] = Dictionary()
-    var cells: [Hex : HexagonViewModel] = Dictionary()
     var edges: [SKShapeNode] = Array()
 
-    var land: [Hex : HexagonViewModel] {
-        return cells.filter { key, value -> Bool in
-            value.type == .land
-        }
-    }
+    let gridCellManager: GridCellManager
 
-    var sea: [Hex : HexagonViewModel] {
-        return cells.filter { key, value -> Bool in
-            value.type == .sea
-        }
-    }
+//    var cells: [Hex : GridCell] = Dictionary()
+//
+//    var land: [Hex : GridCell] {
+//        return cells.filter { key, value -> Bool in
+//            value.type == .land
+//        }
+//    }
+//
+//    var sea: [Hex : GridCell] {
+//        return cells.filter { key, value -> Bool in
+//            value.type == .sea
+//        }
+//    }
 
     let hexagonViewController: SKHexagonViewController
 
     init() {
+        gridCellManager = GridCellManager()
+
         let storyboard = UIStoryboard(name: "SKHexagon", bundle: nil)
         hexagonViewController = storyboard.instantiateViewController(withIdentifier: "SpriteKit") as! SKHexagonViewController
         hexagonViewController.tabBarItem = UITabBarItem(title: "SpriteKit", image: UIImage(named: "SpriteKitImage"), selectedImage: nil)
@@ -59,7 +64,7 @@ extension SpriteKitCoordinator: HexagonGroupDelegate {
         data[hex] = drawData
         let shape = createShapeNode(with: drawData.vertices)
         shapes[hex] = shape
-        cells[hex] = HexagonViewModel(type: .sea)
+        gridCellManager.createNewCell(for: hex)
         hexagonViewController.scene?.addChild(shape)
     }
 
@@ -84,8 +89,9 @@ extension SpriteKitCoordinator: HexagonGroupDelegate {
             return
         }
         let shape = shapes[hex]
-        cells.removeValue(forKey: hex)
-        cells[hex] = HexagonViewModel(type: .land)
+
+        gridCellManager.createLand(at: hex)
+
         shape?.fillColor = SKColor(red: 0.42, green: 0.61, blue: 0.35, alpha: 1)
     }
 }
@@ -96,8 +102,8 @@ extension SpriteKitCoordinator: HexagonInteractionDelegate {
             shape.removeFromParent()
         }
 
-        let landCells = land
-        let seaCells = sea
+        let landCells = gridCellManager.land
+        let seaCells = gridCellManager.sea
 
         landCells.forEach { landHex, landModel in
             let neighborKeys = group?.neighbors(for: landHex)
@@ -136,16 +142,9 @@ extension SpriteKitCoordinator: HexagonInteractionDelegate {
     }
 
     func resetGrid() {
-        let landCells = land
-        let seaCells = sea
 
-        cells.removeAll()
-        landCells.keys.forEach { hex in
-            cells[hex] = HexagonViewModel(type: .sea)
-        }
-        cells.merge(seaCells) { (origin, new) -> HexagonViewModel in
-            return new
-        }
+        gridCellManager.reset()
+
         shapes.forEach { hex, node in
             node.fillColor = SKColor(red: 0.28, green: 0.66, blue: 1, alpha: 1)
         }

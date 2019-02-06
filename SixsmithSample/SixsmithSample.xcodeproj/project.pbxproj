@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		27EF4AA821884C99001A732F /* HexagonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF4AA721884C99001A732F /* HexagonViewModel.swift */; };
+		27EF4AA821884C99001A732F /* GridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF4AA721884C99001A732F /* GridCell.swift */; };
 		2BA4C35F218276C200947D12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA4C35E218276C200947D12 /* AppDelegate.swift */; };
 		2BA4C361218276C200947D12 /* UIHexagonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA4C360218276C200947D12 /* UIHexagonViewController.swift */; };
 		2BA4C366218276C300947D12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA4C365218276C300947D12 /* Assets.xcassets */; };
@@ -18,6 +18,7 @@
 		2BF80073220A37EF004217F1 /* SpriteKitCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF80072220A37EF004217F1 /* SpriteKitCoordinator.swift */; };
 		2BF80075220A3851004217F1 /* SKHexagon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BF80074220A3851004217F1 /* SKHexagon.storyboard */; };
 		2BF8007F220B8900004217F1 /* HexagonInteractionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8007E220B8900004217F1 /* HexagonInteractionDelegate.swift */; };
+		2BF80081220B90E0004217F1 /* GridCellManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF80080220B90E0004217F1 /* GridCellManager.swift */; };
 		2BFF69832184F1B5005DE688 /* HexagonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF69822184F1B5005DE688 /* HexagonView.swift */; };
 		2BFF698B2185056F005DE688 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF698A2185056F005DE688 /* AppCoordinator.swift */; };
 		2BFF699121850D65005DE688 /* HexagonScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2BFF699021850D65005DE688 /* HexagonScene.sks */; };
@@ -41,7 +42,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		27EF4AA721884C99001A732F /* HexagonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonViewModel.swift; sourceTree = "<group>"; };
+		27EF4AA721884C99001A732F /* GridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
 		2BA4C35B218276C200947D12 /* SixsmithSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SixsmithSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA4C35E218276C200947D12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BA4C360218276C200947D12 /* UIHexagonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHexagonViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +54,7 @@
 		2BF80072220A37EF004217F1 /* SpriteKitCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteKitCoordinator.swift; sourceTree = "<group>"; };
 		2BF80074220A3851004217F1 /* SKHexagon.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SKHexagon.storyboard; sourceTree = "<group>"; };
 		2BF8007E220B8900004217F1 /* HexagonInteractionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonInteractionDelegate.swift; sourceTree = "<group>"; };
+		2BF80080220B90E0004217F1 /* GridCellManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCellManager.swift; sourceTree = "<group>"; };
 		2BFF69822184F1B5005DE688 /* HexagonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonView.swift; sourceTree = "<group>"; };
 		2BFF698A2185056F005DE688 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		2BFF699021850D65005DE688 /* HexagonScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HexagonScene.sks; sourceTree = "<group>"; };
@@ -130,9 +132,10 @@
 				2BFF699221850DA2005DE688 /* HexagonScene.swift */,
 				2BFF699021850D65005DE688 /* HexagonScene.sks */,
 				2BFF699421850EB2005DE688 /* TouchDelegate.swift */,
-				27EF4AA721884C99001A732F /* HexagonViewModel.swift */,
 				2BCC7BBC218A3196000A093F /* Vec2.swift */,
 				2BF8007E220B8900004217F1 /* HexagonInteractionDelegate.swift */,
+				2BF80080220B90E0004217F1 /* GridCellManager.swift */,
+				27EF4AA721884C99001A732F /* GridCell.swift */,
 			);
 			path = SpriteKit;
 			sourceTree = "<group>";
@@ -218,9 +221,10 @@
 				2BA6BDEC21858008005368EC /* DataSource.swift in Sources */,
 				2BCC7BBD218A3196000A093F /* Vec2.swift in Sources */,
 				2BF8007F220B8900004217F1 /* HexagonInteractionDelegate.swift in Sources */,
+				2BF80081220B90E0004217F1 /* GridCellManager.swift in Sources */,
 				2BF80073220A37EF004217F1 /* SpriteKitCoordinator.swift in Sources */,
 				2BFF699521850EB2005DE688 /* TouchDelegate.swift in Sources */,
-				27EF4AA821884C99001A732F /* HexagonViewModel.swift in Sources */,
+				27EF4AA821884C99001A732F /* GridCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

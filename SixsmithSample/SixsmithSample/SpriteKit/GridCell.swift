@@ -4,6 +4,6 @@ enum CellType {
     case sea
 }
 
-struct HexagonViewModel {
+struct GridCell {
     let type: CellType
 }
