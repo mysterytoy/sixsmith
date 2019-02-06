@@ -1,7 +1,7 @@
 
 import UIKit
 
-class AppCoordinator: NSObject, UITabBarControllerDelegate {
+class AppCoordinator: NSObject {
 
     let uiViewController: UIHexagonViewController
     let spriteKitCoordinator: SpriteKitCoordinator
@@ -25,5 +25,13 @@ class AppCoordinator: NSObject, UITabBarControllerDelegate {
         tabBarController.viewControllers = [uiViewController, spriteKitCoordinator.rootViewControlle]
 
         tabBarController.delegate = self
+    }
+}
+
+extension AppCoordinator: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        if viewController is SKHexagonViewController {
+            spriteKitCoordinator.start()
+        }
     }
 }
