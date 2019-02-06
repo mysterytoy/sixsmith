@@ -12,8 +12,6 @@ class SpriteKitCoordinator {
 
     var data: [Hex : DrawData] = Dictionary()
 
-    var edges: [SKShapeNode] = Array()
-
     let gridCellManager: GridCellManager
     let sceneManager: SceneManager
     let hexagonViewController: SKHexagonViewController
@@ -62,9 +60,7 @@ extension SpriteKitCoordinator: HexagonGroupDelegate {
 
 extension SpriteKitCoordinator: HexagonInteractionDelegate {
     func drawBorders() {
-        edges.forEach { shape in
-            shape.removeFromParent()
-        }
+        sceneManager.resetEdges()
 
         let landCells = gridCellManager.land
         let seaCells = gridCellManager.sea
@@ -96,23 +92,14 @@ extension SpriteKitCoordinator: HexagonInteractionDelegate {
 
             var points = [newFirst.point, newSecond.point]
 
-            let shape = SKShapeNode(points: &points, count: points.count)
-            shape.lineWidth = 2.5
-            shape.strokeColor = .red
-            shape.lineCap = .round
-            hexagonViewController.scene?.addChild(shape)
-            edges.append(shape)
+            sceneManager.createNewEdge(with: &points)
         }
     }
 
     func resetGrid() {
-
-        sceneManager.reset()
+        sceneManager.resetEdges()
+        sceneManager.resetShapes()
         gridCellManager.reset()
-
-        edges.forEach { shape in
-            shape.removeFromParent()
-        }
     }
 }
 

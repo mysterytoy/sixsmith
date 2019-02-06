@@ -6,6 +6,7 @@ class SceneManager {
     let scene: SKScene
 
     var shapes: [Hex : SKShapeNode] = Dictionary()
+    var edges: [SKShapeNode] = Array()
 
     init(_ scene: SKScene) {
         self.scene = scene
@@ -17,6 +18,15 @@ class SceneManager {
         scene.addChild(shape)
     }
 
+    func createNewEdge(with points: inout [CGPoint]) {
+        let shape = SKShapeNode(points: &points, count: points.count)
+        shape.lineWidth = 2.5
+        shape.strokeColor = .red
+        shape.lineCap = .round
+        scene.addChild(shape)
+        edges.append(shape)
+    }
+
     func touchNode(at hex: Hex) {
         if !shapes.keys.contains(hex) {
             return
@@ -25,9 +35,15 @@ class SceneManager {
         shape?.fillColor = SKColor(red: 0.42, green: 0.61, blue: 0.35, alpha: 1)
     }
 
-    func reset() {
+    func resetShapes() {
         shapes.forEach { hex, node in
             node.fillColor = SKColor(red: 0.28, green: 0.66, blue: 1, alpha: 1)
+        }
+    }
+
+    func resetEdges() {
+        edges.forEach { shape in
+            shape.removeFromParent()
         }
     }
 
