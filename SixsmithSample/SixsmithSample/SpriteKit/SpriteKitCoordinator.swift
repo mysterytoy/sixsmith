@@ -41,6 +41,7 @@ class SpriteKitCoordinator {
     }
 
     func start() {
+        gridCellManager.dataProvider = self
         group?.present()
     }
 }
@@ -61,36 +62,8 @@ extension SpriteKitCoordinator: HexagonGroupDelegate {
 extension SpriteKitCoordinator: HexagonInteractionDelegate {
     func drawBorders() {
         sceneManager.resetEdges()
-
-        let landCells = gridCellManager.land
-        let seaCells = gridCellManager.sea
-
-        landCells.forEach { landHex, landModel in
-            let neighborKeys = group?.neighbors(for: landHex)
-
-            let seaNeighborKeys = neighborKeys?.filter { neighborHex -> Bool in
-                return seaCells.contains(where: { seaHex, seaModel -> Bool in
-                    neighborHex == seaHex
-                })
-            }
-
-            drawBordersForHex(landHex, neighbors: seaNeighborKeys!)
-        }
-    }
-
-    func drawBordersForHex(_ origin: Hex, neighbors: [Hex]) {
-        neighbors.forEach { neighbor in
-            guard let sharedVertices = group?.sharedEdgeBetween(origin, and: neighbor) else { return }
-            guard let origin = data[origin]?.center else { return }
-
-            let originCenter = Vec2(origin)
-            let firstSharedVertex = Vec2(sharedVertices.first)
-            let secondSharedVertex = Vec2(sharedVertices.second)
-
-            let firstVertexLerpedTowardCenter = Vec2.lerp(originCenter, firstSharedVertex, coefficient: 0.92)
-            let secondVertexLerpedTowardCenter = Vec2.lerp(originCenter, secondSharedVertex, coefficient: 0.92)
-
-            var points = [firstVertexLerpedTowardCenter.point, secondVertexLerpedTowardCenter.point]
+        for edge in gridCellManager.calculateEdges() {
+            var points = edge
             sceneManager.createNewEdge(with: &points)
         }
     }
@@ -105,5 +78,26 @@ extension SpriteKitCoordinator: HexagonInteractionDelegate {
 extension SpriteKitCoordinator: TouchDelegate {
     func touch(x: Double, y: Double) {
         group?.touchEvent(at: Vector2(x, y))
+    }
+}
+
+extension SpriteKitCoordinator: NeighborDataProvider {
+    func neighbors(for hex: Hex) -> Set<Hex>{
+        guard let neighbors = group?.neighbors(for: hex) else { return Set<Hex>() }
+        return Set<Hex>(neighbors)
+    }
+
+    func center(for hex: Hex) -> Vec2 {
+        guard let center = data[hex]?.center else { return Vec2.zero }
+        return Vec2(center)
+    }
+
+    func edge(for hex: Hex, and neighbor: Hex) -> (Vec2, Vec2) {
+        guard let sharedVertices = group?.sharedEdgeBetween(hex, and: neighbor) else { return (Vec2.zero, Vec2.zero) }
+
+        let firstSharedVertex = Vec2(sharedVertices.first)
+        let secondSharedVertex = Vec2(sharedVertices.second)
+
+        return (firstSharedVertex, secondSharedVertex)
     }
 }
