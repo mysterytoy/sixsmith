@@ -15,8 +15,8 @@ class UIHexagonViewController: UIViewController, HexagonGroupDelegate {
                              y: view.frame.size.height / 2)
 
         let group = HexagonGroup(dataSource: DataSource(origin: center,
-                                                        system: .increaseTowardBottomRight),
-                                 delegate: self)
+                                                        system: .increaseTowardBottomRight))
+        group.delegate = self
         group.present()
 
         view.addSubview(hexagonView!)

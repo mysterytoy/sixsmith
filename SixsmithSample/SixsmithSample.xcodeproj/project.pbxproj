@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27774AB1220C98BA008CFBAA /* MapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27774AB0220C98BA008CFBAA /* MapDelegate.swift */; };
+		27DDA2C1220C938D005BEA3D /* HexagonDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DDA2C0220C938D005BEA3D /* HexagonDataManager.swift */; };
 		27EF4AA821884C99001A732F /* GridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF4AA721884C99001A732F /* GridCell.swift */; };
 		2BA4C35F218276C200947D12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA4C35E218276C200947D12 /* AppDelegate.swift */; };
 		2BA4C361218276C200947D12 /* UIHexagonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA4C360218276C200947D12 /* UIHexagonViewController.swift */; };
@@ -44,6 +46,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		27774AB0220C98BA008CFBAA /* MapDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDelegate.swift; sourceTree = "<group>"; };
+		27DDA2C0220C938D005BEA3D /* HexagonDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonDataManager.swift; sourceTree = "<group>"; };
 		27EF4AA721884C99001A732F /* GridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
 		2BA4C35B218276C200947D12 /* SixsmithSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SixsmithSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA4C35E218276C200947D12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +146,8 @@
 				2BF80080220B90E0004217F1 /* GridCellManager.swift */,
 				27EF4AA721884C99001A732F /* GridCell.swift */,
 				2BF80084220BA46B004217F1 /* NeighborDataProvider.swift */,
+				27DDA2C0220C938D005BEA3D /* HexagonDataManager.swift */,
+				27774AB0220C98BA008CFBAA /* MapDelegate.swift */,
 			);
 			path = SpriteKit;
 			sourceTree = "<group>";
@@ -220,10 +226,12 @@
 			files = (
 				2BFF699A218513DC005DE688 /* SKHexagonViewController.swift in Sources */,
 				2BFF698B2185056F005DE688 /* AppCoordinator.swift in Sources */,
+				27DDA2C1220C938D005BEA3D /* HexagonDataManager.swift in Sources */,
 				2BA4C361218276C200947D12 /* UIHexagonViewController.swift in Sources */,
 				2BFF699321850DA2005DE688 /* HexagonScene.swift in Sources */,
 				2BA4C35F218276C200947D12 /* AppDelegate.swift in Sources */,
 				2BFF69832184F1B5005DE688 /* HexagonView.swift in Sources */,
+				27774AB1220C98BA008CFBAA /* MapDelegate.swift in Sources */,
 				2BA6BDEC21858008005368EC /* DataSource.swift in Sources */,
 				2BCC7BBD218A3196000A093F /* Vec2.swift in Sources */,
 				2BF8007F220B8900004217F1 /* HexagonInteractionDelegate.swift in Sources */,

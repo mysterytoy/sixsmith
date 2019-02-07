@@ -8,47 +8,39 @@ class SpriteKitCoordinator {
         return hexagonViewController
     }
 
-    var group: HexagonGroup?
-
-    var data: [Hex : DrawData] = Dictionary()
-
+    let hexagonDataManager: HexagonDataManager
     let gridCellManager: GridCellManager
     let sceneManager: SceneManager
     let hexagonViewController: SKHexagonViewController
 
     init() {
         guard let scene = HexagonScene(fileNamed: "HexagonScene") else { fatalError() }
-        sceneManager = SceneManager(scene)
-
+        scene.scaleMode = .aspectFill
+        scene.backgroundColor = .white
+        
+        hexagonDataManager = HexagonDataManager()
         gridCellManager = GridCellManager()
+        sceneManager = SceneManager(scene)
 
         let storyboard = UIStoryboard(name: "SKHexagon", bundle: nil)
         hexagonViewController = storyboard.instantiateViewController(withIdentifier: "SpriteKit") as! SKHexagonViewController
         hexagonViewController.tabBarItem = UITabBarItem(title: "SpriteKit", image: UIImage(named: "SpriteKitImage"), selectedImage: nil)
-        hexagonViewController.delegate = self
-
-
-        scene.scaleMode = .aspectFill
-        scene.backgroundColor = .white
-        scene.touchDelegate = self
-
         hexagonViewController.scene = scene
 
-        let center = CGPoint(x: 0, y: 0)
-        group = HexagonGroup(dataSource: DataSource(origin: center,
-                                                    system: .increaseTowardTopRight),
-                             delegate: self)
+        scene.touchDelegate = self
     }
 
     func start() {
-        gridCellManager.dataProvider = self
-        group?.present()
+        hexagonViewController.delegate = self
+        hexagonDataManager.delegate = self
+        
+        gridCellManager.dataProvider = hexagonDataManager
+        hexagonDataManager.generateData()
     }
 }
 
-extension SpriteKitCoordinator: HexagonGroupDelegate {
+extension SpriteKitCoordinator: MapDelegate {
     func dataForHexagon(_ hex: Hex, drawData: DrawData) {
-        data[hex] = drawData
         sceneManager.createNewNode(for: hex, with: drawData)
         gridCellManager.createNewCell(for: hex)
     }
@@ -77,27 +69,6 @@ extension SpriteKitCoordinator: HexagonInteractionDelegate {
 
 extension SpriteKitCoordinator: TouchDelegate {
     func touch(x: Double, y: Double) {
-        group?.touchEvent(at: Vector2(x, y))
-    }
-}
-
-extension SpriteKitCoordinator: NeighborDataProvider {
-    func neighbors(for hex: Hex) -> Set<Hex>{
-        guard let neighbors = group?.neighbors(for: hex) else { return Set<Hex>() }
-        return Set<Hex>(neighbors)
-    }
-
-    func center(for hex: Hex) -> Vec2 {
-        guard let center = data[hex]?.center else { return Vec2.zero }
-        return Vec2(center)
-    }
-
-    func edge(for hex: Hex, and neighbor: Hex) -> (Vec2, Vec2) {
-        guard let sharedVertices = group?.sharedEdgeBetween(hex, and: neighbor) else { return (Vec2.zero, Vec2.zero) }
-
-        let firstSharedVertex = Vec2(sharedVertices.first)
-        let secondSharedVertex = Vec2(sharedVertices.second)
-
-        return (firstSharedVertex, secondSharedVertex)
+        hexagonDataManager.processTouch(at: Vec2(x, y))
     }
 }

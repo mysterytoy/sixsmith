@@ -1,13 +1,13 @@
 
 public class HexagonGroup {
+    public var delegate: HexagonGroupDelegate?
+
     let dataSource: HexagonGroupDataSource
-    let delegate: HexagonGroupDelegate
 
     var hexagons: [Hex] = Array()
 
-    public init(dataSource: HexagonGroupDataSource, delegate: HexagonGroupDelegate) {
+    public init(dataSource: HexagonGroupDataSource) {
         self.dataSource = dataSource
-        self.delegate = delegate
 
         switch(dataSource.groupShape) {
         case .single:
@@ -39,13 +39,13 @@ public class HexagonGroup {
     
     public func present() {
         hexagons.forEach { hexagon in
-            delegate.dataForHexagon(hexagon, drawData: hexagon.drawData(with: dataSource))
+            delegate?.dataForHexagon(hexagon, drawData: hexagon.drawData(with: dataSource))
         }
     }
 
     public func touchEvent(at position: Vector2) {
         let hexagon = Conversion.pixelToHex(position, dataSource: dataSource)
-        delegate.touchAtHexagon(hexagon)
+        delegate?.touchAtHexagon(hexagon)
     }
 }
 
