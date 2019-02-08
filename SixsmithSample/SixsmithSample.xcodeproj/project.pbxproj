@@ -19,6 +19,7 @@
 		2BCC7BBD218A3196000A093F /* Vec2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCC7BBC218A3196000A093F /* Vec2.swift */; };
 		2BCD2E11220D129D00352D11 /* MapConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCD2E10220D129D00352D11 /* MapConductor.swift */; };
 		2BCD2E1B220D1AFF00352D11 /* MapSceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCD2E1A220D1AFF00352D11 /* MapSceneManager.swift */; };
+		2BCD2E1D220D1F2700352D11 /* MapCellManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCD2E1C220D1F2700352D11 /* MapCellManager.swift */; };
 		2BF80073220A37EF004217F1 /* SpriteKitCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF80072220A37EF004217F1 /* SpriteKitCoordinator.swift */; };
 		2BF80075220A3851004217F1 /* SKHexagon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BF80074220A3851004217F1 /* SKHexagon.storyboard */; };
 		2BF8007F220B8900004217F1 /* HexagonInteractionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8007E220B8900004217F1 /* HexagonInteractionDelegate.swift */; };
@@ -61,6 +62,7 @@
 		2BCC7BBC218A3196000A093F /* Vec2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vec2.swift; sourceTree = "<group>"; };
 		2BCD2E10220D129D00352D11 /* MapConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConductor.swift; sourceTree = "<group>"; };
 		2BCD2E1A220D1AFF00352D11 /* MapSceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSceneManager.swift; sourceTree = "<group>"; };
+		2BCD2E1C220D1F2700352D11 /* MapCellManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCellManager.swift; sourceTree = "<group>"; };
 		2BF80072220A37EF004217F1 /* SpriteKitCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteKitCoordinator.swift; sourceTree = "<group>"; };
 		2BF80074220A3851004217F1 /* SKHexagon.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SKHexagon.storyboard; sourceTree = "<group>"; };
 		2BF8007E220B8900004217F1 /* HexagonInteractionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonInteractionDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				2BCD2E10220D129D00352D11 /* MapConductor.swift */,
+				2BCD2E1C220D1F2700352D11 /* MapCellManager.swift */,
 				2BCD2E1A220D1AFF00352D11 /* MapSceneManager.swift */,
 				27774AB0220C98BA008CFBAA /* MapDelegate.swift */,
 			);
@@ -247,6 +250,7 @@
 				2BA4C35F218276C200947D12 /* AppDelegate.swift in Sources */,
 				2BCD2E11220D129D00352D11 /* MapConductor.swift in Sources */,
 				2BFF69832184F1B5005DE688 /* HexagonView.swift in Sources */,
+				2BCD2E1D220D1F2700352D11 /* MapCellManager.swift in Sources */,
 				27774AB1220C98BA008CFBAA /* MapDelegate.swift in Sources */,
 				2BA6BDEC21858008005368EC /* DataSource.swift in Sources */,
 				2BCD2E1B220D1AFF00352D11 /* MapSceneManager.swift in Sources */,

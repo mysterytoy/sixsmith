@@ -15,8 +15,13 @@ class SpriteKitCoordinator {
         scene.scaleMode = .aspectFill
         scene.backgroundColor = .white
 
+        let hexagonDataManager = HexagonDataManager()
+        let gridCellManager = GridCellManager()
+        gridCellManager.dataProvider = hexagonDataManager
         let hexagonSceneManager = HexagonSceneManager(scene)
-        mapConductor = MapConductor(sceneManager: hexagonSceneManager)
+        mapConductor = MapConductor(dataManager: hexagonDataManager,
+                                    cellManager: gridCellManager,
+                                    sceneManager: hexagonSceneManager)
 
         let storyboard = UIStoryboard(name: "SKHexagon", bundle: nil)
         hexagonViewController = storyboard.instantiateViewController(withIdentifier: "SpriteKit") as! SKHexagonViewController

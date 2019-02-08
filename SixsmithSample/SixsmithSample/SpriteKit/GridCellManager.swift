@@ -1,7 +1,7 @@
 
 import Sixsmith
 
-class GridCellManager {
+class GridCellManager: MapCellManager {
     var cells: [Hex : GridCell] = Dictionary()
 
     weak var dataProvider: NeighborDataProvider?
@@ -18,11 +18,11 @@ class GridCellManager {
         }
     }
 
-    func createNewCell(for hex: Hex) {
+    func createCell(for hex: Hex) {
         cells[hex] = GridCell(type: .sea)
     }
 
-    func createLand(at hex: Hex) {
+    func touchCell(at hex: Hex) {
         cells.removeValue(forKey: hex)
         cells[hex] = GridCell(type: .land)
     }
