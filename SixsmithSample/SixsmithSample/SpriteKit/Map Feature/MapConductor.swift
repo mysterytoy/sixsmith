@@ -2,19 +2,20 @@
 import Sixsmith
 
 class MapConductor {
-    let hexagonDataManager: HexagonDataManager
+    let hexagonDataManager: MapDataManager
     let cellManager: MapCellManager
     let sceneManager: MapSceneManager
 
-    init(dataManager: HexagonDataManager, cellManager: MapCellManager, sceneManager: MapSceneManager) {
+    init(dataManager: MapDataManager, cellManager: MapCellManager, sceneManager: MapSceneManager) {
         self.hexagonDataManager = dataManager
         self.cellManager = cellManager
         self.sceneManager = sceneManager
+        
+        self.hexagonDataManager.setMapDelegate(self)
         self.sceneManager.setTouchDelegate(self)
     }
 
     func start() {
-        hexagonDataManager.delegate = self
         hexagonDataManager.generateData()
     }
 }
@@ -49,6 +50,6 @@ extension MapConductor: HexagonInteractionDelegate {
 
 extension MapConductor: TouchDelegate {
     func touch(x: Double, y: Double) {
-        hexagonDataManager.processTouch(at: Vec2(x, y))
+        hexagonDataManager.touchData(at: Vec2(x, y))
     }
 }

@@ -1,7 +1,7 @@
 
 import Sixsmith
 
-class HexagonDataManager {
+class HexagonDataManager: MapDataManager {
     let group: HexagonGroup
     var data: [Hex : DrawData] = Dictionary()
     
@@ -12,12 +12,16 @@ class HexagonDataManager {
                                                     system: .increaseTowardTopRight))
         group.delegate = self
     }
-    
+
+    func setMapDelegate(_ delegate: MapDelegate) {
+        self.delegate = delegate
+    }
+
     func generateData() {
         group.present()
     }
     
-    func processTouch(at location: Vec2) {
+    func touchData(at location: Vec2) {
         group.touchEvent(at: Vector2(location.x, location.y))
     }
 }

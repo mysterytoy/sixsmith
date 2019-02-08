@@ -20,6 +20,7 @@
 		2BCD2E11220D129D00352D11 /* MapConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCD2E10220D129D00352D11 /* MapConductor.swift */; };
 		2BCD2E1B220D1AFF00352D11 /* MapSceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCD2E1A220D1AFF00352D11 /* MapSceneManager.swift */; };
 		2BCD2E1D220D1F2700352D11 /* MapCellManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCD2E1C220D1F2700352D11 /* MapCellManager.swift */; };
+		2BCD2E1F220D231800352D11 /* MapDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCD2E1E220D231800352D11 /* MapDataManager.swift */; };
 		2BF80073220A37EF004217F1 /* SpriteKitCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF80072220A37EF004217F1 /* SpriteKitCoordinator.swift */; };
 		2BF80075220A3851004217F1 /* SKHexagon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BF80074220A3851004217F1 /* SKHexagon.storyboard */; };
 		2BF8007F220B8900004217F1 /* HexagonInteractionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8007E220B8900004217F1 /* HexagonInteractionDelegate.swift */; };
@@ -63,6 +64,7 @@
 		2BCD2E10220D129D00352D11 /* MapConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConductor.swift; sourceTree = "<group>"; };
 		2BCD2E1A220D1AFF00352D11 /* MapSceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSceneManager.swift; sourceTree = "<group>"; };
 		2BCD2E1C220D1F2700352D11 /* MapCellManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCellManager.swift; sourceTree = "<group>"; };
+		2BCD2E1E220D231800352D11 /* MapDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDataManager.swift; sourceTree = "<group>"; };
 		2BF80072220A37EF004217F1 /* SpriteKitCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteKitCoordinator.swift; sourceTree = "<group>"; };
 		2BF80074220A3851004217F1 /* SKHexagon.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SKHexagon.storyboard; sourceTree = "<group>"; };
 		2BF8007E220B8900004217F1 /* HexagonInteractionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonInteractionDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				2BCD2E10220D129D00352D11 /* MapConductor.swift */,
+				2BCD2E1E220D231800352D11 /* MapDataManager.swift */,
 				2BCD2E1C220D1F2700352D11 /* MapCellManager.swift */,
 				2BCD2E1A220D1AFF00352D11 /* MapSceneManager.swift */,
 				27774AB0220C98BA008CFBAA /* MapDelegate.swift */,
@@ -258,6 +261,7 @@
 				2BF8007F220B8900004217F1 /* HexagonInteractionDelegate.swift in Sources */,
 				2BF80081220B90E0004217F1 /* GridCellManager.swift in Sources */,
 				2BF80083220B9319004217F1 /* HexagonSceneManager.swift in Sources */,
+				2BCD2E1F220D231800352D11 /* MapDataManager.swift in Sources */,
 				2BF80073220A37EF004217F1 /* SpriteKitCoordinator.swift in Sources */,
 				2BFF699521850EB2005DE688 /* TouchDelegate.swift in Sources */,
 				27EF4AA821884C99001A732F /* GridCell.swift in Sources */,
