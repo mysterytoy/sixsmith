@@ -22,7 +22,7 @@ class AppCoordinator: NSObject {
     func start() {
         uiViewController.tabBarItem = UITabBarItem(title: "UIKit", image: UIImage(named: "UIKitImage"), selectedImage: nil)
 
-        tabBarController.viewControllers = [uiViewController, spriteKitCoordinator.rootViewControlle]
+        tabBarController.viewControllers = [uiViewController, spriteKitCoordinator.rootViewController]
 
         tabBarController.delegate = self
     }

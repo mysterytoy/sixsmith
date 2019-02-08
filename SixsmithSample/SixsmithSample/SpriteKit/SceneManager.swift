@@ -28,11 +28,8 @@ class SceneManager {
     }
 
     func touchNode(at hex: Hex) {
-        if !shapes.keys.contains(hex) {
-            return
-        }
-        let shape = shapes[hex]
-        shape?.fillColor = SKColor(red: 0.42, green: 0.61, blue: 0.35, alpha: 1)
+        guard let shape = shapes[hex] else { return }
+        shape.fillColor = SKColor(red: 0.42, green: 0.61, blue: 0.35, alpha: 1)
     }
 
     func resetShapes() {
