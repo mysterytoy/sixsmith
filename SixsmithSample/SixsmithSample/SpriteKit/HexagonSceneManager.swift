@@ -2,23 +2,27 @@
 import Sixsmith
 import SpriteKit
 
-class SceneManager {
-    let scene: SKScene
+class HexagonSceneManager: MapSceneManager {
+    let scene: HexagonScene
 
     var shapes: [Hex : SKShapeNode] = Dictionary()
     var edges: [SKShapeNode] = Array()
 
-    init(_ scene: SKScene) {
+    init(_ scene: HexagonScene) {
         self.scene = scene
     }
 
-    func createNewNode(for hex: Hex, with drawData: DrawData) {
+    func setTouchDelegate(_ delegate: TouchDelegate) {
+        scene.touchDelegate = delegate
+    }
+
+    func createNode(for hex: Hex, with drawData: DrawData) {
         let shape = createShapeNode(with: drawData.vertices)
         shapes[hex] = shape
         scene.addChild(shape)
     }
 
-    func createNewEdge(with points: inout [CGPoint]) {
+    func createEdge(with points: inout [CGPoint]) {
         let shape = SKShapeNode(points: &points, count: points.count)
         shape.lineWidth = 2.5
         shape.strokeColor = .red

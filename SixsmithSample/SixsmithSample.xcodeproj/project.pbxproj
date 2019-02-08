@@ -18,11 +18,12 @@
 		2BA6BDEC21858008005368EC /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA6BDEB21858008005368EC /* DataSource.swift */; };
 		2BCC7BBD218A3196000A093F /* Vec2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCC7BBC218A3196000A093F /* Vec2.swift */; };
 		2BCD2E11220D129D00352D11 /* MapConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCD2E10220D129D00352D11 /* MapConductor.swift */; };
+		2BCD2E1B220D1AFF00352D11 /* MapSceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCD2E1A220D1AFF00352D11 /* MapSceneManager.swift */; };
 		2BF80073220A37EF004217F1 /* SpriteKitCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF80072220A37EF004217F1 /* SpriteKitCoordinator.swift */; };
 		2BF80075220A3851004217F1 /* SKHexagon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BF80074220A3851004217F1 /* SKHexagon.storyboard */; };
 		2BF8007F220B8900004217F1 /* HexagonInteractionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF8007E220B8900004217F1 /* HexagonInteractionDelegate.swift */; };
 		2BF80081220B90E0004217F1 /* GridCellManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF80080220B90E0004217F1 /* GridCellManager.swift */; };
-		2BF80083220B9319004217F1 /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF80082220B9319004217F1 /* SceneManager.swift */; };
+		2BF80083220B9319004217F1 /* HexagonSceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF80082220B9319004217F1 /* HexagonSceneManager.swift */; };
 		2BF80085220BA46B004217F1 /* NeighborDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF80084220BA46B004217F1 /* NeighborDataProvider.swift */; };
 		2BFF69832184F1B5005DE688 /* HexagonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF69822184F1B5005DE688 /* HexagonView.swift */; };
 		2BFF698B2185056F005DE688 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF698A2185056F005DE688 /* AppCoordinator.swift */; };
@@ -59,11 +60,12 @@
 		2BA6BDEB21858008005368EC /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		2BCC7BBC218A3196000A093F /* Vec2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vec2.swift; sourceTree = "<group>"; };
 		2BCD2E10220D129D00352D11 /* MapConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConductor.swift; sourceTree = "<group>"; };
+		2BCD2E1A220D1AFF00352D11 /* MapSceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSceneManager.swift; sourceTree = "<group>"; };
 		2BF80072220A37EF004217F1 /* SpriteKitCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteKitCoordinator.swift; sourceTree = "<group>"; };
 		2BF80074220A3851004217F1 /* SKHexagon.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SKHexagon.storyboard; sourceTree = "<group>"; };
 		2BF8007E220B8900004217F1 /* HexagonInteractionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonInteractionDelegate.swift; sourceTree = "<group>"; };
 		2BF80080220B90E0004217F1 /* GridCellManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCellManager.swift; sourceTree = "<group>"; };
-		2BF80082220B9319004217F1 /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
+		2BF80082220B9319004217F1 /* HexagonSceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonSceneManager.swift; sourceTree = "<group>"; };
 		2BF80084220BA46B004217F1 /* NeighborDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighborDataProvider.swift; sourceTree = "<group>"; };
 		2BFF69822184F1B5005DE688 /* HexagonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonView.swift; sourceTree = "<group>"; };
 		2BFF698A2185056F005DE688 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				2BA4C35E218276C200947D12 /* AppDelegate.swift */,
 				2BFF698A2185056F005DE688 /* AppCoordinator.swift */,
 				2BA6BDEB21858008005368EC /* DataSource.swift */,
+				2BCD2E19220D1A3100352D11 /* Map Feature */,
 				2BFF698E21850D2D005DE688 /* UIKit */,
 				2BFF698F21850D35005DE688 /* SpriteKit */,
 				2BA4C365218276C300947D12 /* Assets.xcassets */,
@@ -122,6 +125,17 @@
 				2BA4C370218278A000947D12 /* Sixsmith.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2BCD2E19220D1A3100352D11 /* Map Feature */ = {
+			isa = PBXGroup;
+			children = (
+				2BCD2E10220D129D00352D11 /* MapConductor.swift */,
+				2BCD2E1A220D1AFF00352D11 /* MapSceneManager.swift */,
+				27774AB0220C98BA008CFBAA /* MapDelegate.swift */,
+			);
+			name = "Map Feature";
+			path = "SpriteKit/Map Feature";
 			sourceTree = "<group>";
 		};
 		2BFF698E21850D2D005DE688 /* UIKit */ = {
@@ -143,14 +157,12 @@
 				2BFF699021850D65005DE688 /* HexagonScene.sks */,
 				2BFF699421850EB2005DE688 /* TouchDelegate.swift */,
 				2BCC7BBC218A3196000A093F /* Vec2.swift */,
-				2BF80082220B9319004217F1 /* SceneManager.swift */,
+				2BF80082220B9319004217F1 /* HexagonSceneManager.swift */,
 				2BF8007E220B8900004217F1 /* HexagonInteractionDelegate.swift */,
 				2BF80080220B90E0004217F1 /* GridCellManager.swift */,
 				27EF4AA721884C99001A732F /* GridCell.swift */,
 				2BF80084220BA46B004217F1 /* NeighborDataProvider.swift */,
 				27DDA2C0220C938D005BEA3D /* HexagonDataManager.swift */,
-				27774AB0220C98BA008CFBAA /* MapDelegate.swift */,
-				2BCD2E10220D129D00352D11 /* MapConductor.swift */,
 			);
 			path = SpriteKit;
 			sourceTree = "<group>";
@@ -237,10 +249,11 @@
 				2BFF69832184F1B5005DE688 /* HexagonView.swift in Sources */,
 				27774AB1220C98BA008CFBAA /* MapDelegate.swift in Sources */,
 				2BA6BDEC21858008005368EC /* DataSource.swift in Sources */,
+				2BCD2E1B220D1AFF00352D11 /* MapSceneManager.swift in Sources */,
 				2BCC7BBD218A3196000A093F /* Vec2.swift in Sources */,
 				2BF8007F220B8900004217F1 /* HexagonInteractionDelegate.swift in Sources */,
 				2BF80081220B90E0004217F1 /* GridCellManager.swift in Sources */,
-				2BF80083220B9319004217F1 /* SceneManager.swift in Sources */,
+				2BF80083220B9319004217F1 /* HexagonSceneManager.swift in Sources */,
 				2BF80073220A37EF004217F1 /* SpriteKitCoordinator.swift in Sources */,
 				2BFF699521850EB2005DE688 /* TouchDelegate.swift in Sources */,
 				27EF4AA821884C99001A732F /* GridCell.swift in Sources */,

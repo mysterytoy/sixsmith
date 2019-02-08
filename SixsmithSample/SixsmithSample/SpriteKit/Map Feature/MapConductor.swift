@@ -4,14 +4,13 @@ import Sixsmith
 class MapConductor {
     let hexagonDataManager: HexagonDataManager
     let gridCellManager: GridCellManager
-    let sceneManager: SceneManager
+    let sceneManager: MapSceneManager
 
-    init(_ scene: HexagonScene) {
+    init(sceneManager: MapSceneManager) {
         hexagonDataManager = HexagonDataManager()
         gridCellManager = GridCellManager()
-        sceneManager = SceneManager(scene)
-
-        scene.touchDelegate = self
+        self.sceneManager = sceneManager
+        self.sceneManager.setTouchDelegate(self)
     }
 
     func start() {
@@ -24,7 +23,7 @@ class MapConductor {
 
 extension MapConductor: MapDelegate {
     func dataForHexagon(_ hex: Hex, drawData: DrawData) {
-        sceneManager.createNewNode(for: hex, with: drawData)
+        sceneManager.createNode(for: hex, with: drawData)
         gridCellManager.createNewCell(for: hex)
     }
 
@@ -39,7 +38,7 @@ extension MapConductor: HexagonInteractionDelegate {
         sceneManager.resetEdges()
         for edge in gridCellManager.calculateEdges() {
             var points = edge
-            sceneManager.createNewEdge(with: &points)
+            sceneManager.createEdge(with: &points)
         }
     }
 
