@@ -30,6 +30,7 @@ class SpriteKitCoordinator {
         hexagonViewController = storyboard.instantiateViewController(withIdentifier: "SpriteKit") as! SKHexagonViewController
         hexagonViewController.tabBarItem = UITabBarItem(title: "SpriteKit", image: UIImage(named: "SpriteKitImage"), selectedImage: nil)
         hexagonViewController.scene = scene
+        hexagonViewController.sceneDelegate = hexagonSceneManager
     }
 
     func start() {

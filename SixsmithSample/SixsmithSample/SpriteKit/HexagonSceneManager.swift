@@ -2,18 +2,26 @@
 import Sixsmith
 import SpriteKit
 
-class HexagonSceneManager: MapSceneManager {
+class HexagonSceneManager: MapSceneManager, SceneDelegate {
     let scene: HexagonScene
+    let camera: SKCameraNode
 
     var shapes: [Hex : SKShapeNode] = Dictionary()
     var edges: [SKShapeNode] = Array()
 
     init(_ scene: HexagonScene) {
         self.scene = scene
+        self.camera = SKCameraNode()
+
+        camera.position = CGPoint.zero
+
+        scene.addChild(camera)
+        scene.camera = camera
     }
 
-    func setTouchDelegate(_ delegate: TouchDelegate) {
-        scene.touchDelegate = delegate
+    func zoom(scale: CGFloat) {
+        let newScale = camera.xScale / scale
+        camera.setScale(newScale)
     }
 
     func createNode(for hex: Hex, with drawData: DrawData) {

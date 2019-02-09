@@ -10,6 +10,7 @@
 		27774AB1220C98BA008CFBAA /* MapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27774AB0220C98BA008CFBAA /* MapDelegate.swift */; };
 		27DDA2C1220C938D005BEA3D /* HexagonDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DDA2C0220C938D005BEA3D /* HexagonDataManager.swift */; };
 		27EF4AA821884C99001A732F /* GridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF4AA721884C99001A732F /* GridCell.swift */; };
+		2B9A776C220F451000764BDC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9A776B220F451000764BDC /* SceneDelegate.swift */; };
 		2BA4C35F218276C200947D12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA4C35E218276C200947D12 /* AppDelegate.swift */; };
 		2BA4C361218276C200947D12 /* UIHexagonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA4C360218276C200947D12 /* UIHexagonViewController.swift */; };
 		2BA4C366218276C300947D12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA4C365218276C300947D12 /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 		27774AB0220C98BA008CFBAA /* MapDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDelegate.swift; sourceTree = "<group>"; };
 		27DDA2C0220C938D005BEA3D /* HexagonDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonDataManager.swift; sourceTree = "<group>"; };
 		27EF4AA721884C99001A732F /* GridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
+		2B9A776B220F451000764BDC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2BA4C35B218276C200947D12 /* SixsmithSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SixsmithSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA4C35E218276C200947D12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BA4C360218276C200947D12 /* UIHexagonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHexagonViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				27EF4AA721884C99001A732F /* GridCell.swift */,
 				2BF80084220BA46B004217F1 /* NeighborDataProvider.swift */,
 				27DDA2C0220C938D005BEA3D /* HexagonDataManager.swift */,
+				2B9A776B220F451000764BDC /* SceneDelegate.swift */,
 			);
 			path = SpriteKit;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				2BFF699321850DA2005DE688 /* HexagonScene.swift in Sources */,
 				2BA4C35F218276C200947D12 /* AppDelegate.swift in Sources */,
 				2BCD2E11220D129D00352D11 /* MapConductor.swift in Sources */,
+				2B9A776C220F451000764BDC /* SceneDelegate.swift in Sources */,
 				2BFF69832184F1B5005DE688 /* HexagonView.swift in Sources */,
 				2BCD2E1D220D1F2700352D11 /* MapCellManager.swift in Sources */,
 				27774AB1220C98BA008CFBAA /* MapDelegate.swift in Sources */,
