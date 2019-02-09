@@ -24,8 +24,9 @@ extension MapConductor: MapDelegate {
     }
 
     func touchAtHexagon(_ hex: Hex) {
-        sceneManager.touchNode(at: hex)
-        cellManager.touchCell(at: hex)
+        if sceneManager.touchNode(at: hex) {
+            cellManager.touchCell(at: hex)
+        }
     }
 }
 

@@ -31,9 +31,10 @@ class HexagonSceneManager: MapSceneManager {
         edges.append(shape)
     }
 
-    func touchNode(at hex: Hex) {
-        guard let shape = shapes[hex] else { return }
+    func touchNode(at hex: Hex) -> Bool {
+        guard let shape = shapes[hex] else { return false }
         shape.fillColor = SKColor(red: 0.42, green: 0.61, blue: 0.35, alpha: 1)
+        return true
     }
 
     func resetShapes() {
