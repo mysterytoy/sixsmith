@@ -19,6 +19,15 @@ class HexagonSceneManager: MapSceneManager, SceneDelegate {
         scene.camera = camera
     }
 
+    func move(translation: CGPoint) {
+        let currentX = camera.position.x
+        let currentY = camera.position.y
+        let scaledX = translation.x * camera.xScale
+        let scaledY = translation.y * camera.yScale
+
+        camera.position = CGPoint(x: currentX - scaledX, y: currentY + scaledY)
+    }
+
     func zoom(scale: CGFloat) {
         let newScale = camera.xScale / scale
         camera.setScale(newScale)

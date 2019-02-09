@@ -18,13 +18,24 @@ class SKHexagonViewController: UIViewController {
         view.showsFPS = true
         view.showsNodeCount = true
 
+        let panRecognizer = UIPanGestureRecognizer(target: self, action: #selector(pan(_:)))
+        view.addGestureRecognizer(panRecognizer)
+
         let pinchRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(pinch(_:)))
         view.addGestureRecognizer(pinchRecognizer)
     }
 
+    @objc func pan(_ recognizer: UIGestureRecognizer) {
+        guard let pan = recognizer as? UIPanGestureRecognizer else { return }
+
+        if pan.state == .changed {
+            sceneDelegate?.move(translation: pan.translation(in: view))
+            pan.setTranslation(CGPoint.zero, in: view)
+        }
+    }
+
     @objc func pinch(_ recognizer: UIGestureRecognizer) {
         guard let pinch = recognizer as? UIPinchGestureRecognizer else { return }
-
 
         if pinch.state == .began || pinch.state == .changed {
             sceneDelegate?.zoom(scale: pinch.scale)
