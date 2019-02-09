@@ -10,7 +10,7 @@ public struct Direction {
     static let five = Direction(value:5)
 }
 
-public enum FlatDirections {
+public enum Flat {
     case north
     case northWest
     case southWest
@@ -36,7 +36,7 @@ public enum FlatDirections {
     }
 }
 
-public enum PointedDirections {
+public enum Pointed {
     case northWest
     case west
     case southWest

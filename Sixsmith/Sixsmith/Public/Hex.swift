@@ -4,6 +4,8 @@ public struct Hex {
     let r: Int
     let s: Int
 
+    static let zero = Hex(q: 0, r: 0, s: 0)
+
     static let bottomCoordinateDirections = [Hex(q: 0, r: 1, s: -1),
                                              Hex(q: -1, r: 1, s: 0),
                                              Hex(q: -1, r: 0, s: 1),
@@ -35,20 +37,19 @@ public struct Hex {
     }
 }
 
-extension Hex: Hashable {
+// MARK: - Meta
+extension Hex: Hashable, CustomStringConvertible {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(q)
         hasher.combine(r)
     }
-}
 
-extension Hex: CustomStringConvertible {
     public var description: String {
         return "Hex(q:\(q), r:\(r), s:\(s))"
     }
 }
 
-// Equality
+// MARK: - Equality
 extension Hex: Equatable {
     public static func ==(lhs: Hex, rhs: Hex) -> Bool {
         return lhs.q == rhs.q && lhs.r == rhs.r && lhs.s == rhs.s
@@ -59,7 +60,7 @@ extension Hex: Equatable {
     }
 }
 
-// Arithmetic
+// MARK: - Arithmetic
 extension Hex {
     public static func +(lhs: Hex, rhs: Hex) -> Hex {
         return Hex(q: lhs.q + rhs.q, r: lhs.r + rhs.r, s: lhs.s + rhs.s)
@@ -74,7 +75,7 @@ extension Hex {
     }
 }
 
-// Relational
+// MARK: - Relational
 extension Hex {
     func length() -> Int {
         return (abs(q) + abs(r) + abs(s)) / 2
