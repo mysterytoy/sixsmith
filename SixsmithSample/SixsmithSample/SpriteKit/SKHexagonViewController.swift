@@ -7,8 +7,8 @@ class SKHexagonViewController: UIViewController {
     weak var delegate: HexagonInteractionDelegate?
     weak var sceneDelegate: SceneDelegate?
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         guard let scene = scene, let view = self.view as? SKView else { return }
 

@@ -21,17 +21,8 @@ class AppCoordinator: NSObject {
 
     func start() {
         uiViewController.tabBarItem = UITabBarItem(title: "UIKit", image: UIImage(named: "UIKitImage"), selectedImage: nil)
+        tabBarController.viewControllers = [spriteKitCoordinator.rootViewController, uiViewController]
 
-        tabBarController.viewControllers = [uiViewController, spriteKitCoordinator.rootViewController]
-
-        tabBarController.delegate = self
-    }
-}
-
-extension AppCoordinator: UITabBarControllerDelegate {
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        if viewController is SKHexagonViewController {
-            spriteKitCoordinator.start()
-        }
+        spriteKitCoordinator.start()
     }
 }
