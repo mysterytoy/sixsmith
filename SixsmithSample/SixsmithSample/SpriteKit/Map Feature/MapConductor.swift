@@ -1,5 +1,5 @@
 
-import Sixsmith
+import CoreGraphics
 
 class MapConductor {
     let hexagonDataManager: MapDataManager
@@ -18,14 +18,14 @@ class MapConductor {
 }
 
 extension MapConductor: MapDelegate {
-    func dataForHexagon(_ hex: Hex, drawData: DrawData) {
+    func dataForHexagon(_ hex: AnyHashable, drawData: [CGPoint]) {
         sceneManager.createNode(for: hex, with: drawData)
         cellManager.createCell(for: hex)
     }
 
-    func touchAtHexagon(_ hex: Hex) {
-        if sceneManager.touchNode(at: hex) {
-            cellManager.touchCell(at: hex)
+    func touchAtHexagon(_ key: AnyHashable) {
+        if sceneManager.touchNode(at: key) {
+            cellManager.touchCell(at: key)
         }
     }
 }

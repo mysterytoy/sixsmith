@@ -1,7 +1,7 @@
 
-import Sixsmith
+import CoreGraphics
 
 protocol MapDelegate {
-    func dataForHexagon(_ hex: Hex, drawData: DrawData)
-    func touchAtHexagon(_ hex: Hex)
+    func dataForHexagon(_ hex: AnyHashable, drawData: [CGPoint])
+    func touchAtHexagon(_ hex: AnyHashable)
 }

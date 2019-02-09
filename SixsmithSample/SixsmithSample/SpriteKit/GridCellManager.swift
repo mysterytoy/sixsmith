@@ -1,30 +1,30 @@
 
-import Sixsmith
+import CoreGraphics
 
 class GridCellManager: MapCellManager {
-    var cells: [Hex : GridCell] = Dictionary()
+    var cells: [AnyHashable : GridCell] = Dictionary()
 
     weak var dataProvider: NeighborDataProvider?
 
-    var land: [Hex : GridCell] {
+    var land: [AnyHashable : GridCell] {
         return cells.filter { key, value -> Bool in
             value.type == .land
         }
     }
 
-    var sea: [Hex : GridCell] {
+    var sea: [AnyHashable : GridCell] {
         return cells.filter { key, value -> Bool in
             value.type == .sea
         }
     }
 
-    func createCell(for hex: Hex) {
-        cells[hex] = GridCell(type: .sea)
+    func createCell(for key: AnyHashable) {
+        cells[key] = GridCell(type: .sea)
     }
 
-    func touchCell(at hex: Hex) {
-        cells.removeValue(forKey: hex)
-        cells[hex] = GridCell(type: .land)
+    func touchCell(at key: AnyHashable) {
+        cells.removeValue(forKey: key)
+        cells[key] = GridCell(type: .land)
     }
 
     func calculateEdges() -> [[CGPoint]] {
@@ -48,7 +48,7 @@ class GridCellManager: MapCellManager {
         return edges
     }
 
-    func calculateEdgesForHex(_ origin: Hex, neighbors: Set<Hex>) -> [[CGPoint]] {
+    func calculateEdgesForHex(_ origin: AnyHashable, neighbors: Set<AnyHashable>) -> [[CGPoint]] {
         return neighbors.map { neighbor in
             if let sharedVertices: (first: Vec2, second: Vec2) = dataProvider?.edge(for: origin, and: neighbor), let originCenter = dataProvider?.center(for: origin) {
                 let firstSharedVertex = sharedVertices.first

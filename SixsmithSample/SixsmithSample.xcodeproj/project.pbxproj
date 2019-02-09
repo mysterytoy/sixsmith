@@ -93,6 +93,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B9A776D220F589400764BDC /* Sixsmith Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				2BA6BDEB21858008005368EC /* DataSource.swift */,
+				27DDA2C0220C938D005BEA3D /* HexagonDataManager.swift */,
+				2BCC7BBC218A3196000A093F /* Vec2.swift */,
+			);
+			path = "Sixsmith Adapter";
+			sourceTree = "<group>";
+		};
 		2BA4C352218276C200947D12 = {
 			isa = PBXGroup;
 			children = (
@@ -115,10 +125,10 @@
 			children = (
 				2BA4C35E218276C200947D12 /* AppDelegate.swift */,
 				2BFF698A2185056F005DE688 /* AppCoordinator.swift */,
-				2BA6BDEB21858008005368EC /* DataSource.swift */,
+				2B9A776D220F589400764BDC /* Sixsmith Adapter */,
 				2BCD2E19220D1A3100352D11 /* Map Feature */,
-				2BFF698E21850D2D005DE688 /* UIKit */,
 				2BFF698F21850D35005DE688 /* SpriteKit */,
+				2BFF698E21850D2D005DE688 /* UIKit */,
 				2BA4C365218276C300947D12 /* Assets.xcassets */,
 				2BA4C36A218276C300947D12 /* Info.plist */,
 			);
@@ -164,13 +174,11 @@
 				2BFF699221850DA2005DE688 /* HexagonScene.swift */,
 				2BFF699021850D65005DE688 /* HexagonScene.sks */,
 				2BFF699421850EB2005DE688 /* TouchDelegate.swift */,
-				2BCC7BBC218A3196000A093F /* Vec2.swift */,
 				2BF80082220B9319004217F1 /* HexagonSceneManager.swift */,
 				2BF8007E220B8900004217F1 /* HexagonInteractionDelegate.swift */,
 				2BF80080220B90E0004217F1 /* GridCellManager.swift */,
 				27EF4AA721884C99001A732F /* GridCell.swift */,
 				2BF80084220BA46B004217F1 /* NeighborDataProvider.swift */,
-				27DDA2C0220C938D005BEA3D /* HexagonDataManager.swift */,
 				2B9A776B220F451000764BDC /* SceneDelegate.swift */,
 			);
 			path = SpriteKit;

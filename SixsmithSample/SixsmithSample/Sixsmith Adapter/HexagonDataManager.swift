@@ -3,7 +3,8 @@ import Sixsmith
 
 class HexagonDataManager: MapDataManager {
     let group: HexagonGroup
-    var data: [Hex : DrawData] = Dictionary()
+    var data: [AnyHashable : DrawData] = Dictionary()
+    var keys: [AnyHashable : Hex] = Dictionary()
     
     var delegate: MapDelegate?
     
@@ -28,9 +29,10 @@ class HexagonDataManager: MapDataManager {
 
 extension HexagonDataManager: HexagonGroupDelegate {
     func dataForHexagon(_ hex: Hex, drawData: DrawData) {
+        keys[hex] = hex
         data[hex] = drawData
         
-        delegate?.dataForHexagon(hex, drawData: drawData)
+        delegate?.dataForHexagon(hex, drawData: drawData.vertices.map { vertex -> CGPoint in vertex.point })
     }
     
     func touchAtHexagon(_ hex: Hex) {
@@ -39,17 +41,19 @@ extension HexagonDataManager: HexagonGroupDelegate {
 }
 
 extension HexagonDataManager: NeighborDataProvider {
-    func neighbors(for hex: Hex) -> Set<Hex>{
+    func neighbors(for key: AnyHashable) -> Set<AnyHashable>{
+        guard let hex = keys[key] else { return Set<AnyHashable>() }
         let neighbors = group.neighbors(for: hex)
-        return Set<Hex>(neighbors)
+        return Set<AnyHashable>(neighbors)
     }
     
-    func center(for hex: Hex) -> Vec2 {
-        guard let center = data[hex]?.center else { return Vec2.zero }
+    func center(for key: AnyHashable) -> Vec2 {
+        guard let center = data[key]?.center else { return Vec2.zero }
         return Vec2(center)
     }
     
-    func edge(for hex: Hex, and neighbor: Hex) -> (Vec2, Vec2) {
+    func edge(for key: AnyHashable, and neighborKey: AnyHashable) -> (Vec2, Vec2) {
+        guard let hex = keys[key], let neighbor = keys[neighborKey] else { return (Vec2.zero, Vec2.zero) }
         let sharedVertices = group.sharedEdgeBetween(hex, and: neighbor)
         
         let firstSharedVertex = Vec2(sharedVertices.first)

@@ -1,12 +1,11 @@
 
-import Sixsmith
 import SpriteKit
 
 class HexagonSceneManager {
     let scene: HexagonScene
     let camera: SKCameraNode
 
-    var shapes: [Hex : SKShapeNode] = Dictionary()
+    var shapes: [AnyHashable : SKShapeNode] = Dictionary()
     var edges: [SKShapeNode] = Array()
 
     init(_ scene: HexagonScene) {
@@ -19,10 +18,8 @@ class HexagonSceneManager {
         scene.camera = camera
     }
 
-    private func createShapeNode(with vertices: [Vector2]) -> SKShapeNode {
-        var points = vertices.map { vertex -> CGPoint in
-            return vertex.point
-        }
+    private func createShapeNode(with vertices: [CGPoint]) -> SKShapeNode {
+        var points = vertices
         guard let first = points.first else { fatalError() }
         points.append(first)
 
@@ -37,9 +34,9 @@ class HexagonSceneManager {
 }
 
 extension HexagonSceneManager: MapSceneManager {
-    func createNode(for hex: Hex, with drawData: DrawData) {
-        let shape = createShapeNode(with: drawData.vertices)
-        shapes[hex] = shape
+    func createNode(for key: AnyHashable, with drawData: [CGPoint]) {
+        let shape = createShapeNode(with: drawData)
+        shapes[key] = shape
         scene.addChild(shape)
     }
 
@@ -52,7 +49,7 @@ extension HexagonSceneManager: MapSceneManager {
         edges.append(shape)
     }
 
-    func touchNode(at hex: Hex) -> Bool {
+    func touchNode(at hex: AnyHashable) -> Bool {
         guard let shape = shapes[hex] else { return false }
         shape.fillColor = SKColor(red: 0.42, green: 0.61, blue: 0.35, alpha: 1)
         return true

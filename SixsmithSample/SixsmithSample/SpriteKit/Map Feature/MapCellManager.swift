@@ -1,9 +1,9 @@
 
-import Sixsmith
+import CoreGraphics
 
 protocol MapCellManager {
-    func createCell(for hex: Hex)
-    func touchCell(at hex: Hex)
+    func createCell(for key: AnyHashable)
+    func touchCell(at key: AnyHashable)
     func calculateEdges() -> [[CGPoint]]
     func reset()
 }

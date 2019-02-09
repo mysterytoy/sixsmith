@@ -1,7 +1,6 @@
 
 import UIKit
 import SpriteKit
-import Sixsmith
 
 class SKHexagonViewController: UIViewController {
     weak var scene: HexagonScene?
