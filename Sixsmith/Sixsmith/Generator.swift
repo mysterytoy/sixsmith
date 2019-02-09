@@ -17,4 +17,15 @@ struct Generator {
         }
         return hexagons
     }
+
+    static func parallelogramGroup(of width: Int, and height: Int) -> [Hex] {
+        var hexagons: [Hex] = Array()
+        (0...width).forEach { w in
+            (0...height).forEach { h in
+                let hex = Hex(q: w, r: h, s: -w-h)
+                hexagons.append(hex)
+            }
+        }
+        return hexagons
+    }
 }

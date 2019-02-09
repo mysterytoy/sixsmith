@@ -4,7 +4,7 @@ public class HexagonGroup {
 
     let dataSource: HexagonGroupDataSource
 
-    var hexagons: [Hex] = Array()
+    let hexagons: [Hex]
 
     public init(dataSource: HexagonGroupDataSource) {
         self.dataSource = dataSource
@@ -14,6 +14,8 @@ public class HexagonGroup {
             hexagons = Generator.single()
         case .hexagon(let radius):
             hexagons = Generator.hexagonGroup(with: radius)
+        case .parallelogram(let width, let height):
+            hexagons = Generator.parallelogramGroup(of: width, and: height)
         }
     }
     
