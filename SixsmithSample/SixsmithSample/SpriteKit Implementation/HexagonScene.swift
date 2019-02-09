@@ -2,7 +2,6 @@
 import SpriteKit
 
 class HexagonScene: SKScene {
-
     var touchDelegate: TouchDelegate?
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
