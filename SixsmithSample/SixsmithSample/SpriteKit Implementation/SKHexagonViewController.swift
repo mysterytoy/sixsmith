@@ -42,10 +42,6 @@ class SKHexagonViewController: UIViewController {
         }
     }
 
-    @IBAction func borders() {
-        delegate?.drawBorders()
-    }
-    
     @IBAction func reset() {
         delegate?.resetGrid()
     }

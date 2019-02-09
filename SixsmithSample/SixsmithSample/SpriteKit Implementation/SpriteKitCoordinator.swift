@@ -40,10 +40,6 @@ class SpriteKitCoordinator {
 }
 
 extension SpriteKitCoordinator: HexagonInteractionDelegate {
-    func drawBorders() {
-        mapConductor.drawBorders()
-    }
-
     func resetGrid() {
         mapConductor.resetGrid()
     }

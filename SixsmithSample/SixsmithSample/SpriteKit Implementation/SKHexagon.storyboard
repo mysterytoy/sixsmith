@@ -17,13 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u28-De-acT">
-                                <rect key="frame" x="160.5" y="40" width="54" height="30"/>
-                                <state key="normal" title="Borders"/>
-                                <connections>
-                                    <action selector="borders" destination="KLL-v2-Yna" eventType="touchUpInside" id="uIJ-QR-agY"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUn-j9-Dbu">
                                 <rect key="frame" x="168" y="617" width="39" height="30"/>
                                 <state key="normal" title="Reset"/>
@@ -35,9 +28,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="AfB-3Z-I10" firstAttribute="bottom" secondItem="VUn-j9-Dbu" secondAttribute="bottom" constant="20" id="7Rj-7W-0bl"/>
-                            <constraint firstItem="u28-De-acT" firstAttribute="centerX" secondItem="6zi-wc-FgE" secondAttribute="centerX" id="7ZA-Wk-D3A"/>
                             <constraint firstItem="VUn-j9-Dbu" firstAttribute="centerX" secondItem="6zi-wc-FgE" secondAttribute="centerX" id="dOw-Pt-F1J"/>
-                            <constraint firstItem="u28-De-acT" firstAttribute="top" secondItem="AfB-3Z-I10" secondAttribute="top" constant="20" id="rUu-29-heZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AfB-3Z-I10"/>
                     </view>
