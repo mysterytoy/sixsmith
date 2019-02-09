@@ -2,7 +2,7 @@
 import Sixsmith
 import SpriteKit
 
-class HexagonSceneManager: MapSceneManager, SceneDelegate {
+class HexagonSceneManager {
     let scene: HexagonScene
     let camera: SKCameraNode
 
@@ -19,20 +19,24 @@ class HexagonSceneManager: MapSceneManager, SceneDelegate {
         scene.camera = camera
     }
 
-    func move(translation: CGPoint) {
-        let currentX = camera.position.x
-        let currentY = camera.position.y
-        let scaledX = translation.x * camera.xScale
-        let scaledY = translation.y * camera.yScale
+    private func createShapeNode(with vertices: [Vector2]) -> SKShapeNode {
+        var points = vertices.map { vertex -> CGPoint in
+            return vertex.point
+        }
+        guard let first = points.first else { fatalError() }
+        points.append(first)
 
-        camera.position = CGPoint(x: currentX - scaledX, y: currentY + scaledY)
+        let shape = SKShapeNode(points: &points,
+                                count: points.count)
+        shape.fillColor = SKColor(red: 0.28, green: 0.66, blue: 1, alpha: 1)
+        shape.strokeColor = SKColor(white: 1, alpha: 0.5)
+        shape.lineWidth = 1
+
+        return shape
     }
+}
 
-    func zoom(scale: CGFloat) {
-        let newScale = camera.xScale / scale
-        camera.setScale(newScale)
-    }
-
+extension HexagonSceneManager: MapSceneManager {
     func createNode(for hex: Hex, with drawData: DrawData) {
         let shape = createShapeNode(with: drawData.vertices)
         shapes[hex] = shape
@@ -65,20 +69,20 @@ class HexagonSceneManager: MapSceneManager, SceneDelegate {
             shape.removeFromParent()
         }
     }
+}
 
-    private func createShapeNode(with vertices: [Vector2]) -> SKShapeNode {
-        var points = vertices.map { vertex -> CGPoint in
-            return vertex.point
-        }
-        guard let first = points.first else { fatalError() }
-        points.append(first)
+extension HexagonSceneManager: SceneDelegate {
+    func move(translation: CGPoint) {
+        let currentX = camera.position.x
+        let currentY = camera.position.y
+        let scaledX = translation.x * camera.xScale
+        let scaledY = translation.y * camera.yScale
 
-        let shape = SKShapeNode(points: &points,
-                                count: points.count)
-        shape.fillColor = SKColor(red: 0.28, green: 0.66, blue: 1, alpha: 1)
-        shape.strokeColor = SKColor(white: 1, alpha: 0.5)
-        shape.lineWidth = 1
+        camera.position = CGPoint(x: currentX - scaledX, y: currentY + scaledY)
+    }
 
-        return shape
+    func zoom(scale: CGFloat) {
+        let newScale = camera.xScale / scale
+        camera.setScale(newScale)
     }
 }
