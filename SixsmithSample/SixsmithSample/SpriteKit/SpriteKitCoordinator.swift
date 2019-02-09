@@ -23,6 +23,9 @@ class SpriteKitCoordinator {
                                     cellManager: gridCellManager,
                                     sceneManager: hexagonSceneManager)
 
+        hexagonDataManager.delegate = mapConductor
+        scene.touchDelegate = mapConductor
+
         let storyboard = UIStoryboard(name: "SKHexagon", bundle: nil)
         hexagonViewController = storyboard.instantiateViewController(withIdentifier: "SpriteKit") as! SKHexagonViewController
         hexagonViewController.tabBarItem = UITabBarItem(title: "SpriteKit", image: UIImage(named: "SpriteKitImage"), selectedImage: nil)

@@ -10,9 +10,6 @@ class MapConductor {
         self.hexagonDataManager = dataManager
         self.cellManager = cellManager
         self.sceneManager = sceneManager
-        
-        self.hexagonDataManager.setMapDelegate(self)
-        self.sceneManager.setTouchDelegate(self)
     }
 
     func start() {
