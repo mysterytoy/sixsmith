@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		27DDA2C1220C938D005BEA3D /* HexagonDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DDA2C0220C938D005BEA3D /* HexagonDataManager.swift */; };
 		27EF4AA821884C99001A732F /* GridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EF4AA721884C99001A732F /* GridCell.swift */; };
+		2B8BB1BB2213508A00D392D3 /* MapSceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BB1B72213508A00D392D3 /* MapSceneManager.swift */; };
+		2B8BB1BC2213508A00D392D3 /* MapCellManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BB1B82213508A00D392D3 /* MapCellManager.swift */; };
+		2B8BB1BD2213508A00D392D3 /* MapDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BB1B92213508A00D392D3 /* MapDataManager.swift */; };
+		2B8BB1BE2213508A00D392D3 /* MapConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BB1BA2213508A00D392D3 /* MapConductor.swift */; };
 		2B9A776C220F451000764BDC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9A776B220F451000764BDC /* SceneDelegate.swift */; };
 		2B9A7774220F5C3500764BDC /* MapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9A776F220F5C3500764BDC /* MapDelegate.swift */; };
-		2B9A7775220F5C3500764BDC /* MapSceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9A7770220F5C3500764BDC /* MapSceneManager.swift */; };
-		2B9A7776220F5C3500764BDC /* MapConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9A7771220F5C3500764BDC /* MapConductor.swift */; };
-		2B9A7777220F5C3500764BDC /* MapCellManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9A7772220F5C3500764BDC /* MapCellManager.swift */; };
-		2B9A7778220F5C3500764BDC /* MapDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9A7773220F5C3500764BDC /* MapDataManager.swift */; };
 		2BA4C35F218276C200947D12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA4C35E218276C200947D12 /* AppDelegate.swift */; };
 		2BA4C361218276C200947D12 /* UIHexagonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA4C360218276C200947D12 /* UIHexagonViewController.swift */; };
 		2BA4C366218276C300947D12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BA4C365218276C300947D12 /* Assets.xcassets */; };
@@ -53,12 +53,12 @@
 /* Begin PBXFileReference section */
 		27DDA2C0220C938D005BEA3D /* HexagonDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonDataManager.swift; sourceTree = "<group>"; };
 		27EF4AA721884C99001A732F /* GridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
+		2B8BB1B72213508A00D392D3 /* MapSceneManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapSceneManager.swift; sourceTree = "<group>"; };
+		2B8BB1B82213508A00D392D3 /* MapCellManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapCellManager.swift; sourceTree = "<group>"; };
+		2B8BB1B92213508A00D392D3 /* MapDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapDataManager.swift; sourceTree = "<group>"; };
+		2B8BB1BA2213508A00D392D3 /* MapConductor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapConductor.swift; sourceTree = "<group>"; };
 		2B9A776B220F451000764BDC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2B9A776F220F5C3500764BDC /* MapDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapDelegate.swift; path = "SixsmithSample/Sixsmith Adapter/MapDelegate.swift"; sourceTree = SOURCE_ROOT; };
-		2B9A7770220F5C3500764BDC /* MapSceneManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapSceneManager.swift; path = "SixsmithSample/Map Feature/MapSceneManager.swift"; sourceTree = SOURCE_ROOT; };
-		2B9A7771220F5C3500764BDC /* MapConductor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapConductor.swift; path = "SixsmithSample/Map Feature/MapConductor.swift"; sourceTree = SOURCE_ROOT; };
-		2B9A7772220F5C3500764BDC /* MapCellManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapCellManager.swift; path = "SixsmithSample/Map Feature/MapCellManager.swift"; sourceTree = SOURCE_ROOT; };
-		2B9A7773220F5C3500764BDC /* MapDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapDataManager.swift; path = "SixsmithSample/Map Feature/MapDataManager.swift"; sourceTree = SOURCE_ROOT; };
 		2BA4C35B218276C200947D12 /* SixsmithSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SixsmithSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BA4C35E218276C200947D12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BA4C360218276C200947D12 /* UIHexagonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHexagonViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +93,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B8BB1B62213506600D392D3 /* Map Feature */ = {
+			isa = PBXGroup;
+			children = (
+				2B8BB1B82213508A00D392D3 /* MapCellManager.swift */,
+				2B8BB1BA2213508A00D392D3 /* MapConductor.swift */,
+				2B8BB1B92213508A00D392D3 /* MapDataManager.swift */,
+				2B8BB1B72213508A00D392D3 /* MapSceneManager.swift */,
+			);
+			path = "Map Feature";
+			sourceTree = "<group>";
+		};
 		2B9A776D220F589400764BDC /* Sixsmith Adapter */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,7 +149,7 @@
 				2BFF698A2185056F005DE688 /* AppCoordinator.swift */,
 				2B9A776D220F589400764BDC /* Sixsmith Adapter */,
 				2B9A776E220F5BAA00764BDC /* Terrain Feature */,
-				2BCD2E19220D1A3100352D11 /* Map Feature */,
+				2B8BB1B62213506600D392D3 /* Map Feature */,
 				2BFF698F21850D35005DE688 /* SpriteKit Implementation */,
 				2BFF698E21850D2D005DE688 /* UIKit Implementation */,
 				2BA4C365218276C300947D12 /* Assets.xcassets */,
@@ -153,18 +164,6 @@
 				2BA4C370218278A000947D12 /* Sixsmith.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		2BCD2E19220D1A3100352D11 /* Map Feature */ = {
-			isa = PBXGroup;
-			children = (
-				2B9A7771220F5C3500764BDC /* MapConductor.swift */,
-				2B9A7773220F5C3500764BDC /* MapDataManager.swift */,
-				2B9A7772220F5C3500764BDC /* MapCellManager.swift */,
-				2B9A7770220F5C3500764BDC /* MapSceneManager.swift */,
-			);
-			name = "Map Feature";
-			path = "SpriteKit/Map Feature";
 			sourceTree = "<group>";
 		};
 		2BFF698E21850D2D005DE688 /* UIKit Implementation */ = {
@@ -264,7 +263,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B9A7776220F5C3500764BDC /* MapConductor.swift in Sources */,
 				2BFF699A218513DC005DE688 /* SKHexagonViewController.swift in Sources */,
 				2BFF698B2185056F005DE688 /* AppCoordinator.swift in Sources */,
 				27DDA2C1220C938D005BEA3D /* HexagonDataManager.swift in Sources */,
@@ -273,15 +271,16 @@
 				2BFF699321850DA2005DE688 /* HexagonScene.swift in Sources */,
 				2BA4C35F218276C200947D12 /* AppDelegate.swift in Sources */,
 				2B9A776C220F451000764BDC /* SceneDelegate.swift in Sources */,
+				2B8BB1BC2213508A00D392D3 /* MapCellManager.swift in Sources */,
 				2BFF69832184F1B5005DE688 /* HexagonView.swift in Sources */,
 				2BA6BDEC21858008005368EC /* DataSource.swift in Sources */,
-				2B9A7775220F5C3500764BDC /* MapSceneManager.swift in Sources */,
-				2B9A7778220F5C3500764BDC /* MapDataManager.swift in Sources */,
+				2B8BB1BB2213508A00D392D3 /* MapSceneManager.swift in Sources */,
 				2BCC7BBD218A3196000A093F /* Vec2.swift in Sources */,
 				2BF8007F220B8900004217F1 /* HexagonInteractionDelegate.swift in Sources */,
-				2B9A7777220F5C3500764BDC /* MapCellManager.swift in Sources */,
+				2B8BB1BE2213508A00D392D3 /* MapConductor.swift in Sources */,
 				2BF80081220B90E0004217F1 /* GridCellManager.swift in Sources */,
 				2BF80083220B9319004217F1 /* HexagonSceneManager.swift in Sources */,
+				2B8BB1BD2213508A00D392D3 /* MapDataManager.swift in Sources */,
 				2BF80073220A37EF004217F1 /* SpriteKitCoordinator.swift in Sources */,
 				2BFF699521850EB2005DE688 /* TouchDelegate.swift in Sources */,
 				27EF4AA821884C99001A732F /* GridCell.swift in Sources */,
