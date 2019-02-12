@@ -6,11 +6,11 @@ struct DataSource: HexagonGroupDataSource {
     var groupOrigin: Vector2
 
     var groupShape: GroupShape {
-        return .hexagon(radius: 3)
+        return .hexagon(radius: 1)
     }
 
     var hexagonSize: Double {
-        return 25
+        return 150
     }
 
     var hexagonScaleFactor: Double {
@@ -18,7 +18,7 @@ struct DataSource: HexagonGroupDataSource {
     }
 
     var hexagonOrientation: Orientation {
-        return Orientation.flat
+        return Orientation.pointed
     }
 
     init(origin: CGPoint, system: CoordinateSystem) {

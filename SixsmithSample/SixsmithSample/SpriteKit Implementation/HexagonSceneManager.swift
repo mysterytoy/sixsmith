@@ -42,7 +42,7 @@ extension HexagonSceneManager: MapSceneManager {
 
     func createEdge(with points: inout [CGPoint]) {
         let shape = SKShapeNode(points: &points, count: points.count)
-        shape.lineWidth = 2.5
+        shape.lineWidth = 15
         shape.strokeColor = .red
         shape.lineCap = .round
         scene.addChild(shape)
