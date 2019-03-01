@@ -22,6 +22,32 @@
 		2BA6BDEE2185985A005368EC /* GroupShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA6BDED2185985A005368EC /* GroupShape.swift */; };
 		2BA6BDF021859AF7005368EC /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA6BDEF21859AF7005368EC /* Generator.swift */; };
 		2BA6BDF22185E269005368EC /* CoordinateSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA6BDF12185E269005368EC /* CoordinateSystem.swift */; };
+		2BFA55A02229C07F007BC88A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA559F2229C07F007BC88A /* AppDelegate.swift */; };
+		2BFA55A72229C080007BC88A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BFA55A62229C080007BC88A /* Assets.xcassets */; };
+		2BFA55AA2229C080007BC88A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BFA55A82229C080007BC88A /* LaunchScreen.storyboard */; };
+		2BFA55B92229C1B4007BC88A /* HexagonDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA55B52229C1B4007BC88A /* HexagonDataManager.swift */; };
+		2BFA55BA2229C1B4007BC88A /* MapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA55B62229C1B4007BC88A /* MapDelegate.swift */; };
+		2BFA55BB2229C1B4007BC88A /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA55B72229C1B4007BC88A /* DataSource.swift */; };
+		2BFA55BC2229C1B4007BC88A /* Vec2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA55B82229C1B4007BC88A /* Vec2.swift */; };
+		2BFA55C02229C1BB007BC88A /* NeighborDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA55BD2229C1BB007BC88A /* NeighborDataProvider.swift */; };
+		2BFA55C12229C1BB007BC88A /* GridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA55BE2229C1BB007BC88A /* GridCell.swift */; };
+		2BFA55C22229C1BB007BC88A /* GridCellManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA55BF2229C1BB007BC88A /* GridCellManager.swift */; };
+		2BFA55C72229C1C6007BC88A /* MapCellManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA55C32229C1C6007BC88A /* MapCellManager.swift */; };
+		2BFA55C82229C1C6007BC88A /* MapDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA55C42229C1C6007BC88A /* MapDataManager.swift */; };
+		2BFA55C92229C1C6007BC88A /* MapSceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA55C52229C1C6007BC88A /* MapSceneManager.swift */; };
+		2BFA55CA2229C1C6007BC88A /* MapConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA55C62229C1C6007BC88A /* MapConductor.swift */; };
+		2BFA55D42229C1CF007BC88A /* HexagonInteractionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA55CB2229C1CF007BC88A /* HexagonInteractionDelegate.swift */; };
+		2BFA55D52229C1CF007BC88A /* SKHexagon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BFA55CC2229C1CF007BC88A /* SKHexagon.storyboard */; };
+		2BFA55D62229C1CF007BC88A /* SpriteKitCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA55CD2229C1CF007BC88A /* SpriteKitCoordinator.swift */; };
+		2BFA55D72229C1CF007BC88A /* HexagonScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2BFA55CE2229C1CF007BC88A /* HexagonScene.sks */; };
+		2BFA55D82229C1CF007BC88A /* TouchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA55CF2229C1CF007BC88A /* TouchDelegate.swift */; };
+		2BFA55D92229C1CF007BC88A /* HexagonScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA55D02229C1CF007BC88A /* HexagonScene.swift */; };
+		2BFA55DA2229C1CF007BC88A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA55D12229C1CF007BC88A /* SceneDelegate.swift */; };
+		2BFA55DB2229C1CF007BC88A /* HexagonSceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA55D22229C1CF007BC88A /* HexagonSceneManager.swift */; };
+		2BFA55DC2229C1CF007BC88A /* SKHexagonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA55D32229C1CF007BC88A /* SKHexagonViewController.swift */; };
+		2BFA55DF2229C1DC007BC88A /* UIHexagonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA55DD2229C1DC007BC88A /* UIHexagonViewController.swift */; };
+		2BFA55E02229C1DC007BC88A /* HexagonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA55DE2229C1DC007BC88A /* HexagonView.swift */; };
+		2BFA55E22229C22B007BC88A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA55E12229C22A007BC88A /* AppCoordinator.swift */; };
 		2BFF69792184E52A005DE688 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF69782184E52A005DE688 /* Orientation.swift */; };
 		2BFF697B2184E645005DE688 /* Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF697A2184E645005DE688 /* Conversion.swift */; };
 		2BFF697D2184E727005DE688 /* HexConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF697C2184E727005DE688 /* HexConversionTests.swift */; };
@@ -61,6 +87,34 @@
 		2BA6BDED2185985A005368EC /* GroupShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupShape.swift; sourceTree = "<group>"; };
 		2BA6BDEF21859AF7005368EC /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
 		2BA6BDF12185E269005368EC /* CoordinateSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateSystem.swift; sourceTree = "<group>"; };
+		2BFA559D2229C07F007BC88A /* SixsmithSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SixsmithSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BFA559F2229C07F007BC88A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2BFA55A62229C080007BC88A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2BFA55A92229C080007BC88A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2BFA55AB2229C080007BC88A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BFA55B52229C1B4007BC88A /* HexagonDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexagonDataManager.swift; sourceTree = "<group>"; };
+		2BFA55B62229C1B4007BC88A /* MapDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapDelegate.swift; sourceTree = "<group>"; };
+		2BFA55B72229C1B4007BC88A /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		2BFA55B82229C1B4007BC88A /* Vec2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vec2.swift; sourceTree = "<group>"; };
+		2BFA55BD2229C1BB007BC88A /* NeighborDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeighborDataProvider.swift; sourceTree = "<group>"; };
+		2BFA55BE2229C1BB007BC88A /* GridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
+		2BFA55BF2229C1BB007BC88A /* GridCellManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCellManager.swift; sourceTree = "<group>"; };
+		2BFA55C32229C1C6007BC88A /* MapCellManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapCellManager.swift; sourceTree = "<group>"; };
+		2BFA55C42229C1C6007BC88A /* MapDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapDataManager.swift; sourceTree = "<group>"; };
+		2BFA55C52229C1C6007BC88A /* MapSceneManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapSceneManager.swift; sourceTree = "<group>"; };
+		2BFA55C62229C1C6007BC88A /* MapConductor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapConductor.swift; sourceTree = "<group>"; };
+		2BFA55CB2229C1CF007BC88A /* HexagonInteractionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexagonInteractionDelegate.swift; sourceTree = "<group>"; };
+		2BFA55CC2229C1CF007BC88A /* SKHexagon.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SKHexagon.storyboard; sourceTree = "<group>"; };
+		2BFA55CD2229C1CF007BC88A /* SpriteKitCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteKitCoordinator.swift; sourceTree = "<group>"; };
+		2BFA55CE2229C1CF007BC88A /* HexagonScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HexagonScene.sks; sourceTree = "<group>"; };
+		2BFA55CF2229C1CF007BC88A /* TouchDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchDelegate.swift; sourceTree = "<group>"; };
+		2BFA55D02229C1CF007BC88A /* HexagonScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexagonScene.swift; sourceTree = "<group>"; };
+		2BFA55D12229C1CF007BC88A /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2BFA55D22229C1CF007BC88A /* HexagonSceneManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexagonSceneManager.swift; sourceTree = "<group>"; };
+		2BFA55D32229C1CF007BC88A /* SKHexagonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKHexagonViewController.swift; sourceTree = "<group>"; };
+		2BFA55DD2229C1DC007BC88A /* UIHexagonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIHexagonViewController.swift; sourceTree = "<group>"; };
+		2BFA55DE2229C1DC007BC88A /* HexagonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexagonView.swift; sourceTree = "<group>"; };
+		2BFA55E12229C22A007BC88A /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		2BFF69782184E52A005DE688 /* Orientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
 		2BFF697A2184E645005DE688 /* Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversion.swift; sourceTree = "<group>"; };
 		2BFF697C2184E727005DE688 /* HexConversionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexConversionTests.swift; sourceTree = "<group>"; };
@@ -87,6 +141,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2BFA559A2229C07F007BC88A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -110,6 +171,7 @@
 		2BA4C32E2182766900947D12 = {
 			isa = PBXGroup;
 			children = (
+				2BFA559E2229C07F007BC88A /* SixsmithSample */,
 				2BA4C33A2182766900947D12 /* Sixsmith */,
 				2BA4C3452182766A00947D12 /* SixsmithTests */,
 				2BA4C3392182766900947D12 /* Products */,
@@ -121,6 +183,7 @@
 			children = (
 				2BA4C3382182766900947D12 /* Sixsmith.framework */,
 				2BA4C3412182766A00947D12 /* SixsmithTests.xctest */,
+				2BFA559D2229C07F007BC88A /* SixsmithSample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -152,6 +215,80 @@
 				2BA4C3482182766A00947D12 /* Info.plist */,
 			);
 			path = SixsmithTests;
+			sourceTree = "<group>";
+		};
+		2BFA559E2229C07F007BC88A /* SixsmithSample */ = {
+			isa = PBXGroup;
+			children = (
+				2BFA55A82229C080007BC88A /* LaunchScreen.storyboard */,
+				2BFA55E12229C22A007BC88A /* AppCoordinator.swift */,
+				2BFA559F2229C07F007BC88A /* AppDelegate.swift */,
+				2BFA55B02229C149007BC88A /* Sixsmith Adapter */,
+				2BFA55B12229C14F007BC88A /* Terrain Feature */,
+				2BFA55B22229C15C007BC88A /* Map Feature */,
+				2BFA55B32229C16F007BC88A /* SpriteKit Implementation */,
+				2BFA55B42229C179007BC88A /* UIKit Implementation */,
+				2BFA55A62229C080007BC88A /* Assets.xcassets */,
+				2BFA55AB2229C080007BC88A /* Info.plist */,
+			);
+			path = SixsmithSample;
+			sourceTree = "<group>";
+		};
+		2BFA55B02229C149007BC88A /* Sixsmith Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				2BFA55B72229C1B4007BC88A /* DataSource.swift */,
+				2BFA55B52229C1B4007BC88A /* HexagonDataManager.swift */,
+				2BFA55B62229C1B4007BC88A /* MapDelegate.swift */,
+				2BFA55B82229C1B4007BC88A /* Vec2.swift */,
+			);
+			path = "Sixsmith Adapter";
+			sourceTree = "<group>";
+		};
+		2BFA55B12229C14F007BC88A /* Terrain Feature */ = {
+			isa = PBXGroup;
+			children = (
+				2BFA55BE2229C1BB007BC88A /* GridCell.swift */,
+				2BFA55BF2229C1BB007BC88A /* GridCellManager.swift */,
+				2BFA55BD2229C1BB007BC88A /* NeighborDataProvider.swift */,
+			);
+			path = "Terrain Feature";
+			sourceTree = "<group>";
+		};
+		2BFA55B22229C15C007BC88A /* Map Feature */ = {
+			isa = PBXGroup;
+			children = (
+				2BFA55C32229C1C6007BC88A /* MapCellManager.swift */,
+				2BFA55C62229C1C6007BC88A /* MapConductor.swift */,
+				2BFA55C42229C1C6007BC88A /* MapDataManager.swift */,
+				2BFA55C52229C1C6007BC88A /* MapSceneManager.swift */,
+			);
+			path = "Map Feature";
+			sourceTree = "<group>";
+		};
+		2BFA55B32229C16F007BC88A /* SpriteKit Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				2BFA55CB2229C1CF007BC88A /* HexagonInteractionDelegate.swift */,
+				2BFA55CE2229C1CF007BC88A /* HexagonScene.sks */,
+				2BFA55D02229C1CF007BC88A /* HexagonScene.swift */,
+				2BFA55D22229C1CF007BC88A /* HexagonSceneManager.swift */,
+				2BFA55D12229C1CF007BC88A /* SceneDelegate.swift */,
+				2BFA55CC2229C1CF007BC88A /* SKHexagon.storyboard */,
+				2BFA55D32229C1CF007BC88A /* SKHexagonViewController.swift */,
+				2BFA55CD2229C1CF007BC88A /* SpriteKitCoordinator.swift */,
+				2BFA55CF2229C1CF007BC88A /* TouchDelegate.swift */,
+			);
+			path = "SpriteKit Implementation";
+			sourceTree = "<group>";
+		};
+		2BFA55B42229C179007BC88A /* UIKit Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				2BFA55DE2229C1DC007BC88A /* HexagonView.swift */,
+				2BFA55DD2229C1DC007BC88A /* UIHexagonViewController.swift */,
+			);
+			path = "UIKit Implementation";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,13 +341,30 @@
 			productReference = 2BA4C3412182766A00947D12 /* SixsmithTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		2BFA559C2229C07F007BC88A /* SixsmithSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BFA55AE2229C080007BC88A /* Build configuration list for PBXNativeTarget "SixsmithSample" */;
+			buildPhases = (
+				2BFA55992229C07F007BC88A /* Sources */,
+				2BFA559A2229C07F007BC88A /* Frameworks */,
+				2BFA559B2229C07F007BC88A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SixsmithSample;
+			productName = SixsmithSample;
+			productReference = 2BFA559D2229C07F007BC88A /* SixsmithSample.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		2BA4C32F2182766900947D12 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = LazyAugust;
 				TargetAttributes = {
@@ -221,6 +375,9 @@
 					2BA4C3402182766A00947D12 = {
 						CreatedOnToolsVersion = 10.0;
 					};
+					2BFA559C2229C07F007BC88A = {
+						CreatedOnToolsVersion = 10.1;
+					};
 				};
 			};
 			buildConfigurationList = 2BA4C3322182766900947D12 /* Build configuration list for PBXProject "Sixsmith" */;
@@ -229,12 +386,14 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 2BA4C32E2182766900947D12;
 			productRefGroup = 2BA4C3392182766900947D12 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				2BFA559C2229C07F007BC88A /* SixsmithSample */,
 				2BA4C3372182766900947D12 /* Sixsmith */,
 				2BA4C3402182766A00947D12 /* SixsmithTests */,
 			);
@@ -253,6 +412,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BFA559B2229C07F007BC88A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BFA55AA2229C080007BC88A /* LaunchScreen.storyboard in Resources */,
+				2BFA55A72229C080007BC88A /* Assets.xcassets in Resources */,
+				2BFA55D52229C1CF007BC88A /* SKHexagon.storyboard in Resources */,
+				2BFA55D72229C1CF007BC88A /* HexagonScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +464,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2BFA55992229C07F007BC88A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BFA55E22229C22B007BC88A /* AppCoordinator.swift in Sources */,
+				2BFA55D82229C1CF007BC88A /* TouchDelegate.swift in Sources */,
+				2BFA55D42229C1CF007BC88A /* HexagonInteractionDelegate.swift in Sources */,
+				2BFA55CA2229C1C6007BC88A /* MapConductor.swift in Sources */,
+				2BFA55DC2229C1CF007BC88A /* SKHexagonViewController.swift in Sources */,
+				2BFA55BA2229C1B4007BC88A /* MapDelegate.swift in Sources */,
+				2BFA55C22229C1BB007BC88A /* GridCellManager.swift in Sources */,
+				2BFA55D92229C1CF007BC88A /* HexagonScene.swift in Sources */,
+				2BFA55DF2229C1DC007BC88A /* UIHexagonViewController.swift in Sources */,
+				2BFA55E02229C1DC007BC88A /* HexagonView.swift in Sources */,
+				2BFA55B92229C1B4007BC88A /* HexagonDataManager.swift in Sources */,
+				2BFA55DA2229C1CF007BC88A /* SceneDelegate.swift in Sources */,
+				2BFA55BC2229C1B4007BC88A /* Vec2.swift in Sources */,
+				2BFA55C82229C1C6007BC88A /* MapDataManager.swift in Sources */,
+				2BFA55C12229C1BB007BC88A /* GridCell.swift in Sources */,
+				2BFA55C72229C1C6007BC88A /* MapCellManager.swift in Sources */,
+				2BFA55BB2229C1B4007BC88A /* DataSource.swift in Sources */,
+				2BFA55DB2229C1CF007BC88A /* HexagonSceneManager.swift in Sources */,
+				2BFA55D62229C1CF007BC88A /* SpriteKitCoordinator.swift in Sources */,
+				2BFA55C02229C1BB007BC88A /* NeighborDataProvider.swift in Sources */,
+				2BFA55A02229C07F007BC88A /* AppDelegate.swift in Sources */,
+				2BFA55C92229C1C6007BC88A /* MapSceneManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -304,10 +503,22 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		2BFA55A82229C080007BC88A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2BFA55A92229C080007BC88A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		2BA4C34A2182766A00947D12 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -372,6 +583,7 @@
 		2BA4C34B2182766A00947D12 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -445,7 +657,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.lazyaugust.Sixsmith;
+				PRODUCT_BUNDLE_IDENTIFIER = net.lazyaugust.sixsmith;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -472,7 +684,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.lazyaugust.Sixsmith;
+				PRODUCT_BUNDLE_IDENTIFIER = net.lazyaugust.sixsmith;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -518,6 +730,46 @@
 			};
 			name = Release;
 		};
+		2BFA55AC2229C080007BC88A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WXTE2T7ZL9;
+				INFOPLIST_FILE = SixsmithSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.lazyaugust.sixsmith.sample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2BFA55AD2229C080007BC88A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WXTE2T7ZL9;
+				INFOPLIST_FILE = SixsmithSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.lazyaugust.sixsmith.sample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -544,6 +796,15 @@
 			buildConfigurations = (
 				2BA4C3502182766A00947D12 /* Debug */,
 				2BA4C3512182766A00947D12 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2BFA55AE2229C080007BC88A /* Build configuration list for PBXNativeTarget "SixsmithSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BFA55AC2229C080007BC88A /* Debug */,
+				2BFA55AD2229C080007BC88A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
