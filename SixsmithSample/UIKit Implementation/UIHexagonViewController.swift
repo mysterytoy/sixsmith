@@ -2,7 +2,7 @@
 import UIKit
 import Sixsmith
 
-class UIHexagonViewController: UIViewController, HexagonGroupDelegate {
+class UIHexagonViewController: UIViewController, HexagonDrawDelegate {
 
     var hexagonView: HexagonView?
 
@@ -16,8 +16,8 @@ class UIHexagonViewController: UIViewController, HexagonGroupDelegate {
 
         let group = HexagonGroup(dataSource: DataSource(origin: center,
                                                         system: .increaseTowardBottomRight))
-        group.delegate = self
-        group.present()
+        group.drawDelegate = self
+        group.draw()
 
         view.addSubview(hexagonView!)
     }
@@ -26,7 +26,7 @@ class UIHexagonViewController: UIViewController, HexagonGroupDelegate {
         hexagonView?.paths.append(drawData.vertices)
     }
 
-    func touchAtHexagon(_ hex: Hex) {
+    func drawDidFinish() {
         
     }
 }

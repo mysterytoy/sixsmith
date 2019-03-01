@@ -53,7 +53,7 @@
 		2BFF697D2184E727005DE688 /* HexConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF697C2184E727005DE688 /* HexConversionTests.swift */; };
 		2BFF697F2184E945005DE688 /* HexagonGroupDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF697E2184E945005DE688 /* HexagonGroupDataSource.swift */; };
 		2BFF69812184EAA5005DE688 /* HexagonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF69802184EAA5005DE688 /* HexagonGroup.swift */; };
-		2BFF69852184F448005DE688 /* HexagonGroupDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF69842184F448005DE688 /* HexagonGroupDelegate.swift */; };
+		2BFF69852184F448005DE688 /* HexagonGroupDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF69842184F448005DE688 /* HexagonGroupDelegates.swift */; };
 		2BFF69872185011F005DE688 /* PartialHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF69862185011F005DE688 /* PartialHex.swift */; };
 		2BFF69892185016D005DE688 /* PartialHexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFF69882185016D005DE688 /* PartialHexTests.swift */; };
 /* End PBXBuildFile section */
@@ -120,7 +120,7 @@
 		2BFF697C2184E727005DE688 /* HexConversionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexConversionTests.swift; sourceTree = "<group>"; };
 		2BFF697E2184E945005DE688 /* HexagonGroupDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonGroupDataSource.swift; sourceTree = "<group>"; };
 		2BFF69802184EAA5005DE688 /* HexagonGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonGroup.swift; sourceTree = "<group>"; };
-		2BFF69842184F448005DE688 /* HexagonGroupDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonGroupDelegate.swift; sourceTree = "<group>"; };
+		2BFF69842184F448005DE688 /* HexagonGroupDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonGroupDelegates.swift; sourceTree = "<group>"; };
 		2BFF69862185011F005DE688 /* PartialHex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartialHex.swift; sourceTree = "<group>"; };
 		2BFF69882185016D005DE688 /* PartialHexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartialHexTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,7 +160,7 @@
 				2BA6BDED2185985A005368EC /* GroupShape.swift */,
 				2BA6BDF12185E269005368EC /* CoordinateSystem.swift */,
 				2BFF69802184EAA5005DE688 /* HexagonGroup.swift */,
-				2BFF69842184F448005DE688 /* HexagonGroupDelegate.swift */,
+				2BFF69842184F448005DE688 /* HexagonGroupDelegates.swift */,
 				2BFF697E2184E945005DE688 /* HexagonGroupDataSource.swift */,
 				278D302921872FE50083CE70 /* Directions.swift */,
 				2B229CE421DD5F77008C726F /* DrawData.swift */,
@@ -436,7 +436,7 @@
 				2BFF697B2184E645005DE688 /* Conversion.swift in Sources */,
 				2B229CE321DD5F5F008C726F /* Matrix2.swift in Sources */,
 				2BFF69872185011F005DE688 /* PartialHex.swift in Sources */,
-				2BFF69852184F448005DE688 /* HexagonGroupDelegate.swift in Sources */,
+				2BFF69852184F448005DE688 /* HexagonGroupDelegates.swift in Sources */,
 				2BFF697F2184E945005DE688 /* HexagonGroupDataSource.swift in Sources */,
 				2B229CE521DD5F77008C726F /* DrawData.swift in Sources */,
 				2BA6BDEE2185985A005368EC /* GroupShape.swift in Sources */,

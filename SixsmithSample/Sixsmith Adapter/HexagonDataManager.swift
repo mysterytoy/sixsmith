@@ -11,7 +11,8 @@ class HexagonDataManager: MapDataManager {
     init() {
         group = HexagonGroup(dataSource: DataSource(origin: CGPoint(x: 0, y: 0),
                                                     system: .increaseTowardTopRight))
-        group.delegate = self
+        group.drawDelegate = self
+        group.touchDelegate = self
     }
 
     func setMapDelegate(_ delegate: MapDelegate) {
@@ -19,7 +20,7 @@ class HexagonDataManager: MapDataManager {
     }
 
     func generateData() {
-        group.present()
+        group.draw()
     }
     
     func touchData(at location: Vec2) {
@@ -27,7 +28,7 @@ class HexagonDataManager: MapDataManager {
     }
 }
 
-extension HexagonDataManager: HexagonGroupDelegate {
+extension HexagonDataManager: HexagonDrawDelegate {
     func dataForHexagon(_ hex: Hex, drawData: DrawData) {
         keys[hex] = hex
         data[hex] = drawData
@@ -35,6 +36,12 @@ extension HexagonDataManager: HexagonGroupDelegate {
         delegate?.dataForHexagon(hex, drawData: drawData.vertices.map { vertex -> CGPoint in vertex.point })
     }
     
+    func drawDidFinish() {
+
+    }
+}
+
+extension HexagonDataManager: HexagonTouchDelegate {
     func touchAtHexagon(_ hex: Hex) {
         delegate?.touchAtHexagon(hex)
     }
@@ -50,15 +57,5 @@ extension HexagonDataManager: NeighborDataProvider {
     func center(for key: AnyHashable) -> Vec2 {
         guard let center = data[key]?.center else { return Vec2.zero }
         return Vec2(center)
-    }
-    
-    func edge(for key: AnyHashable, and neighborKey: AnyHashable) -> (Vec2, Vec2) {
-        guard let hex = keys[key], let neighbor = keys[neighborKey] else { return (Vec2.zero, Vec2.zero) }
-        let sharedVertices = group.sharedEdgeBetween(hex, and: neighbor)
-        
-        let firstSharedVertex = Vec2(sharedVertices.first)
-        let secondSharedVertex = Vec2(sharedVertices.second)
-        
-        return (firstSharedVertex, secondSharedVertex)
     }
 }

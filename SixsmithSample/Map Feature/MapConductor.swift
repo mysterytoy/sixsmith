@@ -15,14 +15,6 @@ class MapConductor {
     func start() {
         hexagonDataManager.generateData()
     }
-
-    private func drawBorders() {
-        sceneManager.resetEdges()
-        for edge in cellManager.calculateEdges() {
-            var points = edge
-            sceneManager.createEdge(with: &points)
-        }
-    }
 }
 
 extension MapConductor: MapDelegate {
@@ -34,14 +26,12 @@ extension MapConductor: MapDelegate {
     func touchAtHexagon(_ key: AnyHashable) {
         if sceneManager.touchNode(at: key) {
             cellManager.touchCell(at: key)
-            drawBorders()
         }
     }
 }
 
 extension MapConductor: HexagonInteractionDelegate {
     func resetGrid() {
-        sceneManager.resetEdges()
         sceneManager.resetShapes()
         cellManager.reset()
     }
