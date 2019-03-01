@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'Sixsmith'
-  spec.version = '0.0.2'
+  spec.version = '0.0.3'
   spec.license = 'None'
   spec.homepage = 'https://github.com/lazyaugust/sixsmith'
   spec.authors = { 'Edward Toy' => 'edward.toy@pm.me' }
