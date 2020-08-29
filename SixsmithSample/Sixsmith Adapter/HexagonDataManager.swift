@@ -1,5 +1,6 @@
 
 import Sixsmith
+import Combine
 
 class HexagonDataManager: MapDataManager {
     let group: HexagonGroup
@@ -9,8 +10,12 @@ class HexagonDataManager: MapDataManager {
     var delegate: MapDelegate?
     
     init() {
-        group = HexagonGroup(dataSource: DataSource(origin: CGPoint(x: 0, y: 0),
-                                                    system: .increaseTowardTopRight))
+        group = HexagonGroup(
+            dataSource: DataSource(
+                origin: CGPoint(x: 0, y: 0),
+                system: .increaseTowardTopRight
+            )
+        )
         group.drawDelegate = self
         group.touchDelegate = self
     }

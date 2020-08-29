@@ -8,7 +8,7 @@ struct StubDataSource: HexagonGroupDataSource {
     var groupOrigin: Vector2 {
         return Vector2(0, 0)
     }
-    var groupShape: GroupShape {
+    var groupShape: HexagonGroup.Shape {
         return .hexagon(radius: 15)
     }
     var hexagonSize: Double {

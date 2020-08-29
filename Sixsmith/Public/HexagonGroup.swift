@@ -1,5 +1,11 @@
 
 public class HexagonGroup {
+    public enum Shape {
+        case single
+        case hexagon(radius: Int)
+        case parallelogram(width: Int, height: Int)
+    }
+    
     public var drawDelegate: HexagonDrawDelegate?
     public var touchDelegate: HexagonTouchDelegate?
 
@@ -11,11 +17,11 @@ public class HexagonGroup {
 
         switch(dataSource.groupShape) {
         case .single:
-            hexagons = Generator.single()
+            hexagons = single()
         case .hexagon(let radius):
-            hexagons = Generator.hexagonGroup(with: radius)
+            hexagons = hexagonGroup(with: radius)
         case .parallelogram(let width, let height):
-            hexagons = Generator.parallelogramGroup(of: width, and: height)
+            hexagons = parallelogramGroup(of: width, and: height)
         }
     }
 
@@ -38,4 +44,37 @@ public class HexagonGroup {
         let hexagon = Conversion.pixelToHex(position, dataSource: dataSource)
         touchDelegate?.touchAtHexagon(hexagon)
     }
+}
+
+// MARK: - Generator functions
+
+fileprivate func single() -> [Hex] {
+    return [Hex(q: 0, r: 0, s: 0)]
+}
+
+fileprivate func hexagonGroup(with radius: Int) -> [Hex] {
+    var hexagons: [Hex] = Array()
+    (-radius...radius).forEach { i in
+        let r1 = max(-radius, -i - radius)
+        let r2 = min(radius, -i + radius)
+
+        (r1...r2).forEach { u in
+            hexagons.append(
+                Hex(q: i, r: u, s: -i-u)
+            )
+        }
+    }
+    return hexagons
+}
+
+fileprivate func parallelogramGroup(of width: Int, and height: Int) -> [Hex] {
+    var hexagons: [Hex] = Array()
+    (0...width).forEach { w in
+        (0...height).forEach { h in
+            hexagons.append(
+                Hex(q: w, r: h, s: -w-h)
+            )
+        }
+    }
+    return hexagons
 }

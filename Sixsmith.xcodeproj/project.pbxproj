@@ -19,8 +19,6 @@
 		2BA4C3472182766A00947D12 /* HexEqualityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA4C3462182766A00947D12 /* HexEqualityTests.swift */; };
 		2BA4C3492182766A00947D12 /* Sixsmith.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BA4C33B2182766900947D12 /* Sixsmith.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BA6BDEA21857B02005368EC /* Vector2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA6BDE921857B02005368EC /* Vector2.swift */; };
-		2BA6BDEE2185985A005368EC /* GroupShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA6BDED2185985A005368EC /* GroupShape.swift */; };
-		2BA6BDF021859AF7005368EC /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA6BDEF21859AF7005368EC /* Generator.swift */; };
 		2BA6BDF22185E269005368EC /* CoordinateSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA6BDF12185E269005368EC /* CoordinateSystem.swift */; };
 		2BFA55A02229C07F007BC88A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA559F2229C07F007BC88A /* AppDelegate.swift */; };
 		2BFA55A72229C080007BC88A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BFA55A62229C080007BC88A /* Assets.xcassets */; };
@@ -84,8 +82,6 @@
 		2BA4C3462182766A00947D12 /* HexEqualityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexEqualityTests.swift; sourceTree = "<group>"; };
 		2BA4C3482182766A00947D12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BA6BDE921857B02005368EC /* Vector2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vector2.swift; sourceTree = "<group>"; };
-		2BA6BDED2185985A005368EC /* GroupShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupShape.swift; sourceTree = "<group>"; };
-		2BA6BDEF21859AF7005368EC /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
 		2BA6BDF12185E269005368EC /* CoordinateSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateSystem.swift; sourceTree = "<group>"; };
 		2BFA559D2229C07F007BC88A /* SixsmithSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SixsmithSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BFA559F2229C07F007BC88A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -157,7 +153,6 @@
 				2B502E7B21846C79003BB122 /* Hex.swift */,
 				2BA6BDE921857B02005368EC /* Vector2.swift */,
 				2BFF69782184E52A005DE688 /* Orientation.swift */,
-				2BA6BDED2185985A005368EC /* GroupShape.swift */,
 				2BA6BDF12185E269005368EC /* CoordinateSystem.swift */,
 				2BFF69802184EAA5005DE688 /* HexagonGroup.swift */,
 				2BFF69842184F448005DE688 /* HexagonGroupDelegates.swift */,
@@ -196,7 +191,6 @@
 				2B229CE621DD5F94008C726F /* Public */,
 				2BFF69862185011F005DE688 /* PartialHex.swift */,
 				2BFF697A2184E645005DE688 /* Conversion.swift */,
-				2BA6BDEF21859AF7005368EC /* Generator.swift */,
 				2B229CE221DD5F5F008C726F /* Matrix2.swift */,
 			);
 			path = Sixsmith;
@@ -205,8 +199,8 @@
 		2BA4C3452182766A00947D12 /* SixsmithTests */ = {
 			isa = PBXGroup;
 			children = (
-				2B9A7769220EF6CC00764BDC /* DirectionTests.swift */,
 				2702B1D62187615300C95FA5 /* StubDataSource.swift */,
+				2B9A7769220EF6CC00764BDC /* DirectionTests.swift */,
 				2BA4C3462182766A00947D12 /* HexEqualityTests.swift */,
 				2B502E7D2184848B003BB122 /* HexArithmeticTests.swift */,
 				2B502E7F21848504003BB122 /* HexRelationalTests.swift */,
@@ -439,14 +433,12 @@
 				2BFF69852184F448005DE688 /* HexagonGroupDelegates.swift in Sources */,
 				2BFF697F2184E945005DE688 /* HexagonGroupDataSource.swift in Sources */,
 				2B229CE521DD5F77008C726F /* DrawData.swift in Sources */,
-				2BA6BDEE2185985A005368EC /* GroupShape.swift in Sources */,
 				2BFF69792184E52A005DE688 /* Orientation.swift in Sources */,
 				2BA6BDEA21857B02005368EC /* Vector2.swift in Sources */,
 				278D302A21872FE50083CE70 /* Directions.swift in Sources */,
 				2BA6BDF22185E269005368EC /* CoordinateSystem.swift in Sources */,
 				2BFF69812184EAA5005DE688 /* HexagonGroup.swift in Sources */,
 				2B502E7C21846C79003BB122 /* Hex.swift in Sources */,
-				2BA6BDF021859AF7005368EC /* Generator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,7 +638,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = WXTE2T7ZL9;
+				DEVELOPMENT_TEAM = GW8KHTB5VN;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -673,7 +665,7 @@
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = WXTE2T7ZL9;
+				DEVELOPMENT_TEAM = GW8KHTB5VN;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

@@ -7,17 +7,18 @@ public struct Vector2 {
         self.x = x
         self.y = y
     }
+    
+    public var point: CGPoint {
+        .init(
+            x: self.x,
+            y: self.y
+        )
+    }
 }
 
 extension Vector2: CustomStringConvertible {
     public var description: String {
-        return "Vector2(\(x), \(y))"
+        "Vector2(\(x), \(y))"
     }
 }
 
-extension Vector2 {
-    public var point: CGPoint {
-        return CGPoint(x: x,
-                       y: y)
-    }
-}

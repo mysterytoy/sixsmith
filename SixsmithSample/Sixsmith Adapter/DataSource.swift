@@ -5,7 +5,7 @@ struct DataSource: HexagonGroupDataSource {
     var coordinateSystem: CoordinateSystem
     var groupOrigin: Vector2
 
-    var groupShape: GroupShape {
+    var groupShape: HexagonGroup.Shape {
         return .hexagon(radius: 1)
     }
 
