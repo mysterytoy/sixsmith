@@ -12,12 +12,14 @@ class TabCoordinator {
     var rootViewController: UIViewController {
         let tabController = UITabBarController()
         tabController.viewControllers = [
-            hexagonViewController
+            hexagonViewController,
+            sceneCoordinator.rootViewController
         ]
         
         return tabController
     }
     
+    let sceneCoordinator: SceneCoordinator
     let hexagonViewController: HexagonViewController
     let hexagonGroup: HexGroup
     
@@ -27,11 +29,15 @@ class TabCoordinator {
         let hexagonGroup = HexGroup(dataSource: hexagonViewController)
         hexagonGroup.drawDelegate = hexagonViewController
         
+        let sceneCoordinator = SceneCoordinator(frame: UIScreen.main.bounds)
+        
         self.hexagonGroup = hexagonGroup
         self.hexagonViewController = hexagonViewController
+        self.sceneCoordinator = sceneCoordinator
     }
     
     func start() {
         hexagonGroup.draw()
+        sceneCoordinator.start()
     }
 }

@@ -36,22 +36,13 @@ extension UIBezierPath {
         self.lineWidth = 0
 
         if let first = points.first {
-            move(to: first.point)
+            move(to: first.cgPoint)
         }
         points.forEach {
-            addLine(to: $0.point)
+            addLine(to: $0.cgPoint)
         }
         if points.count > 1 && shouldBeClosed {
             close()
         }
-    }
-}
-
-extension Vector2 {
-    var point: CGPoint {
-        .init(
-            x: self.x,
-            y: self.y
-        )
     }
 }
