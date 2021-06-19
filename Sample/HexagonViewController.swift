@@ -14,11 +14,12 @@ class HexagonViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tabBarItem = UITabBarItem(title: "UIKit", image: UIImage(systemName: "suitcase"), tag: 0)
         
         let hexagonView = HexagonView(frame: view.frame)
-
+        hexagonView.backgroundColor = .systemBackground
+        
         view.addSubview(hexagonView)
         
         self.hexagonView = hexagonView
@@ -38,15 +39,15 @@ extension HexagonViewController: HexGroupDataSource {
     }
     
     var groupShape: HexGroup.Shape {
-        .single
+        .hexagon(radius: 4)
     }
     
     var hexagonSize: Double {
-        50.0
+        25.0
     }
     
     var hexagonScaleFactor: Double {
-        1.0
+        0.95
     }
     
     var hexagonOrientation: Orientation {

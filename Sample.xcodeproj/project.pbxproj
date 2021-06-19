@@ -70,9 +70,9 @@
 		27DF5A5E267E22A200C9AF7D /* Sample */ = {
 			isa = PBXGroup;
 			children = (
-				278499C7267E44AC004B9D58 /* TabCoordinator.swift */,
 				27DF5A5F267E22A200C9AF7D /* AppDelegate.swift */,
 				27DF5A61267E22A200C9AF7D /* SceneDelegate.swift */,
+				278499C7267E44AC004B9D58 /* TabCoordinator.swift */,
 				27DF5A63267E22A200C9AF7D /* HexagonViewController.swift */,
 				27DA024E267E4A2D00607901 /* HexagonView.swift */,
 				27DF5A65267E22A300C9AF7D /* Assets.xcassets */,
