@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		278499C8267E44AC004B9D58 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278499C7267E44AC004B9D58 /* TabCoordinator.swift */; };
 		27D6B3D0267E23A000759837 /* Sixsmith in Frameworks */ = {isa = PBXBuildFile; productRef = 27D6B3CF267E23A000759837 /* Sixsmith */; };
+		27DA024F267E4A2D00607901 /* HexagonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DA024E267E4A2D00607901 /* HexagonView.swift */; };
 		27DF5A60267E22A200C9AF7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DF5A5F267E22A200C9AF7D /* AppDelegate.swift */; };
 		27DF5A62267E22A200C9AF7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DF5A61267E22A200C9AF7D /* SceneDelegate.swift */; };
 		27DF5A64267E22A200C9AF7D /* HexagonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DF5A63267E22A200C9AF7D /* HexagonViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		278499C7267E44AC004B9D58 /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
+		27DA024E267E4A2D00607901 /* HexagonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonView.swift; sourceTree = "<group>"; };
 		27DF5A5C267E22A200C9AF7D /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27DF5A5F267E22A200C9AF7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27DF5A61267E22A200C9AF7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,9 +70,11 @@
 		27DF5A5E267E22A200C9AF7D /* Sample */ = {
 			isa = PBXGroup;
 			children = (
+				278499C7267E44AC004B9D58 /* TabCoordinator.swift */,
 				27DF5A5F267E22A200C9AF7D /* AppDelegate.swift */,
 				27DF5A61267E22A200C9AF7D /* SceneDelegate.swift */,
 				27DF5A63267E22A200C9AF7D /* HexagonViewController.swift */,
+				27DA024E267E4A2D00607901 /* HexagonView.swift */,
 				27DF5A65267E22A300C9AF7D /* Assets.xcassets */,
 				27DF5A6A267E22A300C9AF7D /* LaunchScreen.storyboard */,
 				27DF5A6D267E22A300C9AF7D /* Info.plist */,
@@ -159,7 +165,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				27DF5A60267E22A200C9AF7D /* AppDelegate.swift in Sources */,
+				27DA024F267E4A2D00607901 /* HexagonView.swift in Sources */,
 				27DF5A62267E22A200C9AF7D /* SceneDelegate.swift in Sources */,
+				278499C8267E44AC004B9D58 /* TabCoordinator.swift in Sources */,
 				27DF5A64267E22A200C9AF7D /* HexagonViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
