@@ -15,8 +15,8 @@ public class HexGroup {
         case rectangle(width: Int, height: Int)
     }
     
-    public var drawDelegate: HexDrawDelegate?
-    public var touchDelegate: HexTouchDelegate?
+    public weak var drawDelegate: HexDrawDelegate?
+    public weak var touchDelegate: HexTouchDelegate?
 
     let dataSource: HexGroupDataSource
     let hexagons: [Hex]
