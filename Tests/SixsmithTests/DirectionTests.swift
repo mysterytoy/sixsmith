@@ -2,8 +2,7 @@
 //  DirectionTests.swift
 //  SixsmithTests
 //
-//  Created by Edward Toy on 09/02/2019.
-//  Copyright © 2019 LazyAugust. All rights reserved.
+//  Created by Edward Toy on 01/01/2021.
 //
 
 import XCTest
@@ -18,7 +17,7 @@ class DirectionTests: XCTestCase {
                                   Hex(q: -1, r: 1, s: 0)]
 
     func testPointedDirections() {
-        let group = HexagonGroup(dataSource: StubDataSource())
+        let group = HexGroup(dataSource: StubDataSource())
         let nw = group.neighborInDirection(Pointed.northWest.direction, for: Hex.zero)
         let ne = group.neighborInDirection(Pointed.northEast.direction, for: Hex.zero)
         let e = group.neighborInDirection(Pointed.east.direction, for: Hex.zero)
@@ -35,7 +34,7 @@ class DirectionTests: XCTestCase {
     }
 
     func testFlatDirections() {
-        let group = HexagonGroup(dataSource: StubDataSource())
+        let group = HexGroup(dataSource: StubDataSource())
         let n = group.neighborInDirection(Flat.north.direction, for: Hex.zero)
         let ne = group.neighborInDirection(Flat.northEast.direction, for: Hex.zero)
         let se = group.neighborInDirection(Flat.southEast.direction, for: Hex.zero)

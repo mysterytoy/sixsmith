@@ -1,3 +1,9 @@
+//
+//  Hex.swift
+//  Sixsmith
+//
+//  Created by Edward Toy on 01/01/2021.
+//
 
 import Foundation
 
@@ -26,7 +32,7 @@ public struct Hex {
         Hex(q: 1, r: -1, s: 0)
     ]
 
-    func drawData(with dataSource: HexagonGroupDataSource) -> DrawData {
+    func drawData(with dataSource: HexGroupDataSource) -> DrawData {
         let center = Conversion.hexToPixel(self, dataSource: dataSource)
         
         let corners = (0...5).map { index -> Vector2 in

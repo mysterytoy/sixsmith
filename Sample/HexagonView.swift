@@ -47,3 +47,11 @@ extension UIBezierPath {
     }
 }
 
+extension Vector2 {
+    var point: CGPoint {
+        .init(
+            x: self.x,
+            y: self.y
+        )
+    }
+}

@@ -1,18 +1,27 @@
+//
+//  HexGroup.swift
+//  Sixsmith
+//
+//  Created by Edward Toy on 01/01/2021.
+//
 
-public class HexagonGroup {
+import Foundation
+
+public class HexGroup {
     public enum Shape {
         case single
         case hexagon(radius: Int)
         case parallelogram(width: Int, height: Int)
+        case rectangle(width: Int, height: Int)
     }
     
-    public var drawDelegate: HexagonDrawDelegate?
-    public var touchDelegate: HexagonTouchDelegate?
+    public var drawDelegate: HexDrawDelegate?
+    public var touchDelegate: HexTouchDelegate?
 
-    let dataSource: HexagonGroupDataSource
+    let dataSource: HexGroupDataSource
     let hexagons: [Hex]
 
-    public init(dataSource: HexagonGroupDataSource) {
+    public init(dataSource: HexGroupDataSource) {
         self.dataSource = dataSource
 
         switch(dataSource.groupShape) {
@@ -22,6 +31,15 @@ public class HexagonGroup {
             hexagons = hexagonGroup(with: radius)
         case .parallelogram(let width, let height):
             hexagons = parallelogramGroup(of: width, and: height)
+        case .rectangle(let width, let height):
+            switch dataSource.hexagonOrientation {
+            case .flat:
+                hexagons = flatTopRectangleGroup(of: width, and: height)
+            case .pointed:
+                hexagons = pointedTopRectangleGroup(of: width, and: height)
+            default:
+                hexagons = Array()
+            }
         }
     }
 
@@ -35,14 +53,14 @@ public class HexagonGroup {
 
     public func draw() {
         hexagons.forEach { hexagon in
-            drawDelegate?.dataForHexagon(hexagon, drawData: hexagon.drawData(with: dataSource))
+            drawDelegate?.dataForHex(hexagon, drawData: hexagon.drawData(with: dataSource))
         }
         drawDelegate?.drawDidFinish()
     }
 
     public func touchEvent(at position: Vector2) {
         let hexagon = Conversion.pixelToHex(position, dataSource: dataSource)
-        touchDelegate?.touchAtHexagon(hexagon)
+        touchDelegate?.touchAtHex(hexagon)
     }
 }
 
@@ -73,6 +91,32 @@ fileprivate func parallelogramGroup(of width: Int, and height: Int) -> [Hex] {
         (0...height).forEach { h in
             hexagons.append(
                 Hex(q: w, r: h, s: -w-h)
+            )
+        }
+    }
+    return hexagons
+}
+
+fileprivate func pointedTopRectangleGroup(of width: Int, and height: Int) -> [Hex] {
+    var hexagons: [Hex] = Array()
+    for r in 0..<height {
+        let rOffset = Int(floor(Double(r)/2.0))
+        for q in -rOffset..<(width - rOffset) {
+            hexagons.append(
+                Hex(q: q, r: r, s: -q-r)
+            )
+        }
+    }
+    return hexagons
+}
+
+fileprivate func flatTopRectangleGroup(of width: Int, and height: Int) -> [Hex] {
+    var hexagons: [Hex] = Array()
+    for q in 0..<width {
+        let rOffset = Int(floor(Double(q)/2.0))
+        for r in -rOffset..<(height - rOffset) {
+            hexagons.append(
+                Hex(q: q, r: r, s: -q-r)
             )
         }
     }

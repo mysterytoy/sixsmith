@@ -19,12 +19,12 @@ class TabCoordinator {
     }
     
     let hexagonViewController: HexagonViewController
-    let hexagonGroup: HexagonGroup
+    let hexagonGroup: HexGroup
     
     init() {
         let hexagonViewController = HexagonViewController()
         
-        let hexagonGroup = HexagonGroup(dataSource: hexagonViewController)
+        let hexagonGroup = HexGroup(dataSource: hexagonViewController)
         hexagonGroup.drawDelegate = hexagonViewController
         
         self.hexagonGroup = hexagonGroup

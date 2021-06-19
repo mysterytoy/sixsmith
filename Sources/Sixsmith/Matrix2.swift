@@ -1,3 +1,9 @@
+//
+//  Matrix2.swift
+//  Sixsmith
+//
+//  Created by Edward Toy on 01/01/2021.
+//
 
 struct Matrix2 {
     private let contents: [Double]

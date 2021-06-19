@@ -1,3 +1,9 @@
+//
+//  Direction.swift
+//  Sixsmith
+//
+//  Created by Edward Toy on 01/01/2021.
+//
 
 public struct Direction {
     let value: Int

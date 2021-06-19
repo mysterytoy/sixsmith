@@ -1,3 +1,9 @@
+//
+//  Orientation.swift
+//  Sixsmith
+//
+//  Created by Edward Toy on 01/01/2021.
+//
 
 import Foundation
 
@@ -37,4 +43,10 @@ public struct Orientation {
         ),
         startAngle: 0.0
     )
+}
+
+extension Orientation: Equatable {
+    public static func == (lhs: Orientation, rhs: Orientation) -> Bool {
+        lhs.startAngle == rhs.startAngle
+    }
 }

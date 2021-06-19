@@ -1,5 +1,9 @@
-
-import CoreGraphics
+//
+//  Vector2.swift
+//  Sixsmith
+//
+//  Created by Edward Toy on 01/01/2021.
+//
 
 public struct Vector2 {
     public let x: Double
@@ -9,13 +13,6 @@ public struct Vector2 {
         self.x = x
         self.y = y
     }
-    
-    public var point: CGPoint {
-        .init(
-            x: self.x,
-            y: self.y
-        )
-    }
 }
 
 extension Vector2: CustomStringConvertible {
@@ -23,4 +20,3 @@ extension Vector2: CustomStringConvertible {
         "Vector2(\(x), \(y))"
     }
 }
-

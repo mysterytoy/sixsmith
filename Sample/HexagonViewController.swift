@@ -25,7 +25,7 @@ class HexagonViewController: UIViewController {
     }
 }
 
-extension HexagonViewController: HexagonGroupDataSource {
+extension HexagonViewController: HexGroupDataSource {
     var coordinateSystem: CoordinateSystem {
         .increaseTowardBottomRight
     }
@@ -37,7 +37,7 @@ extension HexagonViewController: HexagonGroupDataSource {
         )
     }
     
-    var groupShape: HexagonGroup.Shape {
+    var groupShape: HexGroup.Shape {
         .single
     }
     
@@ -55,11 +55,11 @@ extension HexagonViewController: HexagonGroupDataSource {
 }
 
 
-extension HexagonViewController: HexagonDrawDelegate {
-    func dataForHexagon(_ hex: Hex, drawData: DrawData) {
+extension HexagonViewController: HexDrawDelegate {
+    func dataForHex(_ hex: Hex, drawData: DrawData) {
         hexagonView?.paths.append(drawData.vertices)
     }
-
+    
     func drawDidFinish() {
         
     }

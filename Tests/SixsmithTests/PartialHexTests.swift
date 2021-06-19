@@ -1,3 +1,9 @@
+//
+//  PartialHexTests.swift
+//  SixsmithTests
+//
+//  Created by Edward Toy on 01/01/2021.
+//
 
 import XCTest
 @testable import Sixsmith

@@ -1,14 +1,14 @@
 
 import Sixsmith
 
-struct StubDataSource: HexagonGroupDataSource {
+struct StubDataSource: HexGroupDataSource {
     var coordinateSystem: CoordinateSystem {
         return .increaseTowardBottomRight
     }
     var groupOrigin: Vector2 {
         return Vector2(0, 0)
     }
-    var groupShape: HexagonGroup.Shape {
+    var groupShape: HexGroup.Shape {
         return .hexagon(radius: 15)
     }
     var hexagonSize: Double {
