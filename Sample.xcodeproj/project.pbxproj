@@ -18,6 +18,9 @@
 		27DF5A6C267E22A300C9AF7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27DF5A6A267E22A300C9AF7D /* LaunchScreen.storyboard */; };
 		27F8BFC0267E5562003B070B /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8BFBF267E5562003B070B /* SceneCoordinator.swift */; };
 		27F8BFC3267E5767003B070B /* Sixsmith+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8BFC2267E5767003B070B /* Sixsmith+.swift */; };
+		27F8BFC5267E6E3A003B070B /* HexagonScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8BFC4267E6E3A003B070B /* HexagonScene.swift */; };
+		27F8BFC7267E7017003B070B /* CoreGraphics+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8BFC6267E7017003B070B /* CoreGraphics+.swift */; };
+		27F8BFC9267E7163003B070B /* SceneDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F8BFC8267E7163003B070B /* SceneDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 		27DF5A6D267E22A300C9AF7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27F8BFBF267E5562003B070B /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
 		27F8BFC2267E5767003B070B /* Sixsmith+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sixsmith+.swift"; sourceTree = "<group>"; };
+		27F8BFC4267E6E3A003B070B /* HexagonScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonScene.swift; sourceTree = "<group>"; };
+		27F8BFC6267E7017003B070B /* CoreGraphics+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreGraphics+.swift"; sourceTree = "<group>"; };
+		27F8BFC8267E7163003B070B /* SceneDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +114,9 @@
 		27F8BFBC267E5519003B070B /* SpriteKit */ = {
 			isa = PBXGroup;
 			children = (
+				27F8BFC4267E6E3A003B070B /* HexagonScene.swift */,
 				27F8BFBF267E5562003B070B /* SceneCoordinator.swift */,
+				27F8BFC8267E7163003B070B /* SceneDataSource.swift */,
 			);
 			path = SpriteKit;
 			sourceTree = "<group>";
@@ -117,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				27F8BFC2267E5767003B070B /* Sixsmith+.swift */,
+				27F8BFC6267E7017003B070B /* CoreGraphics+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -198,9 +207,12 @@
 				27DA024F267E4A2D00607901 /* HexagonView.swift in Sources */,
 				27DF5A62267E22A200C9AF7D /* SceneDelegate.swift in Sources */,
 				278499C8267E44AC004B9D58 /* TabCoordinator.swift in Sources */,
+				27F8BFC7267E7017003B070B /* CoreGraphics+.swift in Sources */,
 				27F8BFC0267E5562003B070B /* SceneCoordinator.swift in Sources */,
+				27F8BFC5267E6E3A003B070B /* HexagonScene.swift in Sources */,
 				27F8BFC3267E5767003B070B /* Sixsmith+.swift in Sources */,
 				27DF5A64267E22A200C9AF7D /* HexagonViewController.swift in Sources */,
+				27F8BFC9267E7163003B070B /* SceneDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
