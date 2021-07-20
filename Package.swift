@@ -8,7 +8,8 @@ let package = Package(
     products: [
         .library(
             name: "Sixsmith",
-            targets: ["Sixsmith"]),
+            targets: ["Sixsmith"]
+        ),
     ],
     dependencies: [],
     targets: [
@@ -17,6 +18,7 @@ let package = Package(
             dependencies: []),
         .testTarget(
             name: "SixsmithTests",
-            dependencies: ["Sixsmith"]),
+            dependencies: ["Sixsmith"]
+        ),
     ]
 )

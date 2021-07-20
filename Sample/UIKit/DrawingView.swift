@@ -1,5 +1,5 @@
 //
-//  HexagonView.swift
+//  DrawingView.swift
 //  Sample
 //
 //  Created by Edward Toy on 19/06/2021.
@@ -8,15 +8,8 @@
 import UIKit
 import Sixsmith
 
-class HexagonView: UIView {
-
+class DrawingView: UIView {
     var paths: [[Vector2]] = Array()
-
-    func drawHexagon(with path: [Vector2]) {
-        let bezier = UIBezierPath(points: path)
-        bezier.stroke()
-        bezier.fill()
-    }
 
     override func draw(_ rect: CGRect) {
         guard let ctx = UIGraphicsGetCurrentContext() else { fatalError("Unable to attain graphics context: HexagonView") }
@@ -25,7 +18,9 @@ class HexagonView: UIView {
         ctx.setLineWidth(1)
 
         paths.forEach { path in
-            drawHexagon(with: path)
+            let bezier = UIBezierPath(points: path)
+            bezier.stroke()
+            bezier.fill()
         }
     }
 }

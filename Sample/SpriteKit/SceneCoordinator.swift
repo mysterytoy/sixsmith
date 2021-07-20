@@ -11,12 +11,12 @@ import Sixsmith
 class SceneCoordinator {
     private let view: SKView
     private let scene: HexagonScene
-    private let group: HexGroup
     private let frame: CGRect
+    private let group: HexGroup
+    
+    private let allShapes: [Hex : SKShapeNode]
 
-    private var allShapes: [Hex : SKShapeNode] = Dictionary()
     private var selectedShapes: [Hex : SKShapeNode] = Dictionary()
-    private var shapeCenters: [Hex : CGPoint] = Dictionary()
     
     var rootViewController: UIViewController
     
@@ -45,13 +45,27 @@ class SceneCoordinator {
             tag: 1
         )
         
-        let group = HexGroup(dataSource: SceneDataSource())
+        let config = HexGroupConfiguration(
+            coordinateSystem: .increaseTowardTopRight,
+            groupOrigin: .init(0, 0),
+            groupShape: .hexagon(radius: 4),
+            hexagonSize: 25,
+            hexagonScaleFactor: 0.95,
+            hexagonOrientation: .flat
+        )
         
+        var allShapes = Dictionary<Hex, SKShapeNode>()
+        
+        let group = HexGroup(config) { hex, drawData in
+            allShapes[hex] = createShapeNode(at: drawData.center.cgPoint, with: drawData.vertices.cgPoints)
+        }
+
         self.rootViewController = viewController
         self.view = view
         self.group = group
         self.scene = scene
         self.frame = frame
+        self.allShapes = allShapes
         
         let panRecognizer = UIPanGestureRecognizer(target: self, action: #selector(pan(_:)))
         view.addGestureRecognizer(panRecognizer)
@@ -63,13 +77,13 @@ class SceneCoordinator {
         doubleTapRecognizer.numberOfTapsRequired = 2
 //        view.addGestureRecognizer(doubleTapRecognizer)
                 
-        group.drawDelegate = self
-        group.touchDelegate = self
         scene.touchOccured = self.touchOccured(at:)
     }
     
     func start() {
-        group.draw()
+        allShapes.forEach { _, shapeNode in
+            scene.addChild(shapeNode)
+        }
     }
     
     @objc func pan(_ recognizer: UIGestureRecognizer) {
@@ -91,47 +105,30 @@ class SceneCoordinator {
     }
     
     func touchOccured(at point: CGPoint) {
-        group.touchEvent(at: point.vector)
-    }
-    
-    private func createShapeNode(at center: CGPoint, with vertices: [CGPoint]) -> SKShapeNode {
-        var points = vertices
-        guard let first = points.first else { fatalError() }
-        points.append(first)
+        group.selection(at: point.vector) { [self] hex in
+            guard let shape = allShapes[hex] else { return }
 
-        let shape = SKShapeNode(points: &points,
-                                count: points.count)
-        shape.fillColor = .systemPink
-        shape.strokeColor = .clear
-        shape.lineWidth = 1
-
-        return shape
-    }
-}
-
-extension SceneCoordinator: HexDrawDelegate {
-    func dataForHex(_ hex: Hex, drawData: DrawData) {
-        let shapeNode = createShapeNode(at: drawData.center.cgPoint, with: drawData.vertices.cgPoints)
-        allShapes[hex] = shapeNode
-        shapeCenters[hex] = drawData.center.cgPoint
-        scene.addChild(shapeNode)
-    }
-    
-    func drawDidFinish() {
-
-    }
-}
-
-extension SceneCoordinator: HexTouchDelegate {
-    func touchAtHex(_ hex: Hex) {
-        guard let shape = allShapes[hex] else { return }
-
-        if selectedShapes.keys.contains(hex) {
-            shape.fillColor = .systemPink
-            selectedShapes.removeValue(forKey: hex)
-        } else {
-            shape.fillColor = .systemTeal
-            selectedShapes[hex] = shape
+            if self.selectedShapes.keys.contains(hex) {
+                shape.fillColor = .systemPink
+                selectedShapes.removeValue(forKey: hex)
+            } else {
+                shape.fillColor = .systemTeal
+                selectedShapes[hex] = shape
+            }
         }
     }
+}
+
+fileprivate func createShapeNode(at center: CGPoint, with vertices: [CGPoint]) -> SKShapeNode {
+    var points = vertices
+    guard let first = points.first else { fatalError() }
+    points.append(first)
+
+    let shape = SKShapeNode(points: &points,
+                            count: points.count)
+    shape.fillColor = .systemPink
+    shape.strokeColor = .clear
+    shape.lineWidth = 1
+
+    return shape
 }
