@@ -48,7 +48,18 @@ class TabCoordinator {
                 
         let sceneCoordinator = SceneCoordinator(frame: UIScreen.main.bounds)
         
-        let hexagonsViewHost = UIHostingController(rootView: HexagonsView())
+        var data: [Hex.DrawData] = Array()
+        
+        let _ = HexGroup(config) { _, drawData in
+            data.append(drawData)
+        }
+        
+        let hexagonsViewHost = UIHostingController(
+            rootView: HexagonsView(
+                data: data
+            )
+        )
+        
         hexagonsViewHost.tabBarItem = UITabBarItem(
             title: "SwiftUI",
             image: UIImage(systemName: "swift"),
