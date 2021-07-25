@@ -19,7 +19,7 @@ public struct HexGroup {
     private let neighborForHex: (Hex, Direction) -> Hex
     private let neighborsForHex: (Hex) -> [Hex]
         
-    public init(_ config: HexGroupConfiguration, dataForHex: (Hex, Hex.DrawData) -> Void) {
+    public init(_ config: HexGroupConfiguration, dataForHex: (Hex, Hex.DrawData) -> Void = { _, _ in }) {
         self.pixelToHex = configurePixelToHex(config)
         self.neighborForHex = configureNeighborForHex(config)
         self.neighborsForHex = configureNeighborsForHex(config)
