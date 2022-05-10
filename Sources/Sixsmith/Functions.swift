@@ -113,24 +113,27 @@ func configureDrawDataForHex(_ config: HexGroupConfiguration) -> (Hex) -> Hex.Dr
   return { hex in
     let center = configureHexToPixel(config)(hex)
     
-    let corners = (0...5).map { index -> Vector2 in
+    let offsets = (0...5).map { index -> Vector2 in
       let angle = 2.0 * Double.pi * (config.hexagonOrientation.startAngle - Double(index)) / 6.0
       let drawSize = config.hexagonSize * config.hexagonScaleFactor
       
-      let offset = Vector2(
+      return Vector2(
         drawSize * cos(angle),
         drawSize * sin(angle)
       )
-      
-      return Vector2(
-        center.x + offset.x,
-        center.y + offset.y
+    }
+    
+    let vertices = offsets.map {
+      Vector2(
+        center.x + $0.x,
+        center.y + $0.y
       )
     }
     
     return Hex.DrawData(
       center: center,
-      vertices: corners
+      relativeVertices: offsets,
+      absoluteVertices: vertices
     )
   }
 }

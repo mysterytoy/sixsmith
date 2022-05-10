@@ -8,7 +8,7 @@ struct HexagonsView: View {
   var body: some View {
     Canvas { context, size in
       for datum in data {
-        let points = datum.vertices.cgPoints
+        let points = datum.absoluteVertices.cgPoints
         
         context.fill(
           Path { path in

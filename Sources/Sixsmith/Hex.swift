@@ -4,7 +4,8 @@ import Foundation
 public struct Hex {
   public struct DrawData {
     public let center: Vector2
-    public let vertices: [Vector2]
+    public let relativeVertices: [Vector2]
+    public let absoluteVertices: [Vector2]
   }
   
   let q: Int

@@ -32,7 +32,7 @@ class SceneCoordinator {
     var allShapes = Dictionary<Hex, SKShapeNode>()
     
     let group = HexGroup(config) { hex, drawData in
-      allShapes[hex] = createShapeNode(at: drawData.center.cgPoint, with: drawData.vertices.cgPoints)
+      allShapes[hex] = createShapeNode(at: drawData.center.cgPoint, with: drawData.relativeVertices.cgPoints)
     }
     
     self.viewController = viewController
@@ -73,6 +73,7 @@ fileprivate func createShapeNode(at center: CGPoint, with vertices: [CGPoint]) -
   shape.fillColor = .systemPink
   shape.strokeColor = .clear
   shape.lineWidth = 1
+  shape.position = center
   
   return shape
 }

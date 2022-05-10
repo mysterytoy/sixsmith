@@ -29,6 +29,6 @@ class HexagonViewController: UIViewController {
   }
   
   func dataForHex(_ hex: Hex, drawData: Hex.DrawData) {
-    hexagonView.paths.append(drawData.vertices)
+    hexagonView.paths.append(drawData.absoluteVertices)
   }
 }
